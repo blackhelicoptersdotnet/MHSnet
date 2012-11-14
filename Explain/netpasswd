@@ -1,0 +1,4 @@
+
+	-c	Check password.
+	-d	Delete entry.
+	-p	Print password file.

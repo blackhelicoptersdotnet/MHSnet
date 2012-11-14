@@ -1,0 +1,5580 @@
+%!PS-Adobe-2.0
+%%Version: 3.3.1
+%%DocumentFonts: (atend)
+%%Pages: (atend)
+%%EndComments
+%
+% Version 3.3.1 prologue for troff files.
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/rotation 1 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation rotation mul rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch neg translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	addmetrics
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/addmetrics {
+	/Symbol /S null Sdefs cf
+	/Times-Roman /S1 StandardEncoding dup length array copy S1defs cf
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto show} repeat}
+	{neg moveto {2 index stringwidth pop sub exch div 0 32 4 -1 roll widthshow} repeat}
+	{neg moveto {spacewidth sub 0.0 32 4 -1 roll widthshow} repeat}
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get bind def} bind def
+
+/w {neg moveto show} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def findfont exch
+	dup /ptsize exch def scaling div dup /size exch def scalefont setfont
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newencoding exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put}{pop pop} ifelse} forall
+
+	newencoding type /arraytype eq {newdict /Encoding newencoding put} if
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+% Move braceleftbt a bit - default PostScript character is off a bit.
+%
+
+/Sdefs [
+	/bracketlefttp		[201 500]
+	/bracketleftbt		[201 500]
+	/bracketrighttp		[-81 380]
+	/bracketrightbt		[-83 380]
+	/braceleftbt		[203 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	/radicalex		[-50 0 500 0]
+	/parenleftex		[-20 -170 0 0]
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+/S1defs [
+	/underscore		[0 80 500 0]
+	/endash			[7 90 650 0]
+] def
+%%EndProlog
+%%BeginSetup
+mark
+/resolution 720 def
+setup
+2 setdecoding
+%%EndSetup
+%%Page: 1 1
+/saveobj save def
+mark
+1 pagesetup
+12 B f
+(Installation Guide for)2 1118 1 2235 850 t
+11 B f
+(MHS)3383 850 w
+12 B f
+(net)3634 850 w
+12 I f
+(Piers Lauder)1 631 1 2699 1045 t
+(\(piers@mhs.oz\))2634 1175 w
+11 R f
+(Message Handling Systems)2 1216 1 2407 1370 t
+10 I f
+(ABSTRACT)2778 1750 w
+10 R f
+(This document is a guide to the installation of the)9 2142 1 720 2050 t
+9 R f
+(MHS)2905 2050 w
+10 R f
+( includes a)2 465( It)1 130( from the distribution \256le.)4 1107(net software)1 508 4 3100 2050 t
+( with care, and notify the author of any)8 1635( read it)2 299( Please)1 316(detailed description for the con\256guration of the network.)7 2340 4 720 2170 t
+(de\256ciencies, additions, or modi\256cations you might think are necessary.)8 2839 1 720 2290 t
+9 B f
+(1. INTRODUCTION)1 834 1 720 2540 t
+10 R f
+(The)720 2720 w
+9 R f
+(MHS)902 2720 w
+10 R f
+(net software distribution arrives as either a)6 1714 1 1097 2720 t
+10 I f
+(tar)2838 2720 w
+10 R f
+(\(1\) format, or)2 544 1 2963 2720 t
+10 I f
+(cpio)3534 2720 w
+10 R f
+( of this \256le)3 440( contents)1 360( The)1 207(\(1\) format \256le.)2 589 4 3714 2720 t
+(should be extracted)2 792 1 720 2840 t
+7 R f
+(1)1512 2800 w
+10 R f
+( system with at least ten megabytes of free)8 1769(into an appropriately labelled directory on a \256le)7 1961 2 1580 2840 t
+( needed during the)3 770( basic source takes around one and a half megabytes, the extra ones will only be)15 3358(space. The)1 462 3 720 2960 t
+(installation process.)1 794 1 720 3080 t
+(There are many sub-directories created by the extraction process, their contents will be explained below.)14 4173 1 720 3260 t
+( that you are going to have to edit for the preliminary stage of compilation, however, there)16 3717(There is only one \256le)4 873 2 720 3440 t
+( before the network will function, so the best course of action is to make hard)15 3209(are other \256les that must be set up)7 1381 2 720 3560 t
+(copies of all the manuals, and the top-level)7 1714 1 720 3680 t
+10 I f
+(Make\256le)2459 3680 w
+10 R f
+(, and have them to hand during the installation process.)9 2206 1 2810 3680 t
+9 B f
+( name of your node.)4 765(1.1 The)1 309 2 720 3860 t
+10 R f
+( there are a few rules you should bear in mind.)10 1964(Choosing the name of your node should be straightforward, but)9 2626 2 720 4040 t
+( of)1 108(The name will consist of a set)6 1199 2 720 4160 t
+10 I f
+(typed)2052 4160 w
+10 R f
+(domains, of which one will be the machine name, and another your country)12 3017 1 2293 4160 t
+( domain names must consist of letters from the set)9 2277(code. The)1 448 2 720 4280 t
+10 B f
+([\261)3500 4280 w
+10 S f
+(_)3583 4280 w
+10 B f
+(A-Za-z0-9])3633 4280 w
+10 R f
+( preceded by their type)4 1038(, be)1 174 2 4098 4280 t
+(\(conventionally, but not necessarily, in upper-case\) and be concatenated together with periods \(`)12 3841 1 720 4400 t
+10 B f
+(.)4561 4400 w
+10 R f
+('\), as in)2 302 1 4586 4400 t
+10 CW f
+(NODE=basser.DEPT=cs.ORG=su.PRMD=oz.COUNTRY=au)870 4580 w
+10 R f
+(At least four domains should be present, more may be added:-)10 2482 1 720 4760 t
+9 R f
+(COUNTRY)900 4940 w
+10 R f
+( country code, normally an internationally recognized two letter code.)9 2786(= The)1 355 2 1335 4940 t
+9 R f
+(ADMD)900 5120 w
+10 R f
+( of your ``Administrative Management Domain'', normally controlled by one of the)11 3378( name)1 242(= The)1 515 3 1175 5120 t
+( is unused in Australia at the moment.)7 1516( This)1 228(local PTTs.)1 461 3 1535 5240 t
+9 R f
+(PRMD)900 5420 w
+10 R f
+( signi\256es)1 359( \(``oz'')1 309( ``Private Management Domain''.)3 1358(= The)1 535 4 1155 5420 t
+10 I f
+(ACSnet)3741 5420 w
+10 R f
+(.\))4049 5420 w
+9 R f
+(ORG)900 5600 w
+10 R f
+( name of your ``Organization''.)4 1260(= The)1 600 2 1090 5600 t
+9 R f
+(DEPT)900 5780 w
+10 R f
+( ``)1 91(= \(Or)1 548 2 1125 5780 t
+9 R f
+(OU1)1764 5780 w
+10 R f
+(='', and ``)2 407 1 1939 5780 t
+9 R f
+(OU2)2346 5780 w
+10 R f
+( ``Organizational Units'', as needed.)4 1457( Optional)1 400(='', ...\))1 280 3 2521 5780 t
+9 R f
+(NODE)900 5960 w
+10 R f
+( name of the machine that is supporting the network locally.)10 2400(= The)1 540 2 1150 5960 t
+( of)1 125(The concatenated domain names make up names)6 2047 2 720 6140 t
+10 I f
+(regions)2934 6140 w
+10 R f
+( region consisting of all the)5 1176( The)1 222(in the network.)2 636 3 3276 6140 t
+(domains except)1 633 1 720 6260 t
+9 R f
+(NODE)1387 6260 w
+10 R f
+(is commonly referred to as your)5 1323 1 1671 6260 t
+10 I f
+(site)3028 6260 w
+10 R f
+(address, and should be used when referring to your)8 2109 1 3201 6260 t
+(network address, in preference to the machine address \(eg: for mail addresses.\))11 3149 1 720 6380 t
+( will need the cooperation of the managers at the nodes)10 2241( You)1 226(You may change the name of your node at any time.)10 2123 3 720 6560 t
+( you, but the rest of the nodes will \256nd out about the change automatically, as your)16 3404(that are directly connected to)4 1186 2 720 6680 t
+( warned, though, that your users will object!)7 1767( Be)1 161(new state information propagates through the network.)6 2188 3 720 6800 t
+9 B f
+( should be easy.)3 602(1.2 Installation)1 599 2 720 6980 t
+10 R f
+( read this document and follow the directions as you go along, then, by the time you reach the end of)20 4122(You should)1 468 2 720 7160 t
+( it isn't, please let us know about any problems.)9 1907( If)1 116(it, you will also have the network up and running.)9 1990 3 720 7280 t
+8 S1 f
+(__________________)720 7460 w
+8 R f
+( a)1 55(1. Extract)1 349 2 720 7580 t
+8 I f
+(cpio)1144 7580 w
+8 R f
+(format \256le with the command ``)5 1018 1 1301 7580 t
+8 CW f
+(cpio -icdm <file)2 768 1 2319 7580 t
+8 R f
+( a)1 55(''. Extract)1 341 2 3087 7580 t
+8 I f
+(tar)3503 7580 w
+8 R f
+(format \256le with the command ``)5 1018 1 3616 7580 t
+8 CW f
+(tar xf file)2 528 1 4634 7580 t
+8 R f
+(''.)5162 7580 w
+10 R f
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 1 1
+%%Page: 2 2
+/saveobj save def
+mark
+2 pagesetup
+10 R f
+(- 2 -)2 166 1 2932 480 t
+9 B f
+( HIERARCHY)1 583(2. DIRECTORY)1 664 2 720 960 t
+10 R f
+( only three real \256les in the top level:)8 1507( are)1 153( There)1 289(The directory tree created by the distribution is described below.)9 2641 4 720 1140 t
+10 CW f
+(BUGS)720 1260 w
+10 R f
+(,)960 1260 w
+10 CW f
+(README)1074 1260 w
+10 R f
+(, and)1 223 1 1434 1260 t
+10 CW f
+(Makefile)1746 1260 w
+10 R f
+(. The)1 259 1 2226 1260 t
+10 CW f
+(BUGS)2539 1260 w
+10 R f
+( suggested)1 447(\256le contains a list of current known bugs and)8 2030 2 2833 1260 t
+(temporary \256xes,)1 651 1 720 1380 t
+10 CW f
+(README)1433 1380 w
+10 R f
+( fourth real \256le here will)5 988( The)1 208( features.)1 368(tells you where to start, and announces any new)8 1926 4 1820 1380 t
+(be the)1 242 1 720 1500 t
+10 I f
+(run)988 1500 w
+10 R f
+( have been)2 426( manuals)1 359( Where)1 316( rest are all directories.)4 915( The)1 206(\256le you create as part of the installation process.)8 1935 6 1153 1500 t
+( of the)2 259( Some)1 280( section number in parentheses.)4 1264(provided, they are referred to with the name in italics followed by the)12 2787 4 720 1620 t
+(information contains unavoidable forward references \320 for which, my apologies.)9 3262 1 720 1740 t
+9 B f
+(2.1 Admin)1 424 1 720 1920 t
+10 R f
+( administration that can be run to start the network, and keep it)12 2517(This directory contains some shell programs to help)7 2073 2 720 2100 t
+( are also useful \256les like a sendmail con\256guration for 4.x)10 2332(tidy. There)1 470 2 720 2220 t
+9 R f
+(BSD)3553 2220 w
+10 R f
+( through it when you get)5 1010(sites. Glance)1 541 2 3759 2220 t
+( are also the following administration commands:-)6 2015( There)1 282(the time.)1 350 3 720 2340 t
+( to turn the repeated page output format of)8 1819( is a management tool that can be used)8 1662(dis.c This)1 929 3 900 2520 t
+(programs like)1 552 1 1651 2640 t
+10 I f
+(linkstats)2228 2640 w
+10 R f
+( See)1 194(into minimally updated screen displays.)4 1591 2 2587 2640 t
+10 I f
+(dis)4397 2640 w
+10 R f
+(\(1\).)4522 2640 w
+( activation keys from licence numbers and site addresses.)8 2287(licence.c Makes)1 1017 2 900 2820 t
+( "cu", except that the)4 845( Like)1 236( can be used to bootstrap \256les over comms lines.)9 1964( program that)2 542(log.c A)1 823 5 900 3000 t
+(\256le-transfer facility is reliable, and it doesn't consult any control \256les.)10 2791 1 1651 3120 t
+( tool that turns addresses into pathnames, and)7 1815(revpath.c Management)1 1272 2 900 3300 t
+10 I f
+(vice-versa)4012 3300 w
+10 R f
+(. See)1 219 1 4429 3300 t
+10 I f
+(netpath)4673 3300 w
+10 R f
+(\(8\).)4981 3300 w
+( See)1 194( tool for examining command \256les for messages in transit.)9 2326(showcmds.c Management)1 1272 3 900 3480 t
+10 I f
+(netcmds)4717 3480 w
+10 R f
+(\(8\).)5052 3480 w
+( See)1 194( tool for examining ``handlers'' validation \256le.)6 1867(showhandlers.c Management)1 1272 3 900 3660 t
+10 I f
+(nethandlers)4258 3660 w
+10 R f
+(\(8\).)4738 3660 w
+( See)1 194( tool for examining message \256les in transit.)7 1727(showhdr.c Management)1 1272 3 900 3840 t
+10 I f
+(nethdr)4118 3840 w
+10 R f
+(\(8\).)4387 3840 w
+( See)1 194( tool for examining the parameter \256les.)6 1556(showparams.c Management)1 1272 3 900 4020 t
+10 I f
+(netparams)3947 4020 w
+10 R f
+(\(8\).)4377 4020 w
+( See)1 194( tool for examining the privileges \256le.)6 1513(showprivs.c Management)1 1272 3 900 4200 t
+10 I f
+(netprivs)3904 4200 w
+10 R f
+(\(8\).)4234 4200 w
+( See)1 230( routing program.)2 774( selections from the statistics records produced by the)8 2421(statspr.c Prints)1 985 4 900 4380 t
+10 I f
+(netstatspr)1651 4500 w
+10 R f
+(\(8\).)2054 4500 w
+( tool for testing out new)5 978(test-crc.c Installation)1 1201 2 900 4680 t
+9 R f
+(CRC)3108 4680 w
+10 R f
+( if you decide to write an)6 1028(implementations, useful)1 965 2 3317 4680 t
+( Try)1 210(assembler version for your new machine architecture.)6 2237 2 1651 4800 t
+10 CW f
+(run test)1 496 1 4174 4800 t
+10 R f
+(after you have)2 600 1 4710 4800 t
+(created and installed your new version of)6 1646 1 1651 4920 t
+10 CW f
+(Lib/crc.c)3322 4920 w
+10 R f
+(in)3887 4920 w
+10 CW f
+(Bin/Lib.a)3990 4920 w
+10 R f
+(.)4530 4920 w
+9 B f
+(2.2 Bin)1 294 1 720 5100 t
+10 R f
+( in the distribution, but will be created when you \256rst run the program)13 2857(This directory is not)3 820 2 720 5280 t
+10 I f
+(make)4427 5280 w
+10 R f
+( will hold all)3 524(. It)1 141 2 4645 5280 t
+( the libraries of sub-routines common to many of the programs, as well as site-speci\256c)14 3490(the binaries made, and also)4 1100 2 720 5400 t
+(header \256les.)1 482 1 720 5520 t
+( of this directory are removed by the command)8 1914(The contents)1 517 2 720 5700 t
+10 CW f
+(run clobber)1 665 1 3216 5700 t
+10 R f
+(\(or)3911 5700 w
+10 CW f
+(make clobber)1 725 1 4092 5700 t
+10 R f
+(\) which will)2 493 1 4817 5700 t
+( clean-up can be)3 698( slightly less draconian)3 970( A)1 139(also remove all the \256les produced during the compilation process.)9 2783 4 720 5820 t
+(produced by the command)3 1122 1 720 5940 t
+10 CW f
+(run clean)1 560 1 1922 5940 t
+10 R f
+( leave the contents of)4 932(, which will)2 515 2 2482 5940 t
+10 CW f
+(Bin)4010 5940 w
+10 R f
+(alone, but remove all the)4 1074 1 4236 5940 t
+(compilation temporaries \(such as)3 1323 1 720 6060 t
+10 B f
+(.o)2068 6060 w
+10 R f
+(\256les\).)2168 6060 w
+9 B f
+(2.3 Con\256g)1 414 1 720 6240 t
+10 R f
+(Contains all the \256les that are installed in the spool directory)10 2382 1 720 6420 t
+10 CW f
+(_config)3162 6420 w
+10 R f
+(that aid menu-driven con\256guration.)3 1415 1 3607 6420 t
+9 B f
+(2.4 Control)1 459 1 720 6600 t
+10 R f
+(This contains the source of the programs used for network control functions:-)11 3092 1 720 6780 t
+( See)1 194( network addresses.)2 784(address.c Resolves)1 1112 3 900 6960 t
+10 I f
+(netaddr)3015 6960 w
+10 R f
+(\(8\).)3334 6960 w
+( to scan)2 323( used)1 216( Also)1 247( by the routing daemon to signal a change-of-state in the link.)11 2546(changestate.c Invoked)1 1078 5 900 7140 t
+( See)1 194(for dead links.)2 574 2 1651 7260 t
+10 I f
+(netchange)2444 7260 w
+10 R f
+(\(8\).)2862 7260 w
+( See)1 194( the messages data-base for broadcast messages.)6 1925(checkmsgsdb.c Compacts)1 1151 3 900 7440 t
+10 I f
+(netcheckdb)4195 7440 w
+10 R f
+(\(8\).)4651 7440 w
+( general purpose)2 705(\256lter.c A)1 818 2 900 7620 t
+10 I f
+(\256lter)2472 7620 w
+10 R f
+(program to examine messages passing through a link that is)9 2600 1 2710 7620 t
+( See)1 194(controlled by purpose-speci\256c shell scripts.)4 1734 2 1651 7740 t
+10 I f
+(net\256lter)3604 7740 w
+10 R f
+(\(8\).)3923 7740 w
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 2 2
+%%Page: 3 3
+/saveobj save def
+mark
+3 pagesetup
+10 R f
+(- 3 -)2 166 1 2932 480 t
+( and routing tables to discover the network)7 1937( users to interrogate the state\256le)5 1433(map.c Allows)1 1040 3 900 960 t
+(topology. See)1 575 1 1651 1080 t
+10 I f
+(netmap)2251 1080 w
+10 R f
+(\(1\).)2553 1080 w
+( and discarded)2 626( out the work areas which can \256ll up with timed-out messages,)11 2761(purge.c Cleans)1 1023 3 900 1260 t
+( See)1 194(temporary \256les.)1 627 2 1651 1380 t
+10 I f
+(netpurge)2497 1380 w
+10 R f
+(\(8\).)2860 1380 w
+( See)1 194( to request a topology update from other network nodes.)9 2241(request.c Used)1 956 3 900 1560 t
+10 I f
+(netrequest)4316 1560 w
+10 R f
+(\(8\).)4740 1560 w
+( See)1 242( re-routing of messages that are lost or delayed on broken links.)11 3057(reroute.c Manages)1 1111 3 900 1740 t
+10 I f
+(netreroute)1651 1860 w
+10 R f
+(\(8\).)2075 1860 w
+(state.c The)1 906 1 900 2040 t
+10 I f
+(state\256le)1834 2040 w
+10 R f
+(manipulation program. Used by)3 1283 1 2173 2040 t
+10 I f
+(changestate)3485 2040 w
+10 R f
+(and)3991 2040 w
+10 I f
+(stater)4164 2040 w
+10 R f
+(to update the state\256le.)3 889 1 4421 2040 t
+(See)1651 2160 w
+10 I f
+(netstate)1820 2160 w
+10 R f
+(\(8\).)2139 2160 w
+9 B f
+(2.5 Dirlib)1 389 1 720 2340 t
+10 R f
+(Contains a distribution of a)4 1089 1 720 2520 t
+9 R f
+(UNIX)1834 2520 w
+10 R f
+( See)1 194(version independent set of directory reading routines.)6 2132 2 2084 2520 t
+10 I f
+(directory)4435 2520 w
+10 R f
+(\(3\).)4809 2520 w
+9 B f
+(2.6 Documents)1 589 1 720 2700 t
+10 R f
+(This directory contains the following documents:-)5 2001 1 720 2880 t
+( with)1 203( Pre-process)1 515( guide.)1 272(install.mm Installation)1 1114 4 900 3060 t
+10 I f
+(tbl)3029 3060 w
+10 R f
+(\(1\).)3143 3060 w
+( paper on ``Link Management and Link Protocol in)8 2047(link.mm A)1 736 2 900 3240 t
+9 R f
+(MHS)3708 3240 w
+10 R f
+(net''.)3903 3240 w
+( are also distributor-)3 867( There)1 302( day-to-day running of the network.)5 1525( management guide for)3 980(MHSnet.mm A)1 736 5 900 3420 t
+(speci\256c versions of this.)3 966 1 1564 3540 t
+( paper on ``Broadcast Routing in)5 1312(routing.mm A)1 736 2 900 3720 t
+9 R f
+(MHS)2973 3720 w
+10 R f
+(net''.)3168 3720 w
+( overview of)2 504(sun4.mm ``An)1 852 2 900 3900 t
+9 R f
+(MHS)2281 3900 w
+10 R f
+( with)1 203(net''. Pre-process)1 728 2 2476 3900 t
+10 I f
+(pic)3432 3900 w
+10 R f
+(\(1\).)3562 3900 w
+(These are all written using the)5 1236 1 720 4080 t
+10 I f
+(mm)1987 4080 w
+10 R f
+(\(7\) or)1 231 1 2139 4080 t
+10 I f
+(ms)2402 4080 w
+10 R f
+(\(7\) macros for)2 584 1 2521 4080 t
+10 I f
+(troff)3137 4080 w
+10 R f
+( of them require pre-processing with a)6 1566(\(1\). Some)1 426 2 3318 4080 t
+(combination of)1 608 1 720 4200 t
+10 I f
+(pic)1353 4200 w
+10 R f
+(\(1\),)1483 4200 w
+10 I f
+(eqn)1649 4200 w
+10 R f
+(\(1\), or)1 249 1 1801 4200 t
+10 I f
+(tbl)2075 4200 w
+10 R f
+(\(1\), as noted here, and in the \256rst line of each document.)11 2251 1 2189 4200 t
+9 B f
+(2.7 FtHeader)1 529 1 720 4380 t
+10 R f
+(Contains the source for the routines making up the library)9 2356 1 720 4560 t
+10 CW f
+(FtHeader.a)3141 4560 w
+10 R f
+( directory)1 391(in the)1 230 2 3771 4560 t
+10 CW f
+(Bin)4458 4560 w
+10 R f
+( routines)1 353(. These)1 319 2 4638 4560 t
+(manage the ``File Transfer Protocol'' headers.)5 1850 1 720 4680 t
+9 B f
+(2.8 Handlers)1 514 1 720 4860 t
+10 R f
+( messages upon reception at a)5 1249(These are all the network handlers, which are invoked to process the contents of)13 3341 2 720 5040 t
+( particular, the program)3 948( In)1 135(valid destination.)1 691 3 720 5160 t
+10 I f
+(router)2521 5160 w
+10 R f
+( makes all the routing decisions, and invokes the)8 1948(is the one that)3 564 2 2798 5160 t
+(other handlers.)1 593 1 720 5280 t
+9 B f
+(2.9 Header)1 444 1 720 5460 t
+10 R f
+( routines making up the library)5 1300(Contains the source for the)4 1124 2 720 5640 t
+10 CW f
+(Header.a)3217 5640 w
+10 R f
+(in the directory)2 636 1 3735 5640 t
+10 CW f
+(Bin)4444 5640 w
+10 R f
+( routines)1 360(. These)1 326 2 4624 5640 t
+(manage the message headers.)3 1174 1 720 5760 t
+9 B f
+(2.10 Include)1 494 1 720 5940 t
+10 R f
+(All the)1 275 1 720 6120 t
+10 I f
+(include)1020 6120 w
+10 R f
+(\256les that are used by programs.)5 1248 1 1339 6120 t
+9 B f
+(2.11 Init)1 344 1 720 6300 t
+10 R f
+( See)1 194(The source for the network initialization programs.)6 2038 2 720 6480 t
+10 I f
+(netinit)2977 6480 w
+10 R f
+(\(8\) and)1 285 1 3241 6480 t
+10 I f
+(net)3551 6480 w
+10 R f
+(\(8\).)3681 6480 w
+9 B f
+(2.12 Lib)1 339 1 720 6660 t
+10 R f
+(All the routines that are non-speci\256c.)5 1481 1 720 6840 t
+9 B f
+(2.13 Libc)1 379 1 720 7020 t
+10 R f
+(Routines that ought to be in your standard C-library, but may not be.)12 2743 1 720 7200 t
+9 B f
+(2.14 Make\256les)1 574 1 720 7380 t
+10 R f
+( main one in the directory above, and also example)9 2269(This directory contains sub-make\256les used by the)6 2131 2 720 7560 t
+10 I f
+(run)5171 7560 w
+10 R f
+(commands for some standard con\256gurations.)4 1795 1 720 7680 t
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 3 3
+%%Page: 4 4
+/saveobj save def
+mark
+4 pagesetup
+10 R f
+(- 4 -)2 166 1 2932 480 t
+10 I f
+(Run)720 960 w
+10 R f
+(commands pass all the con\256guration details to)6 1879 1 911 960 t
+10 I f
+(make)2821 960 w
+10 R f
+(and prevent having to edit the)5 1220 1 3062 960 t
+10 CW f
+(Makefile)4313 960 w
+10 R f
+(itself. They)1 486 1 4824 960 t
+(are)720 1080 w
+10 I f
+(shell)868 1080 w
+10 R f
+(scripts that invoke)2 737 1 1084 1080 t
+10 I f
+(make)1848 1080 w
+10 R f
+( you have a standard con\256guration, you)6 1590( If)1 118(with an appropriate set of parameters.)5 1517 3 2085 1080 t
+( so, copy the)3 556( If)1 133( of the editing stage described below.)6 1591(should be able to choose one of these, and avoid most)10 2310 4 720 1200 t
+(appropriate one to the directory above, and invoke it with the same parameters as you would for)16 3834 1 720 1320 t
+10 I f
+(make)4579 1320 w
+10 R f
+(.)4789 1320 w
+( generate your own)3 794(In any case, it is sensible to)6 1144 2 720 1500 t
+10 I f
+(run)2692 1500 w
+10 R f
+(\256le to match your current con\256guration, as it makes adding)9 2445 1 2865 1500 t
+( of the existing)3 630( One)1 227(updates and porting to new systems much easier.)7 2030 3 720 1620 t
+10 I f
+(run)3643 1620 w
+10 R f
+( a template if)3 554(\256les should be used as)4 938 2 3818 1620 t
+(there isn't a)2 493 1 720 1740 t
+10 I f
+(run)1249 1740 w
+10 R f
+( starting points are)3 777( Good)1 284(\256le for your type of system.)5 1170 3 1425 1740 t
+10 CW f
+(run.4.2)3728 1740 w
+10 R f
+(or)4185 1740 w
+10 CW f
+(run.4.3)4340 1740 w
+10 R f
+(for Berkeley)1 513 1 4797 1740 t
+(derived UNIX systems, or)3 1048 1 720 1860 t
+10 CW f
+(run.sysV)1828 1860 w
+10 R f
+( \256le)1 153( The)1 205(for UNIX System V.)3 832 3 2333 1860 t
+10 CW f
+(run.generic)3583 1860 w
+10 R f
+(may also be helpful.)3 810 1 4268 1860 t
+10 CW f
+(Install)720 2040 w
+10 R f
+(and)1169 2040 w
+10 CW f
+(Site)1377 2040 w
+10 R f
+(are just parts of)3 630 1 1646 2040 t
+10 CW f
+(Makefile)2340 2040 w
+10 R f
+(that have been separated out to allow)6 1504 1 2849 2040 t
+10 I f
+(make)4382 2040 w
+10 R f
+( on small)2 377(to work)1 312 2 4621 2040 t
+( are invoked directly from the main)6 1480( They)1 266(machines without running out of heap space.)6 1855 3 720 2160 t
+10 I f
+(Make\256le)4357 2160 w
+10 R f
+(and you don't)2 575 1 4735 2160 t
+(need to worry about them.)4 1051 1 720 2280 t
+9 B f
+(2.15 Manuals)1 539 1 720 2460 t
+10 R f
+(The manuals for sections 1 through 8 of volume 1 of the standard)12 2613 1 720 2640 t
+9 R f
+(UNIX)3358 2640 w
+10 R f
+( be copied into your)4 803( should)1 292(manual. These)1 607 3 3608 2640 t
+(user manual directories \()3 989 1 720 2760 t
+10 CW f
+(/usr/man/*)1709 2760 w
+10 R f
+( editing the)2 450(?\). Try)1 296 2 2334 2760 t
+10 I f
+(Make\256le)3105 2760 w
+10 R f
+(, and typing)2 475 1 3456 2760 t
+10 CW f
+(make install.)1 780 1 3991 2760 t
+9 B f
+(2.16 Route)1 434 1 720 2940 t
+10 R f
+(The routines that make up the library)6 1595 1 720 3120 t
+10 CW f
+(Route.a)2394 3120 w
+10 R f
+(in the directory)2 648 1 2858 3120 t
+10 CW f
+(Bin)3586 3120 w
+10 R f
+( routines access the)3 833(. These)1 333 2 3766 3120 t
+10 I f
+(route\256le)4977 3120 w
+10 R f
+(created by)1 412 1 720 3240 t
+10 I f
+(netstate)1157 3240 w
+10 R f
+(\(1\) to perform routing functions.)4 1301 1 1476 3240 t
+9 B f
+(2.17 Utilities)1 504 1 720 3420 t
+10 R f
+(These are the user programs for accessing the network:-)8 2232 1 720 3600 t
+( is the rough inverse of)5 948(fetch\256le.c This)1 718 2 900 3780 t
+10 I f
+(net\256le)2597 3780 w
+10 R f
+( request that another site send you \256les that)8 1782( is used to)3 421(\(1\). It)1 258 3 2849 3780 t
+( See)1 194(they have made publicly available.)4 1389 2 1445 3900 t
+10 I f
+(netfetch)3053 3900 w
+10 R f
+(\(1\).)3377 3900 w
+( See)1 194( the message forwarding facility.)4 1311(forward.c Control)1 851 3 900 4080 t
+10 I f
+(netforward)3281 4080 w
+10 R f
+(\(1\).)3734 4080 w
+( See)1 194( program retrieves \256les received from the network.)7 2028(get\256le.c This)1 718 3 900 4260 t
+10 I f
+(netget)3865 4260 w
+10 R f
+(\(1\).)4117 4260 w
+( See)1 211( program used to show network queue status.)7 1922(queue.c A)1 617 3 900 4440 t
+10 I f
+(netq)3692 4440 w
+10 R f
+( the)1 165( program also ful\256lls)3 887(\(1\). This)1 386 3 3872 4440 t
+( stopping network messages \(see)4 1309(functions of)1 481 2 1445 4560 t
+10 I f
+(netstop)3260 4560 w
+10 R f
+(\(1\)\), and of manipulating dumped messages)5 1753 1 3557 4560 t
+(\(see)1445 4680 w
+10 I f
+(netbad)1630 4680 w
+10 R f
+(\(8\)\).)1910 4680 w
+( See)1 204( program that pumps messages containing \256les into the network.)9 2666(send\256le.c The)1 695 3 900 4860 t
+10 I f
+(net\256le)4500 4860 w
+10 R f
+( \256les)1 202(\(1\). The)1 356 2 4752 4860 t
+(are encapsulated in a)3 833 1 1445 4980 t
+10 I f
+(File Transfer Protocol)2 906 1 2303 4980 t
+10 R f
+(envelope, hereafter referred to as ``)5 1404 1 3234 4980 t
+9 R f
+(FTP)4638 4980 w
+10 R f
+(''.)4793 4980 w
+( See)1 198( mail into the network.)4 924( program that pumps messages containing)5 1694(sendmail.c The)1 700 4 900 5160 t
+10 I f
+(netmail)4445 5160 w
+10 R f
+( mail)1 207(\(1\). The)1 350 2 4753 5160 t
+(messages are passed to)3 917 1 1445 5280 t
+10 I f
+(net\256le)2387 5280 w
+10 R f
+(for delivery.)1 493 1 2656 5280 t
+( program that pumps non-)4 1038(sendmsg.c The)1 700 2 900 5460 t
+9 R f
+(FTP)2638 5460 w
+10 R f
+( See)1 194(messages into the network.)3 1082 2 2818 5460 t
+10 I f
+(netmsg)4119 5460 w
+10 R f
+(\(8\).)4410 5460 w
+( See)1 194( to query people data-bases at other sites.)7 1641(whois.c Used)1 750 3 900 5640 t
+10 I f
+(netwho)3510 5640 w
+10 R f
+(\(1\).)3807 5640 w
+9 B f
+(2.18 VCdaemon)1 639 1 720 5820 t
+10 R f
+( See)1 198(The source for the node-to-node virtual-circuit transport daemon.)7 2633 2 720 6000 t
+10 I f
+(netdaemon)3580 6000 w
+10 R f
+(\(8\).)4026 6000 w
+10 I f
+(Linkstats)4221 6000 w
+10 R f
+( also)1 191(is a program)2 507 2 4612 6000 t
+( See)1 194(made from this directory, which can be used to watch the state of a set of links.)16 3161 2 720 6120 t
+10 I f
+(netlink)4100 6120 w
+10 R f
+(\(1\).)4380 6120 w
+9 B f
+(2.19 VCsetup)1 539 1 720 6300 t
+10 R f
+( See)1 208( for the programs that deal with intermittent links over public access networks.)12 3311(The source)1 453 3 720 6480 t
+10 I f
+(netcall)4731 6480 w
+10 R f
+(\(8\) and)1 299 1 5011 6480 t
+10 I f
+(netshell)720 6600 w
+10 R f
+( is also a program called)5 1028(\(8\). There)1 434 2 1039 6600 t
+10 I f
+(tcplisten)2537 6600 w
+10 R f
+(for handling incoming)2 916 1 2912 6600 t
+9 R f
+(TCP/IP)3864 6600 w
+10 R f
+(calls on systems that lack a)5 1140 1 4170 6600 t
+9 R f
+(BSD)720 6720 w
+10 R f
+(style)920 6720 w
+10 I f
+(inetd)1134 6720 w
+10 R f
+(. See)1 219 1 1342 6720 t
+10 I f
+(netlisten)1586 6720 w
+10 R f
+(\(8\).)1933 6720 w
+9 B f
+( THE CONFIGURATION FILE)3 1254(3. EDITING)1 504 2 720 6960 t
+10 R f
+(Your \256rst job will be to edit the site-dependent parameters in an appropriately named)13 3572 1 720 7140 t
+10 I f
+(run)4330 7140 w
+10 R f
+( directory)1 399(\256le in the)2 404 2 4507 7140 t
+10 CW f
+(Makefiles)720 7260 w
+10 R f
+( the name)2 394( \256le should be linked to)5 962(. This)1 257 3 1260 7260 t
+10 CW f
+(run)2936 7260 w
+10 R f
+( should check \256rst that)4 917( You)1 225(in the top-level directory.)3 1024 3 3144 7260 t
+(there isn't already an appropriate)4 1398 1 720 7380 t
+10 I f
+(run)2163 7380 w
+10 R f
+(\256le in the)2 420 1 2347 7380 t
+10 I f
+(Make\256les)2813 7380 w
+10 R f
+(directory \320 if not, use another similar one as a)9 2069 1 3241 7380 t
+( other \256les in the distribution should)6 1487( No)1 178( kind of UNIX system.)4 937( should choose one based on your)6 1390(template. You)1 598 5 720 7500 t
+( this proves not to be the case, please let me have details of the de\256ciency/bug as)16 3337( If)1 123(need to be changed by you!)5 1130 3 720 7620 t
+(soon as possible.)2 675 1 720 7740 t
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 4 4
+%%Page: 5 5
+/saveobj save def
+mark
+5 pagesetup
+10 R f
+(- 5 -)2 166 1 2932 480 t
+(A printed copy of)3 734 1 720 960 t
+10 CW f
+(Makefile)1523 960 w
+10 R f
+(is a useful companion when creating your)6 1723 1 2037 960 t
+10 I f
+(run)3794 960 w
+10 R f
+( of these parameters is)4 932(\256le. Each)1 411 2 3967 960 t
+(exported from the)2 747 1 720 1080 t
+10 I f
+(run)1508 1080 w
+10 R f
+( couple of site-dependent header \256les called either)7 2108(\256le into a)2 410 2 1688 1080 t
+10 CW f
+(Include/site.h)4281 1080 w
+10 R f
+(\(for)5161 1080 w
+(numeric parameters\), or)2 955 1 720 1200 t
+10 CW f
+($\(BIN\)/strings-data.h)1735 1200 w
+10 R f
+(\(for strings\).)1 499 1 3020 1200 t
+( in type, then their effect can be turned off by giving)11 2101( they are numeric)3 695( If)1 116(Most of the parameters should be de\256ned.)6 1678 4 720 1380 t
+(them the value)2 590 1 720 1500 t
+10 B f
+(0)1336 1500 w
+10 R f
+( parameters that have)3 853(. Some)1 304 2 1386 1500 t
+10 I f
+(string)2569 1500 w
+10 R f
+( unde\256ned by just deleting their de\256nition)6 1678(values can safely be)3 803 2 2829 1500 t
+(from the)1 341 1 720 1620 t
+10 I f
+(run)1086 1620 w
+10 R f
+( text should make it all clear.)6 1157(\256le. The)1 358 2 1250 1620 t
+(The parameters are listed in the same order as you will \256nd them in)13 2992 1 720 1800 t
+10 CW f
+(Makefile)3795 1800 w
+10 R f
+( these)1 254( that where)2 489(. Note)1 292 3 4275 1800 t
+(parameters appear in the rest of the document, you should interpolate their values.)12 3277 1 720 1920 t
+9 B f
+( Interfaces)1 408(3.1 System)1 434 2 720 2100 t
+10 R f
+( parameters are to do with the network's interface to your kernel and to the \256le system, and to)18 3974(The \256rst set of)3 616 2 720 2280 t
+( special)1 302( parameters specify the names of programs, and the format of any)11 2632( Some)1 279(programs invoked by the network.)4 1377 4 720 2400 t
+( are some macros that can be used inside)8 1736( There)1 296( passed to them on invocation.)5 1286(arguments that will need to be)5 1272 4 720 2520 t
+( by the)2 296(arguments to interpolate \256elds from the message being processed by the handler, they are all identi\256ed)15 4294 2 720 2640 t
+(special character)1 666 1 720 2760 t
+10 B f
+(&)1411 2760 w
+10 R f
+(:-)1494 2760 w
+(&D)900 2940 w
+10 I f
+(Data name)1 441 1 1205 2940 t
+10 R f
+( name of the data in the message.*)7 1375(. The)1 230 2 1654 2940 t
+(&F)900 3120 w
+10 I f
+(From)1205 3120 w
+10 R f
+( name of the sender of the message.*)7 1474(. The)1 230 2 1435 3120 t
+(&H)900 3300 w
+10 I f
+(Home)1205 3300 w
+10 R f
+( name of the destination host \(on which the program is being invoked\).)12 2833(. The)1 230 2 1451 3300 t
+(&L)900 3480 w
+10 I f
+(Link)1205 3480 w
+10 R f
+( name of the link on which the message arrived.)9 1913(. The)1 230 2 1391 3480 t
+(&O)900 3660 w
+10 I f
+(Origin)1205 3660 w
+10 R f
+( name of the host from which the message originated.)9 2141(. The)1 230 2 1480 3660 t
+(&T)900 3840 w
+10 I f
+(Start time)1 392 1 1205 3840 t
+10 R f
+( time that the message was inserted into the network at its origin.)12 2595(. The)1 230 2 1605 3840 t
+(&U)900 4020 w
+10 I f
+(User)1205 4020 w
+10 R f
+( name of the user to which the message is being delivered.*)11 2379(. The)1 230 2 1407 4020 t
+( you really need to interpolate just an)7 1484(&& If)1 371 2 900 4200 t
+10 B f
+(&)2780 4200 w
+10 R f
+(.)2863 4200 w
+( way to escape a)4 653(&% The)1 460 2 900 4380 t
+10 B f
+(%)2038 4380 w
+10 R f
+(\(see below\).)1 487 1 2163 4380 t
+(Those marked with an asterisk are only valid for messages containing)10 2784 1 720 4560 t
+9 R f
+(FTP)3529 4560 w
+10 R f
+(.)3684 4560 w
+7 R f
+(2)3709 4520 w
+10 R f
+(There is another set of macros that can be used to interpolate a string depending on the evaluation of a simple)20 4590 1 720 4740 t
+( by the null string, and if this causes the)9 1615( the string is not interpolated the macro is replaced)9 2058( If)1 120(boolean expression.)1 797 4 720 4860 t
+( are all enclosed by the)5 957( macros)1 320( These)1 295(entire argument to become empty it is omitted from the list of arguments.)12 3018 4 720 4980 t
+(special character)1 666 1 720 5100 t
+10 B f
+(%)1411 5100 w
+10 R f
+(, and take the form:-)4 812 1 1511 5100 t
+10 B f
+(%)870 5280 w
+10 R f
+([)970 5280 w
+10 B f
+(!)1003 5280 w
+10 R f
+(])1036 5280 w
+10 I f
+(X)1069 5280 w
+10 R f
+(string)1130 5280 w
+10 B f
+(%)1358 5280 w
+10 R f
+( condition selected by)3 877(If the)1 213 2 720 5460 t
+10 I f
+(X)1836 5460 w
+10 R f
+(evaluates to)1 475 1 1923 5460 t
+10 B f
+(true)2424 5460 w
+10 R f
+(and the optional)2 646 1 2627 5460 t
+10 B f
+(!)3299 5460 w
+10 R f
+(was not given then)3 755 1 3358 5460 t
+10 I f
+(string)4139 5460 w
+10 R f
+( Where)1 316(is interpolated.)1 595 2 4399 5460 t
+(the)720 5580 w
+10 B f
+(!)887 5580 w
+10 R f
+(is given)1 334 1 965 5580 t
+10 I f
+(string)1344 5580 w
+10 R f
+( the condition evaluates to)4 1125(is interpolated when)2 850 2 1623 5580 t
+10 B f
+(false)3642 5580 w
+10 R f
+(. The)1 249 1 3836 5580 t
+10 I f
+(string)4129 5580 w
+10 R f
+(given may contain)2 776 1 4407 5580 t
+10 B f
+(&)5227 5580 w
+10 R f
+(substitutions, however nested)2 1180 1 720 5700 t
+10 B f
+(%)1925 5700 w
+10 R f
+(substitutions are not permitted.)3 1239 1 2050 5700 t
+(Selector characters \()2 813 1 720 5880 t
+10 I f
+(X)1533 5880 w
+10 R f
+(\) are:-)1 240 1 1594 5880 t
+( if the message had a)5 834(B True)1 493 2 900 6060 t
+10 I f
+(broadcast)2252 6060 w
+10 R f
+(address.)2677 6060 w
+( if)1 86(L True)1 493 2 900 6240 t
+10 B f
+(&O)1504 6240 w
+10 R f
+(is not identical with)3 792 1 1690 6240 t
+10 B f
+(&L)2507 6240 w
+10 R f
+(, eg: if the message did not originate at the neighbour node.)11 2372 1 2657 6240 t
+( inside a C program function invocation,)6 1720(Arguments should be speci\256ed just as though you were listing them)10 2870 2 720 6420 t
+( to pass three)3 548( Eg:)1 197( prevent them being interpreted by the shell.)7 1820(except that you must escape the double quotes to)8 2025 4 720 6540 t
+( program, the \256rst interpolating ``-I'' if the message was not broadcast, the second the name of the)17 3996(arguments to a)2 594 2 720 6660 t
+(sender, and the third the name of her host, you might specify:-)11 2488 1 720 6780 t
+10 CW f
+(ARGS = \\"%!B-I%\\",\\"-u&F\\",\\"-h&O\\")2 2100 1 870 6960 t
+10 R f
+(Note the use of double-quotes.)4 1223 1 720 7140 t
+8 S1 f
+(__________________)720 7424 w
+8 R f
+( containing ``File Transfer Protocol'' are generated by)7 1726(2. Messages)1 429 2 720 7544 t
+8 I f
+(net\256le)2895 7544 w
+8 R f
+(\(1\).)3095 7544 w
+10 R f
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 5 5
+%%Page: 6 6
+/saveobj save def
+mark
+6 pagesetup
+10 R f
+(- 6 -)2 166 1 2932 480 t
+( \(`*'\) may be altered after con\256guration \320 see)8 2021(Those parameters following that are marked with an asterisk)8 2569 2 720 960 t
+10 I f
+(netparams)720 1080 w
+10 R f
+(\(5\).)1150 1080 w
+7 R f
+(BINMAIL)720 1240 w
+8 R f
+( used to deliver mail generated internally by the network, eg:)10 2126( de\256nes the name of the program that will be)9 1587(* This)1 579 3 1018 1240 t
+( error reports to the)4 612(acknowledgements of correctly delivered \256les, or)5 1576 2 1455 1340 t
+8 I f
+(NCC)3663 1340 w
+8 S f
+(_)3825 1340 w
+8 I f
+(MANAGER)3865 1340 w
+8 R f
+( must be able to read the body)7 957(. It)1 108 2 4245 1340 t
+( and to accept many user addresses as arguments \(after any special arguments)12 2561(of the mail text from its standard input,)7 1294 2 1455 1440 t
+(mentioned in)1 418 1 1455 1540 t
+7 R f
+(BINMAILARGS)1893 1540 w
+8 R f
+(below\).)2397 1540 w
+8 CW f
+(/bin/mail)2734 1540 w
+8 R f
+(should always work.)2 658 1 3186 1540 t
+7 R f
+(BINMAILARGS)720 1690 w
+8 R f
+( mail item, then this is)5 742( you have a version of mail that understands about interpolating the origin host address in the)16 3061(* If)1 303 3 1204 1690 t
+( Basser, where we use a version of mail developed locally, we use the argument)14 2736( At)1 134( do.)1 134(where you tell it what to)5 851 4 1455 1790 t
+(``)1455 1890 w
+8 B f
+(\261n)1507 1890 w
+8 I f
+(user)1592 1890 w
+8 B f
+(@)1729 1890 w
+8 I f
+(host)1803 1890 w
+8 R f
+( the invoker; ie: we set)5 757('' to tell mail that we wish the item to appear to come from someone other than)16 2617 2 1936 1890 t
+7 R f
+(BINMAILARGS)1455 1990 w
+8 R f
+(to be)1 157 1 1959 1990 t
+8 CW f
+("-n&F@&O")2136 1990 w
+8 R f
+(.)2568 1990 w
+7 R f
+(FILESERVERLOG)720 2140 w
+8 R f
+( this would be)3 573( Typically)1 386( an optional \256le which will be used to log \256leserver requests.)11 2388( name for)2 384(* The)1 299 5 1280 2140 t
+8 CW f
+(SPOOLDIR/LIBDIR/servedfiles)1455 2240 w
+8 R f
+(.)2751 2240 w
+7 R f
+(FILESEXPIREDAYS)720 2390 w
+8 R f
+( noti\256ed by mail that the \256les have arrived,)8 1400( \256les have been spooled at a site for delivery to a local user, the user is)16 2288(* After)1 281 3 1341 2390 t
+( It)1 88( is where you specify that period.)6 1058( This)1 182( \256les will be deleted after a certain number of days.)10 1630(and warned that the spooled)4 897 5 1455 2490 t
+(is effected by a periodic command run by)7 1322 1 1455 2590 t
+8 I f
+(cron)2797 2590 w
+8 R f
+(\(1\), see the section)3 595 1 2949 2590 t
+8 I f
+(Maintenance)3564 2590 w
+8 R f
+(for more details.)2 522 1 3999 2590 t
+7 R f
+(IGNMAILERSTATUS)720 2740 w
+8 R f
+( delivery programs, notably)3 924(* Some)1 262 2 1375 2740 t
+8 CW f
+(sendmail)2624 2740 w
+8 R f
+(from 4)1 230 1 3044 2740 t
+7 R f
+(BSD)3274 2740 w
+8 R f
+(, return non-zero exit status, even when they have done)9 1900 1 3410 2740 t
+( the handler would normally assume that something went wrong, and)10 2201( this case,)2 313( In)1 107(something sensible with the mail item.)5 1234 4 1455 2840 t
+( suppress this action by de\256ning this \257ag)7 1314(return the mail item to its origin with an appropriate error message, but you can)14 2541 2 1455 2940 t
+(to be)1 157 1 1455 3040 t
+8 B f
+(1)1632 3040 w
+8 R f
+( which case, you must be perfectly sure that your delivery program will always do the right thing!)17 3110(. In)1 126 2 1672 3040 t
+7 R f
+(INSBIN)720 3190 w
+8 R f
+( use)1 147( We)1 171(The directory where user visible network programs are to be installed.)10 2441 3 1455 3190 t
+8 CW f
+(/usr/bin)4283 3190 w
+8 R f
+(, on some systems)3 643 1 4667 3190 t
+8 CW f
+(/usr/local)1455 3290 w
+8 R f
+(might be more appropriate.)3 865 1 1955 3290 t
+7 R f
+(LOCALSEND)720 3440 w
+8 R f
+( you wish to allow users to send \256les to others on the same node without doing a permission check.)19 3160(* If)1 372 2 1135 3440 t
+7 R f
+(LOCAL)720 3590 w
+7 S f
+(_)953 3590 w
+7 R f
+(NODES)988 3590 w
+8 R f
+( a restricted number of sites, such as within one Department, without doing a)13 2511( you wish to allow users to send \256les to)9 1292(* If)1 287 3 1220 3590 t
+( it can just)3 341( Alternatively,)1 483( per line.)2 288(permission check, this de\256ne should name a \256le where the sites should be listed one)14 2743 4 1455 3690 t
+(be a valid network address.)4 868 1 1455 3790 t
+7 R f
+(MAILER)720 3940 w
+8 R f
+( must)1 180( It)1 93( from users at other hosts.)5 846( de\256nes a program that will be used to deliver mail received off the network, ie:)15 2594(* This)1 609 5 988 3940 t
+(behave in the same way as)5 896 1 1455 4040 t
+7 R f
+(BINMAIL)2381 4040 w
+8 R f
+(above, and again,)2 577 1 2709 4040 t
+8 CW f
+(/bin/mail)3343 4040 w
+8 R f
+( if you have a)4 469( However,)1 361(should always work.)2 676 3 3804 4040 t
+(special program used just for)4 922 1 1455 4140 t
+8 I f
+(delivering)2397 4140 w
+8 R f
+(mail, then this is the place to specify it.)8 1245 1 2739 4140 t
+7 R f
+(MAILERARGS)720 4290 w
+8 R f
+(* If)1 333 1 1174 4290 t
+7 R f
+(MAILER)1535 4290 w
+8 R f
+(can be told where the mail originated, then it should be speci\256ed in this argument, much the same as for)19 3478 1 1832 4290 t
+7 R f
+(BINMAILARGS)1455 4390 w
+8 R f
+( note that this is the only safe way to guarantee that mail ``From'' lines are valid.)16 2591(above. Please)1 454 2 1960 4390 t
+7 R f
+(MAILER)5042 4390 w
+8 R f
+( For)1 151(should interpolate this string in place of any user/site addresses in the body of the mail item.)16 2930 2 1455 4490 t
+7 R f
+(BSD)4556 4490 w
+8 CW f
+(sendmail)4712 4490 w
+8 R f
+(use:)5116 4490 w
+8 CW f
+(MAILERARGS=\\"-em\\",\\"-oit\\",\\"-f&F@&O\\",\\"-oMs&O\\",\\"-oML&L\\",\\"-oMrSunIV\\")1575 4640 w
+8 R f
+(and use)1 241 1 1455 4790 t
+8 CW f
+(Admin/sendmail.cf)1744 4790 w
+8 R f
+(as your)1 232 1 2580 4790 t
+8 CW f
+(/usr/lib/sendmail.cf)2860 4790 w
+8 R f
+(\(or incorporate the changes into it\).)5 1120 1 3840 4790 t
+7 R f
+(MAIL)720 4940 w
+7 S f
+(_)898 4940 w
+7 R f
+(FROM)933 4940 w
+8 R f
+( your version of)3 509(* If)1 376 2 1131 4940 t
+7 R f
+(MAILER)2037 4940 w
+8 R f
+(does not correct the ``From'' line using the information from)9 1957 1 2327 4940 t
+7 R f
+(MAILERARGS)4306 4940 w
+8 R f
+(, then setting this)3 550 1 4760 4940 t
+(to)1455 5040 w
+8 B f
+(1)1537 5040 w
+8 R f
+(will enable the mail handler itself to add a standard)9 1626 1 1597 5040 t
+7 R f
+(UNIX)3243 5040 w
+8 R f
+(mail header.)1 392 1 3436 5040 t
+7 R f
+(MAIL)720 5190 w
+7 S f
+(_)898 5190 w
+7 R f
+(RFC822)933 5190 w
+7 S f
+(_)1171 5190 w
+7 R f
+(HDR)1206 5190 w
+8 R f
+( this to)2 217(* Setting)1 328 2 1353 5190 t
+8 B f
+(1)1918 5190 w
+8 R f
+(causes internally generated mail to include an RFC822 compliant mail header.)10 2494 1 1978 5190 t
+7 R f
+(MAIL)720 5340 w
+7 S f
+(_)898 5340 w
+7 R f
+(TO)933 5340 w
+8 R f
+( this to)2 217(* Setting)1 655 2 1026 5340 t
+8 B f
+(1)1918 5340 w
+8 R f
+(causes internally generated mail to include a ``To: '' header line.)10 2056 1 1978 5340 t
+7 R f
+(MAXRETSIZE)720 5490 w
+8 R f
+( about 2000 \(to allow the header and sub-)8 1410( not be less than)4 553( Should)1 277(Limits the maximum size of a returned message.)7 1615 4 1455 5490 t
+(headers to escape mutilation\), but we recommend that everyone set this to 10000.)12 2593 1 1455 5590 t
+7 R f
+(MAX)720 5740 w
+7 S f
+(_)882 5740 w
+7 R f
+(MESG)917 5740 w
+7 S f
+(_)1111 5740 w
+7 R f
+(DATA)1146 5740 w
+8 R f
+( are split into parts transmitted separately)6 1381( larger than this)3 529( Messages)1 360(Limits the maximum size of a ``message part''.)7 1585 4 1455 5740 t
+( probably be around 2Mb, but is really dependent on the minimum)11 2141( Should)1 269( destination is directly connected.\))4 1100(\(unless the)1 345 4 1455 5840 t
+( recommend that everyone set this to)6 1230( We)1 160( all intermediate spool areas that any message might travel through.)10 2247(size of)1 218 4 1455 5940 t
+(2097152L \(the `L' is for C-compilers on 16-bit)7 1501 1 1455 6040 t
+7 R f
+(CPU)2976 6040 w
+8 R f
+(s.\))3112 6040 w
+7 R f
+(NCC)720 6190 w
+7 S f
+(_)864 6190 w
+7 R f
+(ADMIN)899 6190 w
+8 R f
+( preference a local network)4 891( By)1 140( de\256nes the name of the person to whom network generated error reports are sent.)14 2682(* This)1 463 4 1134 6190 t
+(wizard, maybe ``Postmaster'', or possibly ``root'', alternatively it may be the network address of someone central who)16 3855 1 1455 6290 t
+( is most useful when you have a large network with central control.)12 2141( This)1 182(\256xes problems in your branch of the network.)7 1455 3 1455 6390 t
+7 R f
+(NCC)720 6540 w
+7 S f
+(_)864 6540 w
+7 R f
+(MANAGER)899 6540 w
+8 R f
+( same kind of address as)5 795(* The)1 328 2 1251 6540 t
+7 R f
+(NCC)2398 6540 w
+7 S f
+(_)2542 6540 w
+7 R f
+(ADMIN)2577 6540 w
+8 R f
+( same)1 188( The)1 169(above, only this is for non-urgent network information messages.)8 2117 3 2836 6540 t
+(defaults as for)2 449 1 1455 6640 t
+7 R f
+(NCC)1924 6640 w
+7 S f
+(_)2068 6640 w
+7 R f
+(ADMIN)2103 6640 w
+8 R f
+(above.)2358 6640 w
+7 R f
+(NETADMIN)720 6790 w
+8 R f
+( to)1 96(* Set)1 466 2 1091 6790 t
+8 B f
+(1)1687 6790 w
+8 R f
+( added to routing tables to be sent to)8 1274(to cause mail notices of new regions)6 1241 2 1761 6790 t
+7 R f
+(NCC)4311 6790 w
+7 S f
+(_)4455 6790 w
+7 R f
+(MANAGER)4490 6790 w
+8 R f
+( causes)1 242(. Also)1 226 2 4842 6790 t
+( it to)2 166( Set)1 152(noti\256cation of new/deceased links to your site.)6 1543 3 1455 6890 t
+8 B f
+(2)3346 6890 w
+8 R f
+( notices every time a new site sends its \256rst state)10 1631(for mail)1 263 2 3416 6890 t
+(message \(there are a lot of sites out there ...\))9 1401 1 1455 6990 t
+7 R f
+(NETGROUPNAME)720 7140 w
+8 R f
+( parameter, together with)3 798(* This)1 300 2 1297 7140 t
+7 R f
+(NETUSERNAME)2415 7140 w
+8 R f
+( They)1 204(, is used to de\256ne the account which the network will operate under.)12 2171 2 2935 7140 t
+(ought not to be)3 529 1 1455 7240 t
+8 I f
+(root)2019 7240 w
+8 R f
+(, but should probably be recognized by the mail and possibly news programs as a privileged)15 3152 1 2158 7240 t
+(originator of mail.)2 580 1 1455 7340 t
+7 R f
+(NETPARAMS)720 7490 w
+8 R f
+( must be in some)4 564( It)1 94( name of a \256le where changes to the default con\256guration parameters may be speci\256ed.)14 2855(This is the)2 342 4 1455 7490 t
+(publicly accessible directory,)2 940 1 1455 7590 t
+8 CW f
+(/usr/lib/MHSnetparams)2449 7590 w
+8 R f
+( \256le doesn't have to exist,)5 843( This)1 187(would be a good choice.)4 797 3 3483 7590 t
+(unless you wish to change some of the parameters you are specifying here.)12 2378 1 1455 7690 t
+( 1.10)1 200( E R S I O N)6 410( V)1 1339(September 26, 19106)2 680 4 720 8083 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 6 6
+%%Page: 7 7
+/saveobj save def
+mark
+7 pagesetup
+8 R f
+(- 7 -)2 132 1 2949 400 t
+7 R f
+(NEWSARGS)720 800 w
+8 R f
+( arguments for)2 463(* Any)1 489 2 1104 800 t
+7 R f
+(NEWSEDITOR)2076 800 w
+8 R f
+(.)2530 800 w
+7 R f
+(NEWSCMDS)720 950 w
+8 R f
+( should be the name of a \256le which is used by)11 1509(* This)1 481 2 1116 950 t
+8 I f
+(reporter)3131 950 w
+8 R f
+( the full pathname of a news command and any)9 1559(to provide)1 330 2 3421 950 t
+( you become a sophisticated news gatherer, but could be)9 2064( can safely be ignored until)5 1018( This)1 213(extra arguments.)1 560 4 1455 1050 t
+8 CW f
+(SPOOLDIR/LIBDIR/newscmds)1455 1150 w
+8 R f
+( \256le should contain lines of the form:)7 1178(. The)1 184 2 2607 1150 t
+8 CW f
+(command<tab>full_path_name[<space>arg ...])1 2016 1 1575 1300 t
+8 R f
+(You should consult with your news neighbours to determine the necessary commands to install here \(if any\).)16 3463 1 1455 1450 t
+7 R f
+(NEWSEDITOR)720 1600 w
+8 R f
+( you participate in the)4 697(* If)1 333 2 1174 1600 t
+8 I f
+(netnews)2225 1600 w
+8 R f
+( speci\256es the news receiver program to be invoked by the handler)11 2109(system, this argument)2 698 2 2503 1600 t
+8 I f
+(reporter)1455 1700 w
+8 R f
+( the standard netnews software, this should be set to)9 1833(. For)1 191 2 1726 1700 t
+8 CW f
+(/usr/bin/rnews.)3818 1700 w
+8 R f
+( system)1 260(For the news)2 452 2 4598 1700 t
+(distributed by U.N.S.W., this should be set to)7 1449 1 1455 1800 t
+8 CW f
+(/usr/lib/postnews.)2952 1800 w
+7 R f
+(NICEDAEMON)720 1950 w
+8 R f
+( to run at a non-standard priority, then this parameter should be de\256ned as for use in)16 2750( you wish the transport daemons)5 1053(* If)1 319 3 1188 1950 t
+(the)1455 2050 w
+8 I f
+(nice)1576 2050 w
+8 R f
+( instance, if you wanted the network to run only when there was idle)13 2219( For)1 154(\(2\) system call.)2 493 3 1714 2050 t
+7 R f
+(CPU)4603 2050 w
+8 R f
+(time, then give it)3 548 1 4762 2050 t
+( that if you do this when the system is busy, then the links may appear to go up and)19 2765( be aware)2 314( However,)1 357(the value 19.)2 419 4 1455 2150 t
+( achieve high throughput,)3 823( the other hand, we use a value of -11 to ensure the transport daemons always)15 2525( On)1 142(down a lot.)2 365 4 1455 2250 t
+(which is acceptable since they are not very)7 1361 1 1455 2350 t
+7 R f
+(CPU)2836 2350 w
+8 R f
+( value of 0 is probably safe.)6 881(intensive. A)1 405 2 2992 2350 t
+7 R f
+(NICEHANDLERS)720 2500 w
+8 R f
+( message arrives, and is passed to the routing program to be processed, this parameter will cause the handlers to)19 3608( a)1 57(* When)1 390 3 1255 2500 t
+( parameter may also be)4 736( This)1 182( to users.)2 285( use a value of 10, which is nice)8 1027( We)1 151(be run at a different priority from the daemon.)8 1474 6 1455 2600 t
+(speci\256ed on a per-handler basis by altering the appropriate \256eld in the)11 2267 1 1455 2700 t
+8 I f
+(handlers)3746 2700 w
+8 R f
+(\256le \(see)1 253 1 4049 2700 t
+8 I f
+(nethandlers)4326 2700 w
+8 R f
+( the)1 122( that)1 143(\(5\).\) Note)1 337 3 4708 2700 t
+(router processes messages serially, so slowing down a particular handler will also delay any following messages.)15 3593 1 1455 2800 t
+7 R f
+(NODENAMEFILE)720 2950 w
+8 R f
+( systems without the)3 677(* For)1 300 2 1266 2950 t
+7 R f
+(SYSTEM V)1 352 1 2271 2950 t
+8 I f
+(uname)2651 2950 w
+8 R f
+(\(2\) system call, ot the)4 718 1 2870 2950 t
+7 R f
+(BSD)3616 2950 w
+8 R f
+(4.x)3780 2950 w
+8 I f
+(gethostname)3908 2950 w
+8 R f
+( call, this parameter)3 652(\(2\) system)1 341 2 4317 2950 t
+(nominates a \256le containing the nodename.)5 1344 1 1455 3050 t
+7 R f
+(POSTMASTER)720 3200 w
+8 R f
+( name that messages returned from your node may legally be sent to in the case of the origin also)19 3103( must be set to be a)6 610(* This)1 422 3 1175 3200 t
+( as)1 92( your mail program doesn't recognize anything special such)8 1959( If)1 99(returning them.)1 497 4 1455 3300 t
+7 R f
+(POSTMASTER)4126 3300 w
+8 R f
+(, then this must be the)5 729 1 4581 3300 t
+( networking conventions require that ``postmaster'' be a valid mail address on your)12 2749( International)1 453( real user.)2 326(name of a)2 327 4 1455 3400 t
+(system as a way to guarantee deliveries of enquiries and bug reports.)11 2262 1 1455 3500 t
+7 R f
+(POSTMASTER)3760 3500 w
+8 R f
+( ``postmaster'' in)2 562(would be set to)3 506 2 4242 3500 t
+(this case.)1 291 1 1455 3600 t
+7 R f
+(PRINTER)720 3750 w
+8 R f
+( or if)2 162( it unde\256ned if this host has no printer,)8 1256( Leave)1 237( name of the program used to spool print jobs from the network.)12 2076(* The)1 567 5 1012 3750 t
+( see)1 121( \(But)1 182(you have no intention of letting other sites print their jobs here.)11 2010 3 1455 3850 t
+7 R f
+(PRINTORIGINS)3788 3850 w
+8 R f
+(below.\))4292 3850 w
+7 R f
+(PRINTERARGS)720 4000 w
+8 R f
+( arguments for)2 463(* Any)1 395 2 1198 4000 t
+7 R f
+(PRINTER)2076 4000 w
+8 R f
+(.)2368 4000 w
+7 R f
+(PRINTORIGINS)720 4150 w
+8 R f
+( you)1 141(* If)1 303 2 1204 4150 t
+8 B f
+(do)1669 4150 w
+8 R f
+(de\256ne)1775 4150 w
+7 R f
+(PRINTER)1991 4150 w
+8 R f
+( This)1 184( you are prepared to accept print jobs.)7 1214(, then you will need to restrict the sites from which)10 1629 3 2283 4150 t
+( \(which is)2 330(parameter can be either the full path name of a \256le containing a list of legal network origins for print jobs)20 3525 2 1455 4250 t
+( in)1 86( C strings)2 312( Use)1 167(preferable for site independent network binaries\), or just a list of sites speci\256ed as a multicast address.)16 3290 4 1455 4350 t
+( a \256le \320)3 607( Eg:)1 261(both cases.)1 459 3 1455 4450 t
+8 CW f
+(SPOOLDIR/LIBDIR/printorigins)2912 4450 w
+8 R f
+( a site list \320)4 838(, or)1 216 2 4256 4450 t
+8 CW f
+(*.cs.su.oz,metro.ucc.su.oz)1455 4550 w
+8 R f
+( it is unde\256ned, then the print handler will reject all jobs.)11 1805(. If)1 112 2 2703 4550 t
+7 R f
+(PRIVSFILE)720 4700 w
+8 R f
+( user's privileges will be listed.)5 1033( name of a \256le where network)6 992(* The)1 513 3 1066 4700 t
+8 CW f
+(SPOOLDIR/LIBDIR/privsfile)3708 4700 w
+8 R f
+(is the usual)2 374 1 4936 4700 t
+(choice. \(see)1 394 1 1455 4800 t
+8 I f
+(netprivs)1869 4800 w
+8 R f
+(\(5\).\))2131 4800 w
+7 R f
+(PROTO)720 4950 w
+7 S f
+(_)949 4950 w
+7 R f
+(STATS)984 4950 w
+8 R f
+( message)1 302( there, then the)3 508( If)1 104(This forces the inclusion of code for collecting packet statistics in the protocol routines.)13 2941 4 1455 4950 t
+(transport daemons print out the information on termination.)7 1895 1 1455 5050 t
+7 R f
+(PUBLICFILES)720 5200 w
+8 R f
+( the)1 119( you wish to allow others to retrieve \256les from your system with)12 2055(* If)1 351 3 1156 5200 t
+8 I f
+(fetch\256le)3703 5200 w
+8 R f
+( It)1 90(command, then you should de\256ne this.)5 1244 2 3976 5200 t
+( a directory that will contain the publicly available \256les \(and directories containing publicly)13 3011(can be set to the name of)6 844 2 1455 5300 t
+( might be)2 323( example)1 299( An)1 148(available \256les and directories\).)3 1004 4 1455 5400 t
+8 CW f
+(SPOOLDIR/$\(WORKFLAG\)public)3260 5400 w
+8 R f
+( you can)2 292(. Alternatively,)1 510 2 4508 5400 t
+(de\256ne)1455 5500 w
+7 I f
+(PUBLICFILES)1673 5500 w
+8 R f
+( contains more speci\256c details of precisely who may access which \256les.)11 2297(to be the name of a \256le that)7 889 2 2124 5500 t
+(Typically this would be)3 755 1 1455 5600 t
+8 CW f
+(SPOOLDIR/LIBDIR/publicfiles)2230 5600 w
+8 R f
+( \256le contains lines of the following form)7 1284(. This)1 202 2 3526 5600 t
+8 CW f
+([<user>@]<address><tab>[full_path_name])1575 5750 w
+8 R f
+(Either)1455 5900 w
+8 S f
+(<)1675 5900 w
+8 I f
+(user)1719 5900 w
+8 S f
+(>)1856 5900 w
+8 R f
+(or)1926 5900 w
+8 S f
+(<)2018 5900 w
+8 I f
+(address)2062 5900 w
+8 S f
+(>)2310 5900 w
+8 R f
+(may be)1 238 1 2380 5900 t
+8 B f
+(*)2644 5910 w
+8 R f
+( missing)1 274( A)1 104(, which implies any user \(or address\).)6 1228 3 2684 5900 t
+8 S f
+(<)4316 5900 w
+8 I f
+(user)4360 5900 w
+8 S f
+(>)4497 5900 w
+8 R f
+(implies any user at the)4 743 1 4567 5900 t
+( does)1 168(speci\256ed address \(as)2 659 2 1455 6000 t
+8 B f
+(*)2304 6010 w
+8 R f
+(.\))2344 6000 w
+8 I f
+(Address)2432 6000 w
+8 R f
+(may be any valid network address, such as)7 1371 1 2711 6000 t
+8 CW f
+(*.anu.oz)4104 6000 w
+8 R f
+(, or)1 108 1 4488 6000 t
+8 CW f
+(basser,cluster)4618 6000 w
+8 R f
+(.)5290 6000 w
+( the section on)3 465( See)1 156( be expanded to canonical form before being matched against the source address of the request.)15 3042(It will)1 192 4 1455 6100 t
+(``)1455 6200 w
+7 R f
+(ACTING AS A FILESERVER NODE)4 1084 1 1507 6200 t
+8 R f
+(''.)2591 6200 w
+7 R f
+(SERVERUSER)720 6350 w
+8 R f
+(* If)1 339 1 1168 6350 t
+7 I f
+(PUBLICFILES)1528 6350 w
+8 R f
+(is de\256ned, then you may further restrict access by de\256ning)9 1869 1 1977 6350 t
+7 I f
+(SERVERUSER)3867 6350 w
+8 R f
+( login name provided by)4 787(to be a)2 214 2 4309 6350 t
+( user name in your password \256le, typically)7 1423( is, you should create a new)6 948( That)1 197(your system precisely for this purpose.)5 1287 4 1455 6450 t
+(called)1455 6550 w
+8 I f
+(\256leserver)1668 6550 w
+8 R f
+( you already have such a user for)7 1083( If)1 97( owns any \256les.)3 512(, who is prevented from logging in, and who never)9 1649 4 1969 6550 t
+(other purposes, using it should be \256ne.)6 1249 1 1455 6650 t
+7 I f
+(SERVERUSER)2747 6650 w
+8 R f
+(should be de\256ned to be this user name.)7 1260 1 3191 6650 t
+5 R f
+(3)4451 6618 w
+8 I f
+(Fileserver)4499 6650 w
+8 R f
+(will set its)2 335 1 4849 6650 t
+8 I f
+(uid)5208 6650 w
+8 R f
+( special user has normal)4 815(to be that of this user before accessing any \256les, so only those \256les that this)15 2601 2 1455 6750 t
+7 R f
+(UNIX)4902 6750 w
+8 R f
+(access)5108 6750 w
+(permissions to read will be able to be accessed.)8 1503 1 1455 6850 t
+(It is)1 140 1 1455 7000 t
+8 B f
+(strongly)1634 7000 w
+8 R f
+(recommended that if you have de\256ned)5 1317 1 1952 7000 t
+7 I f
+(PUBLICFILES)3308 7000 w
+8 R f
+( also create such a user, and de\256ne)7 1239(then you)1 296 2 3775 7000 t
+7 I f
+(SERVERUSER)1455 7100 w
+8 R f
+(, otherwise)1 349 1 1882 7100 t
+8 I f
+(\256leserver)2251 7100 w
+8 R f
+(will run as)2 336 1 2566 7100 t
+7 I f
+(NETUSERNAME)2922 7100 w
+8 R f
+(, which is probably not a good idea.)7 1140 1 3419 7100 t
+5 R f
+(4)4559 7068 w
+6 S1 f
+(________________________)720 7240 w
+8 R f
+( as that restriction)3 569( restriction is not important here,)5 1051( This)1 184( some systems limit the number of characters in a login name \(typically to 8\).)14 2489(3. Note:)1 297 5 720 7360 t
+(relates to the)2 421 1 840 7450 t
+8 I f
+(login)1289 7450 w
+8 R f
+( it might be wise to observe the restriction if it does)11 1724( However,)1 360(program, which this particular user should never use.)7 1745 3 1481 7450 t
+(exist, as other system utilities, such as)6 1210 1 840 7540 t
+8 I f
+(ls)2070 7540 w
+8 R f
+(, have been known to make similar assumptions.)7 1546 1 2129 7540 t
+( the security checks in)4 706(4. While)1 314 2 720 7660 t
+8 I f
+(\256leserver)1760 7660 w
+8 R f
+(are tight, there are no guarantees that they are impregnable.)9 1884 1 2075 7660 t
+( 26, 19106)2 340( September)1 1621( 1.10)1 200(V E R S I O N)6 468 4 2681 8083 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 7 7
+%%Page: 8 8
+/saveobj save def
+mark
+8 pagesetup
+8 R f
+(- 8 -)2 132 1 2949 400 t
+7 R f
+(SERVERGROUP)720 800 w
+8 R f
+( provides a facility similar to)5 915(* This)1 372 2 1225 800 t
+7 I f
+(SERVERUSER)2532 800 w
+8 R f
+(, with the obvious difference that the name de\256ned should be the name of)13 2351 1 2959 800 t
+(a newly created group, and is used to set the)9 1405 1 1455 900 t
+8 I f
+(gid)2880 900 w
+8 R f
+( Note:)1 217(of \256leserver.)1 401 2 3002 900 t
+7 R f
+(AUSAS)3640 900 w
+8 R f
+(systems)3888 900 w
+5 R f
+(5)4140 868 w
+8 R f
+( groups in the same way,)5 797(do not use)2 328 2 4185 900 t
+( the group de\256ned in the password \256le for)8 1332( Instead,)1 289(and this de\256nition is not used.)5 957 3 1455 1000 t
+7 I f
+(SERVERUSER)4053 1000 w
+8 R f
+(is used.)1 239 1 4494 1000 t
+(Usually, a group called)3 759 1 1455 1150 t
+8 I f
+(\256leserver)2241 1150 w
+8 R f
+( If)1 99(will be created for this purpose.)5 1041 2 2563 1150 t
+7 I f
+(SERVERGROUP)3730 1150 w
+8 R f
+(is not de\256ned, and this is not an)7 1066 1 4244 1150 t
+7 R f
+(AUSAS)1455 1250 w
+8 R f
+(system,)1703 1250 w
+8 I f
+(\256leserver)1964 1250 w
+8 R f
+(will run with the group id)5 817 1 2279 1250 t
+7 I f
+(NETGROUPNAME)3116 1250 w
+8 R f
+(.)3678 1250 w
+7 R f
+(SPOOLDIR)720 1400 w
+8 R f
+( will contain all the messages)5 969( It)1 95( will take place.)3 524( should be the name of a directory where all the network activity)12 2125(* This)1 536 5 1061 1400 t
+(that are)1 249 1 1455 1500 t
+8 I f
+(in \257ight)1 260 1 1738 1500 t
+8 R f
+( should be somewhere safe, where the)6 1292( It)1 102(as well as the handler programs and network state \256les.)9 1884 3 2032 1500 t
+( The)1 170( is least likely to be compromised, \(so try and avoid less than fully reliable disk drives.\))16 2878(integrity of the messages)3 807 3 1455 1600 t
+(usual choice would be)3 710 1 1455 1700 t
+8 CW f
+(/usr/spool/net)2213 1700 w
+8 R f
+(.)2885 1700 w
+7 R f
+(STATERNOTLIST)720 1850 w
+8 R f
+( Useful)1 256( wish ignored.)2 462( names a \256le that can be edited to contain the addresses of regions whose state messages you)17 2995(* This)1 321 4 1276 1850 t
+(for network backbone sites acting as major gateways.)7 1700 1 1455 1950 t
+7 R f
+(SUN3)720 2100 w
+8 R f
+(Set to)1 186 1 1455 2100 t
+8 B f
+(1)1663 2100 w
+8 R f
+( you also wish to run a gateway)7 1028( If)1 95( are any sites on the net running the previous version of the software.)13 2234(if there)1 228 4 1725 2100 t
+( should also set the following)5 946(to the previous version then you)5 1039 2 1455 2200 t
+7 R f
+(SUN3)3462 2200 w
+8 R f
+( in your)2 252(parameters. Look)1 578 2 3658 2200 t
+7 R f
+(SUN3)4510 2200 w
+8 R f
+(source \(or)1 321 1 4706 2200 t
+8 I f
+(run)5049 2200 w
+8 R f
+(\256le\))5182 2200 w
+(for the setting for these parameters.)5 1123 1 1455 2300 t
+7 R f
+(SUN3LIBDIR)720 2450 w
+8 R f
+( you are also running the previous version of the software, then this string should be set to the name of the)21 3376(* If)1 380 2 1127 2450 t
+7 R f
+(SUN3)4904 2450 w
+8 R f
+(library)5099 2450 w
+(spool directory, normally)2 806 1 1455 2550 t
+8 CW f
+(_lib)2309 2550 w
+8 R f
+(.)2501 2550 w
+7 R f
+(SUN3SPOOLDIR)720 2700 w
+8 R f
+( version of the software, then this string should be set to the name of the)15 2323( you are also running the previous)6 1089(* If)1 272 3 1235 2700 t
+7 R f
+(SUN3)4941 2700 w
+8 R f
+(spool)5137 2700 w
+(directory, normally)1 613 1 1455 2800 t
+8 CW f
+(/usr/spool/ACSnet)2116 2800 w
+8 R f
+(.)2932 2800 w
+7 R f
+(SUN3USERNAME)720 2950 w
+8 R f
+( running the previous version of the software, then this string should be set to the username that)17 3176( you are also)3 425(* If)1 229 3 1278 2950 t
+7 R f
+(SUN3)5136 2950 w
+8 R f
+( that if this is different from)6 917( Note)1 201(programs operate under, normally ``daemon''.)4 1501 3 1455 3050 t
+7 R f
+(NETUSERNAME)4100 3050 w
+8 R f
+(above, then gateway)2 664 1 4646 3050 t
+(programs will have to operate)4 977 1 1455 3150 t
+8 I f
+(setuid)2459 3150 w
+8 R f
+(to)2676 3150 w
+8 I f
+(root)2765 3150 w
+8 R f
+( We)1 157(in order to change the ownership of messages crossing the gateway.)10 2228 2 2925 3150 t
+(strongly recommend that)2 795 1 1455 3250 t
+7 R f
+(NETUSERNAME)2270 3250 w
+8 R f
+(be the same as)3 461 1 2810 3250 t
+7 R f
+(SUN3USERNAME)3291 3250 w
+8 R f
+(.)3849 3250 w
+7 R f
+(SUN3WORKDIR)720 3400 w
+8 R f
+( the)1 120( you are also running the previous version of the software, then this string should be set to the name of)20 3299(* If)1 280 3 1227 3400 t
+7 R f
+(SUN3)4949 3400 w
+8 R f
+(work)5146 3400 w
+(\256le directory, normally)2 735 1 1455 3500 t
+8 CW f
+(_work)2238 3500 w
+8 R f
+(.)2478 3500 w
+7 R f
+(TMPDIR)720 3650 w
+8 R f
+( use)1 126( We)1 150( name of a directory where very temporary \256les are created.)10 1897(* The)1 595 4 984 3650 t
+8 CW f
+(/tmp)3772 3650 w
+8 R f
+(.)3964 3650 w
+7 R f
+(UUCPLOCKS)720 3800 w
+8 R f
+(*)1135 3800 w
+8 B f
+(1)1455 3800 w
+8 R f
+(if you run)2 314 1 1515 3800 t
+8 I f
+(cu)1849 3800 w
+8 R f
+(,)1930 3800 w
+8 I f
+(tip)1970 3800 w
+8 R f
+(or)2074 3800 w
+8 I f
+(uucp)2160 3800 w
+8 R f
+(and you want compatible locking on devices.)6 1440 1 2335 3800 t
+7 R f
+(VALIDATEMAIL)720 3950 w
+8 R f
+( mail delivery programs are guaranteed to fail)7 1452(* Some)1 387 2 1250 3950 t
+5 R f
+(6)3089 3918 w
+8 R f
+(if the destination user doesn't exist, in which case the handler might)11 2175 1 3135 3950 t
+( to happen by de\256ning this \257ag to be)8 1166( can force this check)4 656( You)1 179(as well check \256rst that the user exists in the password \256le.)11 1854 4 1455 4050 t
+8 B f
+(1)1455 4150 w
+8 R f
+(.)1495 4150 w
+7 R f
+(VCDAEMON)720 4300 w
+7 S f
+(_)1122 4300 w
+7 R f
+(STATS)1157 4300 w
+8 R f
+( If)1 101( code for collecting throughput and kernel statistics in the message transport daemons.)12 2852(This forces the inclusion of)4 902 3 1455 4300 t
+(there, then the message transport daemons print out the information on termination.)11 2656 1 1455 4400 t
+7 R f
+(VMS)720 4550 w
+8 R f
+(Set to)1 184 1 1455 4550 t
+8 B f
+(1)1659 4550 w
+8 R f
+(if you want to use the)5 688 1 1719 4550 t
+7 R f
+(VMS)2427 4550 w
+8 R f
+(gateway.)2598 4550 w
+7 R f
+(VMS)720 4700 w
+7 S f
+(_)871 4700 w
+7 R f
+(NET)906 4700 w
+8 R f
+(If you are connected to sites running the)7 1278 1 1455 4700 t
+7 R f
+(VMS)2753 4700 w
+8 R f
+(operating system, and have decided to use the mail interface code supplied)11 2386 1 2924 4700 t
+(in the directory)2 509 1 1455 4800 t
+7 R f
+(VMS)1994 4800 w
+8 R f
+( name of a spooling program that will accept)8 1510(, then this parameter should be set to be the path)10 1655 2 2145 4800 t
+(messages from the Sun4)3 776 1 1455 4900 t
+8 S f
+(_)2231 4900 w
+8 R f
+(VMS gateway handler.)2 737 1 2271 4900 t
+7 R f
+(WHOISARGS)720 5050 w
+8 R f
+( additional arguments you might want to pass to)8 1531(* Any)1 459 2 1134 5050 t
+7 R f
+(WHOISPROG)3144 5050 w
+8 R f
+(.)3558 5050 w
+7 R f
+(WHOISFILE)720 5200 w
+8 R f
+( is deemed publicly)3 669( should contain all the information about your users that)9 1918( It)1 103( name of the people data-base.)5 1041(* The)1 483 5 1096 5200 t
+( carefully pruned copy of)4 835(accessible. A)1 447 2 1455 5300 t
+8 CW f
+(/etc/passwd)2793 5300 w
+8 R f
+(would do, but you should convert all capitals to lower-case,)9 1962 1 3348 5300 t
+(unless your version of)3 726 1 1455 5400 t
+7 R f
+(WHOISPROG)2206 5400 w
+8 R f
+( turn it on in)4 426(has an ``ignore case'' \257ag, \(in which case)7 1372 2 2647 5400 t
+7 R f
+(WHOISARGS)4473 5400 w
+8 R f
+(above\). For)1 395 1 4915 5400 t
+(example, you could use the following command \(perhaps run once a month by)12 2501 1 1455 5500 t
+8 I f
+(cron)3976 5500 w
+8 R f
+(\) to make the pruned)4 658 1 4122 5500 t
+8 I f
+(whois)4800 5500 w
+8 R f
+(\256le:)5007 5500 w
+8 CW f
+(cut -d: -f1,5 /etc/passwd | tr '[A-Z]' '[a-z]' >/usr/pub/whois)8 2976 1 1575 5650 t
+7 R f
+(WHOISPROG)720 5800 w
+8 R f
+( name of the program which will attempt to match the supplied pattern in the)14 2569(* The)1 445 2 1134 5800 t
+8 I f
+(whois)4177 5800 w
+8 R f
+( will be passed)3 501(data-base. It)1 416 2 4393 5800 t
+(arguments as for)2 529 1 1455 5900 t
+8 I f
+(egrep)2004 5900 w
+8 R f
+(\(1\), which is the obvious candidate.)5 1134 1 2191 5900 t
+7 R f
+(WORKFLAG)720 6050 w
+8 R f
+( that will distinguish)3 716(This parameter should be set to a single character)8 1730 2 1455 6050 t
+8 I f
+(work)3942 6050 w
+8 R f
+(directories from)1 529 1 4143 6050 t
+8 I f
+(link)4713 6050 w
+8 R f
+(directories in)1 437 1 4873 6050 t
+7 R f
+(SPOOLDIR)1455 6150 w
+8 R f
+( of the directories in)4 683(. Some)1 254 2 1796 6150 t
+7 R f
+(SPOOLDIR)2764 6150 w
+8 R f
+( These)1 241(are the names of directly connected nodes.)6 1418 2 3136 6150 t
+8 I f
+(link)4826 6150 w
+8 R f
+(directories)4976 6150 w
+( \257ag is used to distinguish these)6 1122( This)1 200(contain command \256les describing messages queued for that particular link.)9 2533 3 1455 6250 t
+( such as)2 260(directories from the work directories for the bene\256t of programs)9 2080 2 1455 6350 t
+8 I f
+(linkstats)3819 6350 w
+8 R f
+(which must search)2 600 1 4108 6350 t
+7 R f
+(SPOOLDIR)4732 6350 w
+8 R f
+(for the)1 213 1 5097 6350 t
+( usual choice would be)4 758( The)1 171(names of links.)2 498 3 1455 6450 t
+8 S1 f
+(_)2909 6450 w
+8 R f
+( non-)1 174( Any)1 186( underbar\).)1 356(\(rule, or)1 262 4 2976 6450 t
+8 I f
+(alpha-numeric)3954 6450 w
+8 R f
+(character will do, but take)4 859 1 4451 6450 t
+(care to choose one that is usable with the shell and)10 1608 1 1455 6550 t
+8 I f
+(make)3083 6550 w
+8 R f
+(.)3257 6550 w
+5 R f
+(7)3277 6518 w
+9 B f
+( Dependencies)1 548(3.2 System)1 434 2 720 6730 t
+10 R f
+( particular version of)3 852(The next set of parameters are to do with the peculiarities of your)12 2671 2 720 6910 t
+9 R f
+(UNIX)4274 6910 w
+10 R f
+( of these are)3 502(. Some)1 309 2 4499 6910 t
+( a)1 80( software is written assuming)4 1219( The)1 217(inter-dependent on most systems, but may be isolated additions on others.)10 3074 4 720 7030 t
+8 S1 f
+(__________________)720 7210 w
+8 R f
+(5. See)1 235 1 720 7330 t
+8 I f
+(System Dependencies)1 687 1 975 7330 t
+8 R f
+(below.)1682 7330 w
+( a)1 55(6. Dump)1 320 2 720 7450 t
+8 I f
+(core)1115 7450 w
+8 R f
+(\256le, or write a)3 446 1 1276 7450 t
+8 I f
+(dead.letter)1742 7450 w
+8 R f
+(\256le.)2104 7450 w
+( instance, some versions of)4 859(7. For)1 231 2 720 7570 t
+8 I f
+(make)1830 7570 w
+8 R f
+(object to \256nding the character `)5 995 1 2018 7570 t
+8 B f
+(=)3013 7570 w
+8 R f
+(' in a name which is to appear in a rule as a dependency of a target.)16 2138 1 3059 7570 t
+10 R f
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 8 8
+%%Page: 9 9
+/saveobj save def
+mark
+9 pagesetup
+10 R f
+(- 9 -)2 166 1 2932 480 t
+(basic AT&T Level 7)3 832 1 720 960 t
+9 R f
+(UNIX)1578 960 w
+10 R f
+(system, and these parameters allow for extra)6 1782 1 1829 960 t
+10 I f
+(features)3637 960 w
+10 R f
+( They)1 257(provided by later versions.)3 1068 2 3985 960 t
+(all take numeric values,)3 975 1 720 1080 t
+7 R f
+(8)1695 1040 w
+10 R f
+(and will be used as arguments in C pre-processor)8 2035 1 1764 1080 t
+10 B f
+(#if)3833 1080 w
+10 R f
+(lines, so set them to)4 832 1 3978 1080 t
+10 B f
+(0)4845 1080 w
+10 R f
+(to nullify)1 380 1 4930 1080 t
+(them.)720 1200 w
+7 R f
+(AUSAS)720 1360 w
+8 R f
+(Refers to your system having the features of the)8 1651 1 1455 1360 t
+8 I f
+(Australian)3142 1360 w
+7 I f
+(UNIX)3515 1360 w
+8 I f
+(Share Accounting System)2 842 1 3714 1360 t
+8 R f
+( makes the)2 374( \257ag)1 156(. This)1 218 3 4562 1360 t
+(network cognizant of the different)4 1085 1 1455 1460 t
+8 I f
+(passwd)2560 1460 w
+8 R f
+( value of)2 278( A)1 98(\256le accessing routines provided by this system.)6 1501 3 2816 1460 t
+8 B f
+(1)4713 1460 w
+8 R f
+(turns it on.)2 343 1 4773 1460 t
+7 R f
+(AUTO)720 1610 w
+7 S f
+(_)913 1610 w
+7 R f
+(LOCKING)948 1610 w
+8 R f
+(Also a part of the)4 552 1 1455 1610 t
+7 R f
+(AUSAS)2027 1610 w
+8 R f
+(package, a value of)3 613 1 2275 1610 t
+8 B f
+(1)2908 1610 w
+8 R f
+(means that the)2 459 1 2968 1610 t
+8 I f
+(auto-lock)3447 1610 w
+8 R f
+(\256le type exists.)2 480 1 3767 1610 t
+7 R f
+(BSD4)720 1760 w
+8 R f
+( number after the decimal point of your Berkeley 4th. distribution. eg: 3 for)13 2474(This \257ag should have the value of the \256rst)8 1381 2 1455 1760 t
+(4.3)1455 1860 w
+7 R f
+(BSD)1555 1860 w
+8 R f
+(.)1691 1860 w
+5 R f
+(9)1711 1828 w
+7 R f
+(BSD4V)720 2010 w
+8 R f
+(If you have the beta-test-site distribution of 4.1c)7 1531 1 1455 2010 t
+7 R f
+(BSD)2986 2010 w
+8 R f
+(, set this \257ag to be)5 580 1 3122 2010 t
+8 B f
+(c)3722 2010 w
+8 R f
+(.)3757 2010 w
+7 R f
+(CARR)720 2160 w
+7 S f
+(_)911 2160 w
+7 R f
+(ON)946 2160 w
+7 S f
+(_)1046 2160 w
+7 R f
+(BUG)1081 2160 w
+8 B f
+(1)1455 2160 w
+8 R f
+(if you have)2 380 1 1526 2160 t
+7 R f
+(OPENDIAL)1937 2160 w
+8 R f
+( modem signal)2 493(=1 and broken device drivers, which only set the software copy of the)12 2353 2 2285 2160 t
+7 R f
+(DCD)5163 2160 w
+8 R f
+(\()1455 2260 w
+7 R f
+(CARR)1481 2260 w
+7 S f
+(_)1672 2260 w
+7 R f
+(ON)1707 2260 w
+8 R f
+( true for most Unisoft)4 693( is)1 75( This)1 184(\) on ``open'' calls, and not on ``ioctl'' calls.)8 1413 4 1807 2260 t
+7 R f
+(SYSTEM III)1 364 1 4193 2260 t
+8 R f
+(systems, eg: Integrated)2 732 1 4578 2260 t
+(Solutions \(DE Unity\).)2 703 1 1455 2360 t
+7 R f
+(FCNTL)720 2510 w
+8 B f
+(1)1455 2510 w
+8 R f
+(if your system has the)4 698 1 1515 2510 t
+8 I f
+(fcntl)2233 2510 w
+8 R f
+(\(2\) system call \(ie: not 4.1?)5 869 1 2380 2510 t
+7 R f
+(BSD)3269 2510 w
+8 R f
+(\).)3405 2510 w
+7 R f
+(FLOCK)720 2660 w
+8 B f
+(1)1455 2660 w
+8 R f
+(if your system has the)4 698 1 1515 2660 t
+7 R f
+(BSD)2233 2660 w
+8 I f
+(\257ock)2389 2660 w
+8 R f
+(\(2\) system call.)2 487 1 2545 2660 t
+7 R f
+(KILL)720 2810 w
+7 S f
+(_)879 2810 w
+7 R f
+(0)914 2810 w
+8 B f
+(1)1455 2810 w
+8 R f
+( 0 can be passed legally to the system call)9 1426(if a signal value of)4 631 2 1525 2810 t
+8 I f
+(kill)3613 2810 w
+8 R f
+(\(2\) in order to interrogate for the existence of a)9 1590 1 3720 2810 t
+( in)1 82(process. True)1 448 2 1455 2910 t
+7 R f
+(SYSTEM III/V)1 433 1 2005 2910 t
+8 R f
+(, and in 4.2)3 357 1 2438 2910 t
+7 R f
+(BSD)2795 2910 w
+8 R f
+(.)2931 2910 w
+7 R f
+(LOCKF)720 3060 w
+8 B f
+(1)1455 3060 w
+8 R f
+( has the)2 267(if your system)2 477 2 1526 3060 t
+8 I f
+(/usr/group)2302 3060 w
+8 R f
+( you have a)3 401( If)1 104(standard locking.)1 560 3 2671 3060 t
+7 R f
+(SYSTEM V)1 356 1 3768 3060 t
+8 R f
+(system with \256le locking primitives)4 1154 1 4156 3060 t
+(\(check)1455 3160 w
+8 CW f
+(/usr/include/fcntl.h)1714 3160 w
+8 R f
+(\) do)1 126 1 2674 3160 t
+8 B f
+(not)2820 3160 w
+8 R f
+(de\256ne)2951 3160 w
+7 R f
+(LOCKF)3166 3160 w
+8 R f
+(to)3415 3160 w
+8 B f
+(1)3497 3160 w
+8 R f
+(.)3537 3160 w
+7 R f
+(MINSLEEP)720 3310 w
+8 B f
+(1)1455 3310 w
+8 R f
+(on almost every version of)4 892 1 1526 3310 t
+7 R f
+(UNIX)2449 3310 w
+8 R f
+( 7, where it should be)5 746(except Version)1 490 2 2653 3310 t
+8 B f
+(2)3921 3310 w
+8 R f
+( problem there was that the kernel)6 1153(. The)1 196 2 3961 3310 t
+(sometimes treated an alarm call for 1 second as in\256nite, due to race conditions.)13 2509 1 1455 3410 t
+7 R f
+(NDIRLIB)720 3560 w
+8 B f
+(1)1455 3560 w
+8 R f
+( system is a non-)4 551(if your)1 217 2 1518 3560 t
+7 R f
+(BSD)2286 3560 w
+8 R f
+(kernel but has the)3 575 1 2446 3560 t
+7 R f
+(BSD)3045 3560 w
+8 R f
+(portable directory reading library routines installed in)6 1726 1 3205 3560 t
+8 I f
+(libc.a)4955 3560 w
+8 R f
+(.)5134 3560 w
+8 B f
+(2)5198 3560 w
+8 R f
+(if)5262 3560 w
+(your system is a non-)4 713 1 1455 3660 t
+7 R f
+(BSD)2168 3660 w
+8 R f
+(/non-)2304 3660 w
+7 R f
+(SYSTEM V.3)1 405 1 2472 3660 t
+8 R f
+(kernel but has the)3 587 1 2905 3660 t
+7 R f
+(SYSTEM V.3)1 404 1 3520 3660 t
+8 R f
+(portable directory reading library routines)4 1359 1 3951 3660 t
+(installed in)1 351 1 1455 3760 t
+8 I f
+(libc.a)1826 3760 w
+8 R f
+( note, if ``sys/dirent.h'' doesn't exist, set it to 0.])9 1542(. [But)1 202 2 2005 3760 t
+7 R f
+(PGRP)720 3910 w
+8 B f
+(1)1455 3910 w
+8 R f
+(if your kernel supports the)4 839 1 1515 3910 t
+8 I f
+(setpgrp)2374 3910 w
+8 R f
+(\(2\) system call as per)4 674 1 2619 3910 t
+7 R f
+(SYSTEM V)1 344 1 3313 3910 t
+8 R f
+(.)3657 3910 w
+8 B f
+(Not)3717 3910 w
+8 R f
+(true for 4.2)2 355 1 3861 3910 t
+7 R f
+(BSD)4216 3910 w
+8 R f
+(.)4352 3910 w
+7 R f
+(RENAME)720 4060 w
+7 S f
+(_)1015 4060 w
+7 R f
+(2)1050 4060 w
+8 B f
+(1)1455 4060 w
+8 R f
+(if your kernel has the)4 675 1 1515 4060 t
+8 I f
+(rename)2210 4060 w
+8 R f
+(\(2\) system call.)2 487 1 2455 4060 t
+7 R f
+(SYS)720 4210 w
+7 S f
+(_)848 4210 w
+7 R f
+(LOCKING)883 4210 w
+8 B f
+(1)1455 4210 w
+8 R f
+(if your kernel has the Unisoft)5 934 1 1515 4210 t
+8 I f
+(locking)2469 4210 w
+8 R f
+(\(2\) system call.)2 487 1 2709 4210 t
+7 R f
+(SYSLIBS)720 4360 w
+8 R f
+(Should be set to any extra system libraries that need to be searched by)13 2228 1 1455 4360 t
+8 I f
+(ld)3703 4360 w
+8 R f
+(\(1\).)3771 4360 w
+7 R f
+(SYSTEM)720 4510 w
+8 R f
+( the version of the AT&T)5 857(Set this \257ag to be)4 586 2 1455 4510 t
+7 R f
+(SYSTEM)2927 4510 w
+8 R f
+(that you are running,)3 690 1 3232 4510 t
+8 B f
+(0)3951 4510 w
+8 R f
+(otherwise. Eg:)1 489 1 4020 4510 t
+8 B f
+(3)4538 4510 w
+8 R f
+(for)4607 4510 w
+7 R f
+(SYSTEM III)1 372 1 4728 4510 t
+8 R f
+(,)5100 4510 w
+8 B f
+(5)5149 4510 w
+8 R f
+(for)5218 4510 w
+7 R f
+(SYSTEM V)1 344 1 1455 4610 t
+8 R f
+(, etc.)1 152 1 1799 4610 t
+7 R f
+(SYSVREL)720 4760 w
+8 R f
+(Set this to be the)4 531 1 1455 4760 t
+7 R f
+(SYSTEM V)1 344 1 2006 4760 t
+8 R f
+(release version.)1 493 1 2370 4760 t
+7 R f
+(TCP)720 4910 w
+7 S f
+(_)849 4910 w
+7 R f
+(IP)884 4910 w
+8 B f
+(1)1455 4910 w
+8 R f
+(if your system has TCP/IP libraries and)6 1256 1 1515 4910 t
+8 I f
+(sockets)2791 4910 w
+8 R f
+(.)3026 4910 w
+7 R f
+(UDP)720 5060 w
+7 S f
+(_)859 5060 w
+7 R f
+(IP)894 5060 w
+8 B f
+(1)1455 5060 w
+8 R f
+(if your system has UDP/IP libraries and)6 1269 1 1515 5060 t
+8 I f
+(sockets)2804 5060 w
+8 R f
+(.)3039 5060 w
+7 R f
+(V8)720 5210 w
+8 B f
+(1)1455 5210 w
+8 R f
+(if your kernel is)3 505 1 1515 5210 t
+7 R f
+(V8)2040 5210 w
+8 R f
+(\(or)2145 5210 w
+7 R f
+(V9)2257 5210 w
+8 R f
+(\).)2342 5210 w
+7 R f
+(VPRINTF)720 5360 w
+8 B f
+(1)1455 5360 w
+8 R f
+(if your C-library includes the)4 927 1 1515 5360 t
+8 I f
+(vprintf)2462 5360 w
+8 R f
+(\(3\) routine \(just makes ``varargs'' processing a bit faster.\))8 1838 1 2680 5360 t
+7 R f
+(WAIT)720 5510 w
+7 S f
+(_)902 5510 w
+7 R f
+(RESTART)937 5510 w
+8 B f
+(1)1455 5510 w
+8 R f
+(if your kernel has the feature that the)7 1198 1 1519 5510 t
+8 I f
+(wait)2742 5510 w
+8 R f
+(\(2\) system call is automatically restarted after a caught signal if there is an)13 2424 1 2886 5510 t
+( is true for all BSD4.3 systems.)6 996( This)1 182(active child process.)2 646 3 1455 5610 t
+9 B f
+( Parameters)1 468(3.3 Kernel)1 424 2 720 5790 t
+10 R f
+(Some kernel magic numbers are in non-standard places on all versions of)11 3002 1 720 5970 t
+9 R f
+(UNIX)3754 5970 w
+10 R f
+( to dig)2 272(, so here is where you get)6 1059 2 3979 5970 t
+(them out.)1 378 1 720 6090 t
+7 R f
+(FILEBUFFERSIZE)720 6250 w
+8 R f
+( that this is not necessarily the same as)8 1251( Note)1 198( be set to the size of the buffers in the \256le system buffer cache.)14 2029(This should)1 377 4 1455 6250 t
+7 R f
+(BUFSIZ)1455 6350 w
+8 R f
+( \256le)1 130(in the include)2 451 2 1725 6350 t
+8 I f
+(stdio.h)2334 6350 w
+8 R f
+( should be adequate, but if buffers are 8K in your system, then setting this)14 2463(. ``512'')1 292 2 2555 6350 t
+(appropriately will improve throughput.)3 1242 1 1455 6450 t
+9 B f
+( Visible Program Names)3 939(3.4 User)1 339 2 720 6630 t
+10 R f
+( The)1 219( are going to be part of the user interface to the network.)12 2415(You can choose what to call the programs that)8 1956 3 720 6810 t
+( is for those of you)5 782( this section)2 492( However)1 422(sensible names to use are the ones in the manual entries as distributed.)12 2894 4 720 6930 t
+( that if you do change the names, then you)9 1701( Remember)1 489(with an aesthetic sensibility appalled by the of\256cial choices.)8 2400 3 720 7050 t
+8 S1 f
+(__________________)720 7230 w
+8 R f
+( for)1 112(8. Except)1 341 2 720 7350 t
+7 R f
+(BSD4V)1193 7350 w
+8 R f
+(and)1434 7350 w
+7 R f
+(SYSLIBS)1569 7350 w
+8 R f
+(.)1849 7350 w
+( you have 4.1z)3 492(9. If)1 172 2 720 7470 t
+7 R f
+(BSD)1384 7470 w
+8 R f
+( parameter as for 4.2)4 686(, de\256ne this)2 388 2 1520 7470 t
+7 R f
+(BSD)2594 7470 w
+8 R f
+( you have 4.0)3 454(. If)1 120 2 2730 7470 t
+7 R f
+(BSD)3304 7470 w
+8 R f
+(\(really?\), setting this parameter to 0 will do all the right)10 1842 1 3468 7470 t
+(things.)840 7560 w
+10 R f
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 9 9
+%%Page: 10 10
+/saveobj save def
+mark
+10 pagesetup
+10 R f
+(- 10 -)2 216 1 2907 480 t
+(should also \256x up the manual entries to re\257ect your new choices.)11 2591 1 720 960 t
+(Two names in particular are)4 1123 1 720 1140 t
+10 I f
+(known)1869 1140 w
+10 R f
+( if you change them after con\256guration, then you)8 1971(to the network internally, and)4 1183 2 2156 1140 t
+(must also set the new values into the relevant parameter \256les \(see)11 2862 1 720 1260 t
+10 I f
+(netparams)3630 1260 w
+10 R f
+( are)1 169(\(5\).\) They)1 452 2 4060 1260 t
+9 R f
+(GETFILE)4729 1260 w
+10 R f
+(, and)1 216 1 5094 1260 t
+9 R f
+(SENDFILE)720 1380 w
+10 R f
+(.)1145 1380 w
+9 B f
+( Control)1 323(3.5 Compilation)1 639 2 720 1560 t
+10 R f
+(This section should be familiar to people who have already grappled with the)12 3084 1 720 1740 t
+10 I f
+(make)3829 1740 w
+10 R f
+( are two sets.)3 521(program. There)1 645 2 4064 1740 t
+9 R f
+(CFLAGS)720 1920 w
+10 R f
+(and)1097 1920 w
+9 R f
+(LDFLAGS)1273 1920 w
+10 R f
+( your C-compiler and link-loader.)4 1377(should be set to be appropriate options for)7 1733 2 1710 1920 t
+10 B f
+(\261O)4878 1920 w
+10 R f
+(for the)1 271 1 5039 1920 t
+(C-optimizer and)1 652 1 720 2040 t
+10 B f
+(\261n)1397 2040 w
+10 R f
+( be generally applicable.)3 978(for shared-text from the loader should)5 1516 2 1528 2040 t
+7 R f
+(10)4022 2000 w
+9 R f
+(DEBUG)4116 2040 w
+10 R f
+(can be null, or can be)5 858 1 4452 2040 t
+(set to be either)3 642 1 720 2160 t
+10 CW f
+(\261DEBUG=1)1441 2160 w
+10 R f
+(which will include some error detection and code for issuing)9 2592 1 1965 2160 t
+10 I f
+(reports)4601 2160 w
+10 R f
+(, or to be)3 412 1 4898 2160 t
+10 CW f
+(\261DEBUG=2)720 2280 w
+10 R f
+( code for doing)3 610(which will enable yet more)4 1087 2 1225 2280 t
+10 I f
+(traces)2948 2280 w
+10 R f
+(\(which will enable all the programs to produce trace)8 2092 1 3218 2280 t
+(output when the)2 644 1 720 2400 t
+10 B f
+(\261T)1389 2400 w
+10 R f
+(\257ag is used\). Eg:)3 672 1 1531 2400 t
+10 CW f
+( provide reports)2 960( #)1 1260(DEBUG = -DEBUG=1)2 960 3 870 2580 t
+9 R f
+(CONFIG)720 2760 w
+10 R f
+( on the command line for)5 1087(can be used)2 495 2 1095 2760 t
+10 I f
+(make)2718 2760 w
+10 R f
+( your)1 224( If)1 132(to pump in circumstantial parameters.)4 1576 3 2969 2760 t
+9 R f
+(CPU)4942 2760 w
+10 R f
+(is a)1 152 1 5158 2760 t
+( compiler pre-processor doesn't de\256ne the name)6 1959(Motorola 68000 series, and the C)5 1367 2 720 2880 t
+10 I f
+(mc68000)4077 2880 w
+10 R f
+(then)4474 2880 w
+9 R f
+(CONFIG)4677 2880 w
+10 R f
+(should)5043 2880 w
+(be set as follows:)3 691 1 720 3000 t
+10 CW f
+( define the CPU type)4 1200( #)1 1140(CONFIG = -Dmc68000)2 1080 3 870 3180 t
+10 R f
+( in the one and only)5 811(If you do have a Motorola 68000 series CPU, then you also need to de\256ne the assembler type)17 3779 2 720 3360 t
+(\256le in the distribution containing assembler code,)6 1986 1 720 3480 t
+10 CW f
+(Lib/crc.c)2768 3480 w
+10 R f
+( several \257avours of)3 765( problem is that there are)5 1005(. The)1 232 3 3308 3480 t
+( see what you've got, and choose something appropriate. You)9 2492(assembler in use for these chips, so you will have to)10 2098 2 720 3600 t
+( to add code for your particular system \320 if so, please let me have a copy for inclusion in the next)21 3984(may even have)2 606 2 720 3720 t
+( an assembler syntax)3 919( far, all the \257avours of assembler outside Bell Laboratories seem to use)12 3185(release. So)1 486 3 720 3840 t
+(compatible with the)2 794 1 720 3960 t
+9 R f
+(MIT)1539 3960 w
+9 S f
+(_)1704 3960 w
+9 R f
+(68K)1749 3960 w
+10 R f
+( the two choices are)4 792(version. So)1 475 2 1929 3960 t
+10 CW f
+( define the assembler type)4 1560( #)1 540(CONFIG = -Dmc68000 -DMIT_68K)3 1680 3 870 4140 t
+10 R f
+(or)720 4320 w
+10 CW f
+( define the assembler type)4 1560( #)1 480(CONFIG = -Dmc68000 -DBELL_68K)3 1740 3 870 4500 t
+10 R f
+(If your)1 274 1 720 4680 t
+9 R f
+(CPU)1019 4680 w
+10 R f
+(is a Microvax, you should set)5 1177 1 1219 4680 t
+9 R f
+(CONFIG)2421 4680 w
+10 R f
+(as follows:)1 436 1 2781 4680 t
+10 CW f
+( define the CPU type)4 1200( #)1 1320(CONFIG = -Duvax)2 900 3 870 4860 t
+10 R f
+(so that the)2 411 1 720 5040 t
+9 R f
+(VAX)1156 5040 w
+10 R f
+(``crc'' instruction assembler code that the Microvax does not support will not be included.)13 3611 1 1376 5040 t
+(Some C compilers don't really support)5 1552 1 720 5220 t
+10 CW f
+(void *)1 360 1 2297 5220 t
+10 R f
+(properly, in which case you need:)5 1347 1 2682 5220 t
+10 CW f
+( don't let cc divide by 0!)6 1560( #)1 840(CONFIG = -DNO_VOID_STAR)2 1380 3 870 5400 t
+10 R f
+(Some C compilers don't support)4 1300 1 720 5580 t
+10 CW f
+(void)2045 5580 w
+10 R f
+(at all, and these should have:)5 1154 1 2310 5580 t
+10 CW f
+( ancient cc)2 660( #)1 1140(CONFIG = -DNO_VOID)2 1080 3 870 5760 t
+10 R f
+(which also sets)2 605 1 720 5940 t
+9 R f
+(NO)1350 5940 w
+9 S f
+(_)1480 5940 w
+9 R f
+(VOID)1525 5940 w
+9 S f
+(_)1750 5940 w
+9 R f
+(STAR)1795 5940 w
+10 R f
+(.)2025 5940 w
+( are explicit integers, in which)5 1244(Some C compilers don't like the use of constants in switch statements unless they)13 3346 2 720 6120 t
+(case you will need:)3 768 1 720 6240 t
+10 CW f
+( fussy cc)2 540( #)1 960(CONFIG = -DINT_SWITCH)2 1260 3 870 6420 t
+10 R f
+( compilers don't like the use of enumerated types in expressions unless they are cast to integers,)16 3862(Similarly, some C)2 728 2 720 6600 t
+(in which case you will need:)5 1140 1 720 6720 t
+10 CW f
+( broken cc)2 600( #)1 840(CONFIG = -DENUM_NOT_INT)2 1380 3 870 6900 t
+10 R f
+( of)1 116(If you have selected either one)5 1256 2 720 7080 t
+9 R f
+(TCP)2125 7080 w
+9 S f
+(_)2290 7080 w
+9 R f
+(IP)2335 7080 w
+10 R f
+(or)2448 7080 w
+9 R f
+(UDP)2564 7080 w
+9 S f
+(_)2744 7080 w
+9 R f
+(IP)2789 7080 w
+10 R f
+(above, and your kernel is)4 1038 1 2902 7080 t
+9 R f
+(SYSTEM V)1 451 1 3973 7080 t
+10 R f
+(with the same)2 571 1 4457 7080 t
+10 I f
+(socket)5061 7080 w
+10 R f
+(include \256les as a standard BSD system, then you need:)9 2187 1 720 7200 t
+8 S1 f
+(__________________)720 7424 w
+8 R f
+(10. If your)2 338 1 720 7544 t
+7 R f
+(CPU)1078 7544 w
+8 R f
+(is a)1 108 1 1234 7544 t
+7 R f
+(PDP)1362 7544 w
+8 R f
+(-11 with)1 268 1 1490 7544 t
+8 I f
+(separate I & D space)4 681 1 1778 7544 t
+8 R f
+(, specify the)2 386 1 2465 7544 t
+8 B f
+(\261i)2871 7544 w
+8 R f
+(loader \257ag also.)2 506 1 2953 7544 t
+10 R f
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 10 10
+%%Page: 11 11
+/saveobj save def
+mark
+11 pagesetup
+10 R f
+(- 11 -)2 216 1 2907 480 t
+10 CW f
+(CONFIG = -DBSD_IP)2 1020 1 870 960 t
+10 R f
+( used by)2 353(The second set are the names of programs)7 1739 2 720 1140 t
+10 I f
+(make)2847 1140 w
+10 R f
+( instance,)1 387( For)1 199(to do its work.)3 608 3 3092 1140 t
+10 I f
+(chown)4321 1140 w
+10 R f
+(\(1\) and)1 295 1 4590 1140 t
+10 I f
+(mknod)4920 1140 w
+10 R f
+(\(1\))5194 1140 w
+( only complex choice is the speci\256cation of the program that will create)12 2898( The)1 208( places.)1 302(often seem to live in peculiar)5 1182 4 720 1260 t
+(a locking \256le \(in)3 685 1 720 1380 t
+9 R f
+(MKLOCK)1439 1380 w
+10 R f
+(\). On)1 239 1 1829 1380 t
+9 R f
+(AUSAS)2103 1380 w
+10 R f
+(systems, this is done with the program)6 1596 1 2433 1380 t
+10 I f
+(mknod)4064 1380 w
+10 R f
+(\(2\) and a \256le type of)5 862 1 4338 1380 t
+10 B f
+(a)5235 1380 w
+10 R f
+(,)5285 1380 w
+( speci\256ed in the parameter)4 1057(which is)1 338 2 720 1500 t
+9 R f
+(MKLOCKTYPE)2141 1500 w
+10 R f
+( all other systems,)3 725(. On)1 198 2 2756 1500 t
+9 R f
+(MKLOCK)3703 1500 w
+10 R f
+(should be set to be something)5 1191 1 4119 1500 t
+(like)720 1620 w
+10 I f
+(touch)898 1620 w
+10 R f
+( an ordinary \256le, and the parameter)6 1423(\(1\) which will just create)4 1010 2 1128 1620 t
+9 R f
+(MKLOCKTYPE)3590 1620 w
+10 R f
+( actual)1 267( The)1 209(should be null.)2 600 3 4234 1620 t
+(locking is then taken care of by code conditional on the)10 2213 1 720 1740 t
+9 R f
+(UNIX)2958 1740 w
+10 R f
+(version parameters.)1 781 1 3208 1740 t
+(If a program doesn't exist, or you wish to cancel its effect, use a variation on one of the following assignments:-)20 4476 1 720 1920 t
+10 CW f
+( do nothing)2 660( #)1 1680(STRIP = :)2 540 3 870 2100 t
+( show what you are not doing)6 1680( #)1 1320(STRIP = : strip)3 900 3 870 2220 t
+10 R f
+( the program for making libraries)5 1443(The exceptions to this rule are the programs for pre-sorting libraries, and)11 3147 2 720 2400 t
+( the programs)2 549( If)1 116(randomly accessible.)1 837 3 720 2520 t
+10 I f
+(lorder)2247 2520 w
+10 R f
+(\(1\) and)1 285 1 2505 2520 t
+10 I f
+(tsort)2815 2520 w
+10 R f
+(\(1\) don't exist then you should cancel them as follows:-)9 2228 1 3007 2520 t
+10 CW f
+( just echo the arguments)4 1440( #)1 1440(LORDER = echo)2 780 3 870 2700 t
+( just copy input to output)5 1560( #)1 1560(TSORT = cat)2 660 3 870 2820 t
+10 R f
+(If the program)2 588 1 720 3000 t
+10 I f
+(ranlib)1339 3000 w
+10 R f
+(\(1\) doesn't exist \()3 725 1 1592 3000 t
+9 R f
+(SYSTEM III)1 474 1 2317 3000 t
+10 R f
+(or early)1 313 1 2822 3000 t
+9 R f
+(SYSTEM V)1 449 1 3166 3000 t
+10 R f
+( be cancelled as for)4 797(\) then it should)3 621 2 3615 3000 t
+9 R f
+(STRIP)5065 3000 w
+10 R f
+( a loader that automatically produces randomly accessible libraries, then one or)11 3204( the system doesn't have)4 1002(above. If)1 384 3 720 3120 t
+( these library sorting programs must exist, and on BSD loaders sometimes insist on libraries being)15 4256(other of)1 334 2 720 3240 t
+(processed with)1 596 1 720 3360 t
+10 I f
+(ranlib.)1341 3360 w
+10 R f
+(On most systems, the library routine)5 1460 1 720 3540 t
+10 I f
+(malloc)2206 3540 w
+10 R f
+(\(3\) is very slow, and in order to speed up the routing calculation by up)14 2824 1 2486 3540 t
+(to 60%, it is worth while using a routine that calls)10 1991 1 720 3660 t
+10 I f
+(brk)2736 3660 w
+10 R f
+(\(2\) directly:)1 474 1 2877 3660 t
+10 CW f
+(CONFIG = -DSLOW_MALLOC)2 1320 1 870 3840 t
+10 R f
+( DECstation 3100, and Sun Micro's)5 1438(However, on some systems, such as the)6 1581 2 720 4020 t
+9 R f
+(SPARC)3765 4020 w
+10 R f
+(, the)1 173 1 4050 4020 t
+10 I f
+(malloc)4249 4020 w
+10 R f
+(\(3\) library has been)3 781 1 4529 4020 t
+( the memory boundaries are aligned)5 1438(strangely modi\256ed, to the extent that the routing ``Malloc'' won't work unless)11 3152 2 720 4140 t
+(on some large number of bytes, so you should either not de\256ne)11 2514 1 720 4260 t
+9 R f
+(SLOW)3259 4260 w
+9 S f
+(_)3514 4260 w
+9 R f
+(MALLOC)3559 4260 w
+10 R f
+(, or add:)2 330 1 3939 4260 t
+10 CW f
+(CONFIG = -DALIGN=512)2 1200 1 870 4440 t
+10 R f
+(\(which will, of course, lead to a large memory hog!\))9 2087 1 720 4620 t
+(The system call)2 641 1 720 4800 t
+10 I f
+(fsync)1393 4800 w
+10 R f
+(\(2\) exists on all)3 640 1 1606 4800 t
+9 R f
+(BSD)2279 4800 w
+10 R f
+(4.2+ systems, is rumoured to exist on)6 1543 1 2487 4800 t
+9 R f
+(SYSTEM)4063 4800 w
+10 R f
+(V.4, but may also be)4 859 1 4451 4800 t
+(present on some)2 649 1 720 4920 t
+9 R f
+(SYSTEM)1394 4920 w
+10 R f
+(V.3 systems, in which case you need:)6 1498 1 1774 4920 t
+10 CW f
+(CONFIG = -DFSYNC)2 960 1 870 5100 t
+10 R f
+(Some implementtaions of Berkeley-style sockets have the structure)7 2772 1 720 5280 t
+10 CW f
+(iovec)3529 5280 w
+10 R f
+(de\256ned as)1 414 1 3866 5280 t
+10 CW f
+(uiovec)4318 5280 w
+10 R f
+(, in which case)3 632 1 4678 5280 t
+(ytou need:)1 419 1 720 5400 t
+10 CW f
+(CONFIG = -DUIOVEC)2 1020 1 870 5580 t
+9 B f
+( BUGS)1 268(4. SYSTEM)1 484 2 720 5820 t
+10 R f
+( all systems have)3 692( Not)1 204( we discuss a few well known system bugs that may plague your installation.)13 3127(In this section)2 567 4 720 6000 t
+(them, but if they exist they will all cause)8 1624 1 720 6120 t
+10 B f
+(make)2369 6120 w
+10 R f
+(to fail in one way or another.)6 1156 1 2627 6120 t
+(If)720 6300 w
+10 I f
+(ranlib)813 6300 w
+10 R f
+( exist on your system, be warned that not all versions of)11 2264(does not)1 338 2 1085 6300 t
+10 I f
+(lorder)3715 6300 w
+10 R f
+(and)3993 6300 w
+10 I f
+(tsort)4165 6300 w
+10 R f
+(do a proper sort; if you)5 933 1 4377 6300 t
+(get unde\256ned global errors at)4 1182 1 720 6420 t
+10 I f
+(ld)1930 6420 w
+10 R f
+( concerned by hand with judicious)5 1383(\(1\) time, you will need to re-arrange the library)8 1911 2 2016 6420 t
+(applications of the command)3 1157 1 720 6540 t
+10 CW f
+(ar ma ...)2 540 1 1937 6540 t
+10 R f
+(\(see)2527 6540 w
+10 I f
+(ar)2712 6540 w
+10 R f
+(\(1\)\).)2809 6540 w
+( bug in)2 314(On the other hand, there is a well known)8 1758 2 720 6720 t
+10 I f
+(ranlib)2835 6720 w
+10 R f
+(when the number of symbols in the existing library)8 2187 1 3123 6720 t
+10 CW f
+(_ _.SYMDEF)1 556 1 720 6840 t
+10 R f
+( the \256rst word)3 591(entry just happen to make)4 1080 2 1313 6840 t
+10 CW f
+(== 0408)1 420 1 3020 6840 t
+10 R f
+(.)3440 6840 w
+10 I f
+(Ranlib)3526 6840 w
+10 R f
+(will fail with a message about ``old)6 1481 1 3829 6840 t
+(fashioned archive format'', and the only solution is to remove the offending library and try again.)15 3896 1 720 6960 t
+( spaces\),)1 347(On small machines, \(with small address)5 1608 2 720 7140 t
+10 I f
+(make)2704 7140 w
+10 R f
+(may fail with the message ``too many env parameters'' \320)9 2367 1 2943 7140 t
+(try stripping the environment as in)5 1380 1 720 7260 t
+10 CW f
+(env - run)2 540 1 2160 7260 t
+10 R f
+(.)2700 7260 w
+(The Gould system manual suggests that)5 1686 1 720 7440 t
+10 CW f
+(kill\(pid, 0\))1 720 1 2485 7440 t
+10 R f
+( You)1 242( but the Gould kernel disagrees.)5 1370(is legal \320)2 449 3 3249 7440 t
+(should de\256ne)1 536 1 720 7560 t
+9 R f
+(KILL)1281 7560 w
+9 S f
+(_)1486 7560 w
+9 R f
+(0)1531 7560 w
+10 R f
+(to be)1 197 1 1601 7560 t
+10 B f
+(0)1823 7560 w
+10 R f
+(for these machines.)2 773 1 1898 7560 t
+(If you are running one of Melbourne University's versions of 4.2 BSD,)11 2865 1 720 7740 t
+10 I f
+(make)3612 7740 w
+10 R f
+(may fail because)2 674 1 3849 7740 t
+10 I f
+(fd)4550 7740 w
+10 S f
+(_)4628 7740 w
+10 I f
+(set)4678 7740 w
+10 R f
+( in)1 106(is de\256ned)1 388 2 4816 7740 t
+(both)720 7860 w
+10 CW f
+(Include/global.h)928 7860 w
+10 R f
+(and in)1 252 1 1918 7860 t
+10 CW f
+(/usr/include/sys/types.h)2200 7860 w
+10 R f
+( just take out the)4 677( that case,)2 406(. In)1 163 3 3640 7860 t
+10 I f
+(typedef)4915 7860 w
+10 R f
+(in)5232 7860 w
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 11 11
+%%Page: 12 12
+/saveobj save def
+mark
+12 pagesetup
+10 R f
+(- 12 -)2 216 1 2907 480 t
+10 CW f
+(Include/global.h)720 960 w
+10 R f
+(.)1680 960 w
+( any of the other)4 714(A similar problem will affect you if)6 1510 2 720 1140 t
+10 I f
+(typedef)2984 1140 w
+10 R f
+(s in)1 157 1 3272 1140 t
+10 CW f
+(Include/global.h)3469 1140 w
+10 R f
+(\(such as the one for)4 841 1 4469 1140 t
+10 I f
+(Ulong)720 1260 w
+10 R f
+(\) have been made elsewhere \()5 1216 1 970 1260 t
+10 CW f
+(/usr/include/sys/types.h)2186 1260 w
+10 R f
+( solution is the)3 605( The)1 212(is a favourite place\).)3 835 3 3658 1260 t
+(same as for)2 454 1 720 1380 t
+10 I f
+(fd)1199 1380 w
+10 S f
+(_)1277 1380 w
+10 I f
+(set)1327 1380 w
+10 R f
+(\320 just take out the one in)6 1033 1 1463 1380 t
+10 CW f
+(Include/global.h)2521 1380 w
+10 R f
+(.)3481 1380 w
+(Some of the source assumes that the library function)8 2241 1 720 1560 t
+10 I f
+(bcopy)3005 1560 w
+10 R f
+(is safe if the arguments overlap. In particular it)8 2023 1 3287 1560 t
+(assumes that)1 516 1 720 1680 t
+10 I f
+(bcopy)1269 1680 w
+10 R f
+( If)1 123( lower addresses \(as in the C version in Libc/bcopy.c\).)9 2234(can handle copying to overlapping)4 1413 3 1540 1680 t
+(your C-library version doesn't, please arrange to use the one provided.)10 2816 1 720 1800 t
+9 B f
+( TARGETS)1 453(5. MAKEFILE)1 604 2 720 2040 t
+10 R f
+( default)1 320( The)1 223(Now we can get serious.)4 1050 3 720 2220 t
+10 I f
+(make)2356 2220 w
+10 R f
+( will make the)3 626(target, ``all'',)1 552 2 2609 2220 t
+10 I f
+(Bin)3831 2220 w
+10 R f
+(directory, set up the)3 850 1 4014 2220 t
+10 I f
+(site.h)4908 2220 w
+10 R f
+(and)5166 2220 w
+10 I f
+(strings-data.h)720 2340 w
+10 R f
+(\256les, and then make the libraries followed by all the programs.)10 2502 1 1304 2340 t
+(Try it. Type)2 480 1 720 2520 t
+10 CW f
+(run)870 2700 w
+10 R f
+(If you need to re-do anything, then just type)8 1756 1 720 2880 t
+10 CW f
+(run)2536 2880 w
+10 R f
+(again.)2741 2880 w
+(Finally, the command)2 875 1 720 3060 t
+10 CW f
+(run directories special install)3 1860 1 870 3240 t
+10 R f
+( actual)1 274( The)1 216( and install all the binaries.)5 1132(will set up all the work directories, create some network data-base \256les,)11 2968 4 720 3420 t
+10 I f
+(make\256le)720 3540 w
+10 R f
+(involved with implementing these targets is called)6 2022 1 1079 3540 t
+10 CW f
+(Makefiles/Install)3163 3540 w
+10 R f
+( Then)1 256( it if you want.)4 590(. Read)1 281 3 4183 3540 t
+(do it.)1 206 1 720 3660 t
+(If you wish to make a listing at any stage, then try)11 1998 1 720 3840 t
+10 CW f
+(run PRFORMATTER=pr PRSPOOL=lpr print)3 2160 1 870 4020 t
+10 R f
+(or some variation thereof.)3 1031 1 720 4200 t
+7 R f
+(11)1751 4160 w
+9 B f
+(6. REGIONS)1 529 1 720 4440 t
+10 R f
+( the)1 159( are hierarchical name spaces in)5 1325( Regions)1 389(A brief discussion of regions and their con\256guration is necessary.)9 2717 4 720 4620 t
+( consist of)2 447(network. They)1 625 2 720 4740 t
+10 I f
+(typed)1835 4740 w
+10 R f
+(domain names, each domain naming some entity in the network, such as an)12 3217 1 2093 4740 t
+( region name for a particular organization is generally referred to as its)12 2928( The)1 214( a computer \(node.\))3 808(organization, or)1 640 4 720 4860 t
+10 I f
+(site address)1 489 1 720 4980 t
+10 R f
+( sub-units \(eg:)2 598( may be many nodes, or even organizational)7 1861(. There)1 321 3 1209 4980 t
+10 I f
+(departments)4027 4980 w
+10 R f
+(\) containing nodes,)2 789 1 4521 4980 t
+( regions is to reduce the number of sites that must)10 2047( of the reasons for the introduction of)7 1524( One)1 221(within any one site.)3 798 4 720 5100 t
+( lot less information is needed to remember the route to a region, than)13 2811( A)1 124( database.)1 395(be remembered in the topology)4 1260 4 720 5220 t
+( is brought about if all those nodes which are)9 1930( This)1 243(to remember the routes to all the members of that region.)10 2417 3 720 5340 t
+( of the local nodes will not appear)7 1370( Knowledge)1 512( site speci\256c regions.)3 844(essentially local work-stations are relegated to)5 1864 4 720 5460 t
+( may still be addressed explicitly by prepending the node name to)11 2666(in the databases of nodes at other sites, yet they)9 1924 2 720 5580 t
+(the site address \(which)3 927 1 720 5700 t
+10 B f
+(is)1677 5700 w
+10 R f
+( is another advantage \320 you may choose node names that aren't unique)12 2920(known.\) There)1 616 2 1774 5700 t
+( are just special)3 657( Nodes)1 318( unique when the site address is included.)7 1750(across the whole network, yet which become)6 1865 4 720 5820 t
+( domain names become)3 952(cases of typed domain names, so domain names themselves also conform to this rule, ie:-)14 3638 2 720 5940 t
+(unique in a wider context by appending the name of an encompassing region.)12 3092 1 720 6060 t
+( Eg:)1 227( different types may share the same name.)7 1945(Domain names are typed, and so)5 1488 3 720 6240 t
+10 CW f
+(NODE=basser)4443 6240 w
+10 R f
+(and)5166 6240 w
+10 CW f
+(DEPT=basser)720 6360 w
+10 R f
+(are two different domains.)3 1053 1 1405 6360 t
+( name of a domain \(or node\) must be)8 1499( The)1 208( to consider when con\256guring domains for a node.)8 2035(There are a few rules)4 848 4 720 6540 t
+( node must declare its)4 907( Every)1 297(unique within its region.)3 1005 3 720 6660 t
+10 I f
+(visible region)1 556 1 2963 6660 t
+10 R f
+(which essentially de\256nes the largest region)5 1757 1 3553 6660 t
+( visible region chosen is larger than necessary,)7 1871( the)1 148( If)1 117(within which the node will propagate its routing information.)8 2454 4 720 6780 t
+( and will incur unnecessary overheads)5 1541(then information about the node will appear in more places than necessary,)11 3049 2 720 6900 t
+( that no messages originating outside)5 1490( another important property of the visible region is)8 2028( However,)1 441(for other nodes.)2 631 4 720 7020 t
+( if you wish to allow messages)6 1275( So)1 164( lie outside it, will pass through the node.)8 1714(it, and whose destination addresses)4 1437 4 720 7140 t
+(from other sites to traverse yours, then the visible region should also encompass those sites.)14 3663 1 720 7260 t
+8 S1 f
+(__________________)720 7440 w
+8 R f
+(11. The last time we tried this, it used slightly under 1200 pages of 66 line paper.)16 2580 1 720 7560 t
+10 R f
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 12 12
+%%Page: 13 13
+/saveobj save def
+mark
+13 pagesetup
+10 R f
+(- 13 -)2 216 1 2907 480 t
+( management domain'' encompassing all of the sites running)8 2524(The ``private)1 533 2 720 960 t
+9 R f
+(MHS)3813 960 w
+10 R f
+(net in Australia is called ``oz''.)5 1302 1 4008 960 t
+( your site, your visible region should probably be)8 2296(So, if your node is linked to other nodes outside)9 2294 2 720 1080 t
+(``)720 1200 w
+9 R f
+(PRMD)786 1200 w
+10 R f
+(=oz.)1041 1200 w
+9 R f
+(COUNTRY)1216 1200 w
+10 R f
+(=au''.)1651 1200 w
+( domain is called ``)4 819(In our case, our local)4 883 2 720 1380 t
+9 R f
+(DEPT)2422 1380 w
+10 R f
+( are part of)3 470( We)1 200(=cs'' \(for ``Department of Computer Science''\).)5 1993 3 2647 1380 t
+( for which we have chosen the domain name ``)9 1906(Sydney University,)1 777 2 720 1500 t
+9 R f
+(ORG)3403 1500 w
+10 R f
+( have nodes that are local to the)7 1289(=su''. We)1 428 2 3593 1500 t
+( visible region is therefore ``)5 1184(department whose)1 737 2 720 1620 t
+9 R f
+(DEPT)2641 1620 w
+10 R f
+(=cs.)2866 1620 w
+9 R f
+(ORG)3030 1620 w
+10 R f
+(=su.)3220 1620 w
+9 R f
+(PRMD)3390 1620 w
+10 R f
+(=oz.)3645 1620 w
+9 R f
+(COUNTRY)3820 1620 w
+10 R f
+(=au'', However, the main)3 1055 1 4255 1620 t
+( ``)1 99(nodes communicate with other organizations, and so their visible region is)10 3062 2 720 1740 t
+9 R f
+(PRMD)3881 1740 w
+10 R f
+(=oz.)4136 1740 w
+9 R f
+(COUNTRY)4311 1740 w
+10 R f
+(=au'', In fact,)2 564 1 4746 1740 t
+(all sites in Australia should have an address ending in ``.)10 2291 1 720 1860 t
+9 R f
+(COUNTRY)3011 1860 w
+10 R f
+( put it more generally, the domain)6 1381(=au'', or, to)2 483 2 3446 1860 t
+( that because the)3 698( \(Note)1 289( address.)1 361(denoting your country should always be one of the domains mentioned in the)12 3242 4 720 1980 t
+(domains are)1 496 1 720 2100 t
+10 I f
+(typed)1252 2100 w
+10 R f
+(they don't have to appear in any particular order, although the convention is left to right in)16 3806 1 1504 2100 t
+(order of increasing signi\256cance.\))3 1313 1 720 2220 t
+9 B f
+( THE COMMANDSFILE)2 996(7. CONFIGURING)1 774 2 720 2460 t
+10 R f
+(You must now create the \256le)5 1291 1 720 2640 t
+10 CW f
+(SPOOLDIR/STATEDIR/commandsfile)2099 2640 w
+10 R f
+(to control the behaviour of the)5 1357 1 3953 2640 t
+(program)720 2760 w
+10 I f
+(netstate)1087 2760 w
+10 R f
+( is an example ``commands\256le'' in the)6 1566(\(1\). There)1 427 2 1406 2760 t
+10 I f
+(Admin)3428 2760 w
+10 R f
+(directory, that you might like to look at)7 1593 1 3717 2760 t
+(\256rst.)720 2880 w
+(The)720 3060 w
+10 I f
+(netstate)907 3060 w
+10 R f
+(commands that you put in)4 1067 1 1250 3060 t
+10 I f
+(commands\256le)2349 3060 w
+10 R f
+( over the information that appears in)6 1501(give you total control)3 879 2 2930 3060 t
+(your network)1 537 1 720 3180 t
+10 I f
+(state)1284 3180 w
+10 R f
+(and)1500 3180 w
+10 I f
+(routing)1671 3180 w
+10 R f
+( a description of your node that will be seen by all other sites,)13 2471( can give)2 364(tables. You)1 482 3 1993 3180 t
+( routing algorithm, suppress or encourage the knowledge of particular links that)11 3283(control the choices made by the)5 1307 2 720 3300 t
+( by the rest of the world, and tell the network how to handle any special gateways that you are)19 4077(will be seen)2 513 2 720 3420 t
+( should now read the)4 832( You)1 222(connected to.)1 532 3 720 3540 t
+10 I f
+(netstate)2331 3540 w
+10 R f
+(\(1\) manual, a couple of times.)5 1195 1 2650 3540 t
+(Here is a sample)3 671 1 720 3720 t
+10 I f
+(commands\256le)1419 3720 w
+10 R f
+( is)1 96( It)1 115( you master most of the possibilities.)6 1494( should help)2 495( It)1 114(from the node ``basser''.)3 1000 6 1996 3720 t
+( that \256elds in each command are separated by)8 1898( Note)1 254(split into fragments, with comments after each one.)7 2120 3 720 3840 t
+10 I f
+(tabs)5026 3840 w
+10 R f
+(or)5227 3840 w
+10 I f
+(spaces)720 3960 w
+10 R f
+( may also be separated by a)6 1097(. They)1 280 2 994 3960 t
+10 I f
+(newline)2396 3960 w
+10 R f
+(followed by a leading)3 868 1 2732 3960 t
+10 I f
+(space)3625 3960 w
+10 R f
+(or)3877 3960 w
+10 I f
+(tab)3985 3960 w
+10 R f
+(\(as in)1 219 1 4138 3960 t
+10 I f
+(make)4382 3960 w
+10 R f
+(\(1\).)4600 3960 w
+9 B f
+( local node)2 411(7.1 The)1 309 2 720 4140 t
+8 CW f
+(#)840 4300 w
+( the preferred types:)3 1008(# Configure)1 1200 2 840 4400 t
+(#)840 4500 w
+(ordertypes COUNTRY;ADMD;PRMD;ORG;DEPT;NODE)1 2256 1 840 4600 t
+(#)840 4700 w
+( types:)1 336(# Shorthand)1 1200 2 840 4800 t
+(#)840 4900 w
+( COUNTRY)1 1200(map C)1 816 2 840 5000 t
+( ADMD)1 1056(map A)1 816 2 840 5100 t
+( PRMD)1 1056(map P)1 816 2 840 5200 t
+( ORG)1 1008(map O)1 816 2 840 5300 t
+( DEPT)1 1056(map D)1 816 2 840 5400 t
+( NODE)1 1056(map N)1 816 2 840 5500 t
+10 R f
+(First thing to notice is that the character)7 1597 1 720 5680 t
+10 B f
+(#)2343 5680 w
+10 R f
+( line, and blank lines are)5 986(introduces a comment extending to the end of a)8 1905 2 2419 5680 t
+( the)1 150(ignored. Next,)1 602 2 720 5800 t
+10 I f
+(ordertypes)1500 5800 w
+10 R f
+( These)1 291(command lists our preferred type-names in order of decreasing signi\256cance.)9 3064 2 1955 5800 t
+( names for region addresses, and replace the defaults, which are terse, but)12 2969(names will be used when exporting type)6 1621 2 720 5920 t
+( \256rst is for the country identi\256er, the last is always)10 2007( The)1 205( a maximum of 10.)4 758( should be at least 5, up to)7 1051(boring. There)1 569 5 720 6040 t
+( must always quote some version of the \256rst 4 \(together with the)12 2606( that you)2 354( Note)1 246(assumed to be for a network node.)6 1384 4 720 6160 t
+(last\), even though some may not be in use \(eg:)9 1859 1 720 6280 t
+9 R f
+(ADMD)2604 6280 w
+10 R f
+(.\))2879 6280 w
+( shorthand names for the types, because we wish to save some typing in the following)15 3699(We then de\256ne some)3 891 2 720 6460 t
+(commands where long type names could become tedious.)7 2302 1 720 6580 t
+8 R f
+( 26, 19106)2 340( September)1 1621( 1.10)1 200(V E R S I O N)6 468 4 2681 8083 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 13 13
+%%Page: 14 14
+/saveobj save def
+mark
+14 pagesetup
+8 R f
+(- 14 -)2 172 1 2929 400 t
+8 CW f
+(#)840 800 w
+( in some real names:)4 960(# Map)1 912 2 840 900 t
+(#)840 1000 w
+(map ACSnet P=oz)2 1872 1 840 1100 t
+( C=au)1 672(map Australia)1 1200 2 840 1200 t
+( C=as)1 768(map Austria)1 1104 2 840 1300 t
+( D=cs)1 768(map CompSci)1 1104 2 840 1400 t
+( D=cs)1 288( Science)1 384(map Computer\\)1 1200 3 840 1500 t
+( C=nz)1 576( Zealand)1 384(map New)1 912 3 840 1600 t
+( C=ch)1 576(map Switzerland)1 1296 2 840 1700 t
+(map SydUni O=su)2 1872 1 840 1800 t
+( University O=su)2 768(map Sydney\\)1 1104 2 840 1900 t
+10 R f
+( particular, note that our department's)5 1553( In)1 142( domains.)1 398(Here we map some real names for the commonly used typed)10 2497 4 720 2080 t
+( ``su'' \(for Sydney University\), the private management)7 2255(name is ``cs'' \(for Computer Science\), the organization is)8 2335 2 720 2200 t
+( that)1 184( Note)1 253( Australia.\))1 458(domain is ``oz'' \(for ACSnet\), and the country is ``au'' \(the international 2-letter code for)14 3695 4 720 2320 t
+( some of these names in the following)7 1616( will use)2 369( We)1 203(spaces are legal inside names, provided they are escaped.)8 2402 4 720 2440 t
+(commands, just because they are prettier than the typed names \(which could be used instead.\))14 3737 1 720 2560 t
+8 CW f
+(#)840 2720 w
+( address:)1 432(# Our)1 912 2 840 2820 t
+(#)840 2920 w
+(address N=basser.CompSci.SydUni.ACSnet.Australia)1 2688 1 840 3020 t
+(#)840 3120 w
+( visible within ACSnet:)3 1104(# Only)1 960 2 840 3220 t
+(#)840 3320 w
+(visible N=basser.CompSci.SydUni.ACSnet.Australia)1 2688 1 840 3420 t
+(ACSnet.Australia)1608 3520 w
+10 R f
+(First we use the domain names to de\256ne the)8 1826 1 720 3700 t
+10 I f
+(region address)1 606 1 2580 3700 t
+10 R f
+( node name is)3 582( The)1 215( con\256guring.)1 521(of the node we are)4 772 4 3220 3700 t
+( second command de\256nes the)4 1212( The)1 214( are selected from those de\256ned above.)6 1608(``basser'', and the remaining domains)4 1556 4 720 3820 t
+(region within which)2 843 1 720 3940 t
+10 I f
+(basser)1607 3940 w
+10 R f
+( will propagate its routing)4 1113(will be able to resolve addresses, and within which it)9 2285 2 1912 3940 t
+( destined outside our)3 848( other sites will not attempt to route messages through ``basser'' that are)12 2974(information. Also,)1 768 3 720 4060 t
+( that the full region address must be used, and that commands may be continued onto)15 3732( Note)1 265(visible region.)1 593 3 720 4180 t
+(successive lines by preceding each successor with a leading space or tab.)11 2909 1 720 4300 t
+8 CW f
+(#)840 4460 w
+( details:)1 432(# Site)1 960 2 840 4560 t
+(#)840 4660 w
+( University Computer Science)3 1344(organization Sydney)1 1056 2 840 4760 t
+( of Computer Science\\)3 1008(postal_address Department)1 1248 2 840 4860 t
+(Madsen Building, F09\\)2 1008 1 1608 4960 t
+(Sydney University\\)1 864 1 1608 5060 t
+(N.S.W. 2006\\)1 576 1 1608 5160 t
+(Australia)1608 5260 w
+( M120, UMIPS 3.10)3 816(system MIPS)1 960 2 840 5360 t
+( 53 25.0 S / 151 11 18.7 E)8 1248(location 33)1 864 2 840 5460 t
+(remarks Teaching)1 1152 1 840 5560 t
+( Loyzaga)1 384(person Ray)1 912 2 840 5660 t
+(email_address yar@cs.su.oz.au)1 1488 1 840 5760 t
+(telno +61-2-692-3423)1 1440 1 840 5860 t
+10 R f
+( of the commands are mandatory,)5 1421( Two)1 250( network.)1 394(The site details are for the information of other sites on the)11 2525 4 720 6040 t
+10 I f
+(organization)720 6160 w
+10 R f
+(\(it may be spelt with an `s'\) and)7 1287 1 1259 6160 t
+10 I f
+(telno)2573 6160 w
+10 R f
+( be provided for the bene\256t of)6 1198(, but the other details should also)6 1331 2 2781 6160 t
+( contact)1 318( The)1 210( network mapping attempts, and management aids.)6 2061(site surveys,)1 498 4 720 6280 t
+10 I f
+(person)3837 6280 w
+10 R f
+(,)4117 6280 w
+10 I f
+(email)4172 6280 w
+10 S f
+(_)4394 6280 w
+10 I f
+(address)4444 6280 w
+10 R f
+(and)4785 6280 w
+10 I f
+(telno)4959 6280 w
+10 R f
+(are)5189 6280 w
+( to deal with network problems, \(general enquiries about people etc. should)11 3053(all for someone who can be contacted)6 1537 2 720 6400 t
+(be directed to ``)3 646 1 720 6520 t
+10 CW f
+(postmaster@)1366 6520 w
+10 I f
+(site)2026 6520 w
+10 S f
+(_)2165 6520 w
+10 I f
+(address)2215 6520 w
+10 R f
+( that the)2 330(''.\) Note)1 372 2 2526 6520 t
+10 I f
+(email)3257 6520 w
+10 S f
+(_)3479 6520 w
+10 I f
+(address)3529 6520 w
+10 R f
+( the ``site'' address)3 782(provided is)1 451 2 3869 6520 t
+10 I f
+(sans)5132 6520 w
+(types)720 6640 w
+10 R f
+(, ie: the)2 307 1 933 6640 t
+9 R f
+(NODE)1270 6640 w
+10 R f
+( wish to discourage the use of nodenames in mail addresses, as nodes)12 2813( We)1 192(domain is omitted.)2 756 3 1549 6640 t
+( that)1 195( Note)1 263(are ephemeral things.)2 894 3 720 6760 t
+10 I f
+(newlines)2117 6760 w
+10 R f
+(may be escaped by preceding them with a back-slash, so that the)11 2798 1 2512 6760 t
+10 I f
+(postal)720 6880 w
+10 S f
+(_)965 6880 w
+10 I f
+(address)1015 6880 w
+10 R f
+(will contain actual newlines.)3 1143 1 1351 6880 t
+8 CW f
+(#)840 7040 w
+( an easier handle:)3 864(# Map)1 912 2 840 7140 t
+(#)840 7240 w
+( N=basser)1 1248(map R)1 816 2 840 7340 t
+10 R f
+(This is just an)3 574 1 720 7520 t
+10 I f
+(alias)1324 7520 w
+10 R f
+( is a local name only, but can be used to)10 1655( It)1 117( of poor typists.)3 646(for the node, for the convenience)5 1343 4 1549 7520 t
+(refer to the local node in addresses, as in:\261)8 1699 1 720 7640 t
+10 CW f
+(netmap -v r)2 660 1 2444 7640 t
+10 R f
+(\(case is not signi\256cant.\))3 949 1 3129 7640 t
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 14 14
+%%Page: 15 15
+/saveobj save def
+mark
+15 pagesetup
+10 R f
+(- 15 -)2 216 1 2907 480 t
+9 B f
+(7.2 Links)1 379 1 720 960 t
+8 CW f
+(#)840 1120 w
+( the links:)2 528(# Configure)1 1200 2 840 1220 t
+(#)840 1320 w
+(add N=atom.O=lhrl.ACSnet.Australia)1 2208 1 840 1420 t
+(link N=basser.CompSci.SydUni.ACSnet.Australia,)1 2736 1 840 1520 t
+(N=atom.O=lhrl.ACSnet.Australia)1608 1620 w
+(linkname N=atom.O=lhrl.ACSnet.Australia)1 2208 1 840 1720 t
+(atom)1608 1820 w
+(spooler N=atom.O=lhrl.ACSnet.Australia)1 2208 1 840 1920 t
+(SPOOLDIR/LIBDIR/Sun4_3)1608 2020 w
+10 R f
+( We)1 194( is an outside organization still running the old software.)9 2308( ``lhrl'')1 326(This is an example of a link into ``basser''.)8 1762 4 720 2200 t
+(\256rst)720 2320 w
+10 I f
+(add)906 2320 w
+10 R f
+( links are made with the)5 977(the node's address, then make a bi-directional link to it, \(uni-directional)10 2918 2 1086 2320 t
+10 I f
+(hal\257ink)5010 2320 w
+10 R f
+( we give the link a)5 770( Then)1 262( are speci\256ed by a comma separated pair of node addresses.)10 2449( that links)2 407(command.\) Note)1 702 5 720 2440 t
+( name constructed from the reverse ordered)6 1745( default would be a directory)5 1165( The)1 208(short directory name for ease of use.)6 1472 4 720 2560 t
+( we specify a)3 541( Finally)1 340(type-less address.)1 710 3 720 2680 t
+10 I f
+(spooler)2342 2680 w
+10 R f
+( other)1 237( \(The)1 245(to handle the gateway to the other network software.)8 2154 3 2674 2680 t
+( messages to)2 585(network also should be con\256gured to gateway)6 2082 2 720 2800 t
+9 R f
+(MHS)3452 2800 w
+10 R f
+(net, by specifying a)3 902 1 3647 2800 t
+10 I f
+(spooler)4614 2800 w
+10 R f
+(such as)1 331 1 4979 2800 t
+10 CW f
+(SPOOLDIR/LIBDIR/Sun3_4)720 2920 w
+10 R f
+(.\))2040 2920 w
+8 CW f
+(add N=research.O=btl.P=com.C=us)1 2064 1 840 3080 t
+(link N=research.O=btl.P=com.C=us,)1 2112 1 840 3180 t
+(N=basser.CompSci.SydUni.ACSnet.Australia)1608 3280 w
+(delay N=research.O=btl.P=com.C=us,)1 2112 1 840 3380 t
+(N=basser.CompSci.SydUni.ACSnet.Australia)1608 3480 w
+(43200)1608 3580 w
+(restrict N=research.O=btl.P=com.C=us,)1 2112 1 840 3680 t
+(N=basser.CompSci.SydUni.ACSnet.Australia)1608 3780 w
+(ACSnet.Australia)1608 3880 w
+(map research.usa)1 1344 1 840 3980 t
+(N=research.O=btl.P=com.C=us)1608 4080 w
+10 R f
+( set the)2 301( call us every twelve hours, so we)7 1403( They)1 263(The second link example is to a site running the same software.)11 2623 4 720 4260 t
+( wish to receive only Australian ACSnet)6 1639( We)1 192( to be the same \(in seconds.\))6 1158(maximum queueing delay for messages)4 1601 4 720 4380 t
+(traf\256c over this link, so a)5 1084 1 720 4500 t
+10 I f
+(restriction)1846 4500 w
+10 R f
+( on the link into ``basser'' limiting traf\256c from ``research'' to)10 2636(is placed)1 369 2 2305 4500 t
+( have a similar restriction on their end limiting)8 1956( \(They)1 300( sites within ``ACSnet.Australia''.)3 1410(messages addressed to)2 924 4 720 4620 t
+( we map an old address for)6 1117( Finally)1 341( within ``O=btl.P=com.C=us''.\))2 1290(traf\256c from us to messages addressed to sites)7 1842 4 720 4740 t
+(this site into the real one, for the convenience of users.)10 2179 1 720 4860 t
+9 B f
+( Forwarding)1 483(7.3 Address)1 474 2 720 5040 t
+8 CW f
+(#)840 5200 w
+( all messages addressed explicitly)4 1632(# Forward)1 1104 2 840 5300 t
+( the department, Sydney University or ACSnet:)6 2160(# to)1 864 2 840 5400 t
+(#)840 5500 w
+(forward CompSci.SydUni.ACSnet.Australia)1 2256 1 840 5600 t
+(N=cluster.CompSci.SydUni.ACSnet.Australia)1608 5700 w
+(forward SydUni.ACSnet.Australia)1 1872 1 840 5800 t
+(N=metro.D=ucc.SydUni.ACSnet.Australia)1608 5900 w
+(forward ACSnet.Australia)1 1536 1 840 6000 t
+(N=munnari.D=cs.O=mu.ACSnet.Australia)1608 6100 w
+10 R f
+(The)720 6280 w
+10 I f
+(forward)911 6280 w
+10 R f
+( to pass messages arriving at our node addressed to sites or even countries to)14 3224(command allows us)2 816 2 1270 6280 t
+( we forward messages addressed just to the)7 1784( So)1 165(some naming authority with a greater chance of resolving them.)9 2641 3 720 6400 t
+( addressed to the)3 704( Messages)1 450( database for the department.)4 1203(department to ``cluster'', which has the largest people)7 2233 4 720 6520 t
+( to ACSnet itself are forwarded to)6 1431(University are forwarded to the Computing Centre, and messages addressed)9 3159 2 720 6640 t
+(Melbourne University, which is also the international gateway for ACSnet.)9 2999 1 720 6760 t
+9 B f
+( UP AUTO-CALL FACILITIES)3 1249(8. SETTING)1 514 2 720 7000 t
+9 I f
+(MHS)720 7180 w
+10 I f
+(net)905 7180 w
+10 R f
+(provides a facility for making dynamic connections between nodes over)9 3019 1 1068 7180 t
+10 I f
+(dial-up)4128 7180 w
+10 R f
+(lines using)1 448 1 4459 7180 t
+10 I f
+(auto-call)4949 7180 w
+10 R f
+( there are to be any nodes that you)8 1377( If)1 117( on Public Packet Switched Networks.)5 1537(units, or via virtual circuits established)5 1559 4 720 7300 t
+( is not already a transport daemon)6 1395(wish to call automatically \(whenever the queue becomes non-empty, and there)10 3195 2 720 7420 t
+(running\), then a couple of things must be set up.)9 1929 1 720 7540 t
+(The)720 7720 w
+10 I f
+(auto-call)908 7720 w
+10 R f
+(facility is provided by the program)5 1430 1 1302 7720 t
+10 I f
+(netcall)2766 7720 w
+10 R f
+( program in turn provides support for running)7 1886(\(8\). This)1 378 2 3046 7720 t
+(auto-call)720 7840 w
+10 I f
+(programs)1101 7840 w
+10 R f
+( establishment of a virtual circuit)5 1348(written in an appropriate interpreted language to control the)8 2440 2 1522 7840 t
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 15 15
+%%Page: 16 16
+/saveobj save def
+mark
+16 pagesetup
+10 R f
+(- 16 -)2 216 1 2907 480 t
+( successful completion of the program)5 1548( The)1 209( combination of intervening networks.)4 1545(to some remote node over some)5 1288 4 720 960 t
+( two transport daemons communicating with each other over the virtual circuit.)11 3272(will result in)2 528 2 720 1080 t
+10 I f
+(Netcall)4580 1080 w
+10 R f
+(expects at)1 406 1 4904 1080 t
+( to invoke)2 420( routing program knows how)4 1196( The)1 214(least one argument, which is the name of a program to run.)11 2453 4 720 1200 t
+10 I f
+(netcall)5038 1200 w
+10 R f
+( a \256le name in the link's)6 1032(with a program named ``call'' if the link is suitably \257agged, and there is indeed such)15 3558 2 720 1320 t
+( an alternative to)3 731( As)1 182(queueing directory.)1 797 3 720 1440 t
+10 I f
+(netcall)2476 1440 w
+10 R f
+( a different call program using the)6 1490(you can specify)2 668 2 2794 1440 t
+10 I f
+(netstate)4999 1440 w
+10 R f
+(command)720 1560 w
+10 I f
+(caller)1139 1560 w
+10 R f
+(.)1380 1560 w
+( the)1 154( are several examples in)4 982( There)1 288(You must create a call program to make the connection and start the daemon.)13 3166 4 720 1740 t
+10 I f
+(netcall)720 1860 w
+10 R f
+( in a \256le labelled)4 674( a copy of the program in the link's queue directory)10 2087( Put)1 187(distribution directory.)1 875 4 1020 1860 t
+10 I f
+(call)4870 1860 w
+10 R f
+(. Then)1 282 1 5028 1860 t
+(add a line to)3 491 1 720 1980 t
+10 I f
+(commands\256le)1236 1980 w
+10 R f
+(to let the routing program know:-)5 1335 1 1810 1980 t
+8 CW f
+(#)840 2140 w
+( the auto-call links:)3 1008(# Flag)1 960 2 840 2240 t
+(#)840 2340 w
+(flag N=basser.CompSci.SydUni.ACSnet.Australia,)1 2736 1 840 2440 t
+(N=research.O=btl.P=com.C=us)1608 2540 w
+(call)1608 2640 w
+10 R f
+( to call you, then you need to create a)9 1536(Alternatively, if other nodes are going)5 1545 2 720 2820 t
+10 I f
+(login)3831 2820 w
+10 R f
+(name for them to connect to.)5 1173 1 4067 2820 t
+7 R f
+(12)5240 2780 w
+10 R f
+( to be the same as the name of the node that is calling in, but you can)17 2803(The normal practice is for the account name)7 1787 2 720 2940 t
+( have set up in)4 629(also choose any alias \(map\) for that node that you might)10 2367 2 720 3060 t
+10 I f
+(commands\256le)3754 3060 w
+10 R f
+(\(including the directory)2 969 1 4341 3060 t
+(names speci\256ed by the)3 955 1 720 3180 t
+10 I f
+(linkname)1716 3180 w
+10 R f
+(command.\) The)1 673 1 2123 3180 t
+10 I f
+(shell)2837 3180 w
+10 R f
+( of an)2 257(to be invoked must be set to be the path name)10 1986 2 3067 3180 t
+(appropriate installed version of)3 1248 1 720 3300 t
+10 I f
+(netshell)1994 3300 w
+10 R f
+( of)1 109(\(8\). \(Versions)1 580 2 2313 3300 t
+10 I f
+(netshell)3028 3300 w
+10 R f
+( is also)2 282( It)1 112(exist for many types of virtual circuit.\))6 1551 3 3365 3300 t
+( versions of)2 472( Some)1 281(advisable to set a password for the account.)7 1756 3 720 3420 t
+10 I f
+(login)3257 3420 w
+10 R f
+( in 4)2 182(\(1\) \(eg)1 271 2 3471 3420 t
+9 R f
+(BSD)3924 3420 w
+10 R f
+(and)4126 3420 w
+9 R f
+(V)4297 3420 w
+10 R f
+(7\), restrict the length of)4 948 1 4362 3420 t
+( one of the nodes dialing in is too long, then you can add)13 2291( yours does this and the name of)7 1297( If)1 117(a login name allowed.)3 885 4 720 3540 t
+(an alias that is shorter, and)5 1065 1 720 3660 t
+10 I f
+(netshell)1810 3660 w
+10 R f
+( Example:)1 433(will look it up to \256nd the real node name.)9 1655 2 2146 3660 t
+10 CW f
+(gris::64:1:Softway Network Login:SPOOLDIR/LIBDIR/ttyshell)2 3420 1 870 3840 t
+10 R f
+(\(Don't forget to add a password.\))5 1330 1 720 4020 t
+9 B f
+( NETINIT)1 403(9. CONFIGURING)1 774 2 720 4260 t
+10 R f
+( different programs. Some programs are to be run)8 2008(The day to day operation of the network involves running many)10 2582 2 720 4440 t
+( message transport daemons talking to permanently connected)7 2650(continuously, such as the routing program or)6 1940 2 720 4560 t
+( programs are run at)4 899( Other)1 301( terminate.)1 451(systems. These programs must be restarted if, for some reason, they)10 2939 4 720 4680 t
+( calls to other systems may be made several times a day at)12 2456( Dialup)1 333( the day, week or month.)5 1045(particular times of)2 756 4 720 4800 t
+( run once a)3 485( programs that clean up directories and produce statistics need to be)11 2857( Management)1 585(particular times.)1 663 4 720 4920 t
+(week or once a month.)4 906 1 720 5040 t
+( administrator to run and restart these programs the)8 2137(Rather than require the system)4 1264 2 720 5220 t
+10 I f
+(netinit)4158 5220 w
+10 R f
+(program is provided.)2 859 1 4451 5220 t
+(This program runs programs, restarts them if necessary and can run them at nominated times.)14 3727 1 720 5340 t
+( of what programs to run and when is found in the \256le)12 2213(The description)1 628 2 720 5520 t
+10 CW f
+(SPOOLDIR/LIBDIR/initfile)3591 5520 w
+10 R f
+(. Each)1 279 1 5031 5520 t
+(program that is to be run by)6 1110 1 720 5640 t
+10 I f
+(netinit)1855 5640 w
+10 R f
+(has an entry of the form:)5 984 1 2136 5640 t
+10 I f
+(process-id process-type command)2 1358 1 870 5820 t
+10 R f
+(The)720 6000 w
+10 I f
+(process-id)901 6000 w
+10 R f
+( is used as an identi\256er)5 923( It)1 113( space, tab or newline.)4 900(starts at the beginning of a line and is delimited by)10 2031 4 1343 6000 t
+(for the process when)3 840 1 720 6120 t
+10 I f
+(netinit)1589 6120 w
+10 R f
+(is asked to start or stop it by the)8 1304 1 1874 6120 t
+10 I f
+(net)3207 6120 w
+10 R f
+( would normally)2 667( It)1 115(\(8\) program \(described later\).)3 1191 3 3337 6120 t
+( describes the process to be run, for example ``call-cluster'' might be the)12 2925(be a word that)3 571 2 720 6240 t
+10 I f
+(process id)1 410 1 4243 6240 t
+10 R f
+(for the program)2 630 1 4680 6240 t
+(that makes a call to machine ``cluster''.)6 1582 1 720 6360 t
+(The)720 6540 w
+10 I f
+(process-type)903 6540 w
+10 R f
+(is either the word)3 705 1 1435 6540 t
+10 B f
+(restart)2168 6540 w
+10 R f
+(, the word)2 408 1 2455 6540 t
+10 B f
+(runonce)2891 6540 w
+10 R f
+(, or a speci\256cation of the time to run the process in)11 2069 1 3241 6540 t
+(the same form as that used by)6 1187 1 720 6660 t
+10 I f
+(cron)1932 6660 w
+10 R f
+(\(8\), enclosed in double quotes.)4 1226 1 2123 6660 t
+(The)720 6840 w
+10 I f
+(command)900 6840 w
+10 R f
+(speci\256es the program to execute along with its arguments.)8 2322 1 1313 6840 t
+( entry. An empty line terminates)5 1333(Lines beginning with white space are interpreted as continuations of the current)11 3257 2 720 7020 t
+( begin with)2 456( Comments)1 487( space signi\256es the beginning of a new entry.)8 1824(an entry and a line beginning with non-white)7 1823 4 720 7140 t
+(a)720 7260 w
+10 B f
+(#)789 7260 w
+10 R f
+(character and end at a newline.)5 1234 1 864 7260 t
+8 S1 f
+(__________________)720 7440 w
+8 R f
+( method of doing this is idiosyncratic to your brand of)10 1750(12. The)1 244 2 720 7560 t
+7 R f
+(UNIX)2737 7560 w
+8 R f
+( line to)2 229(, but on most versions it consists of using the editor to add an extra)14 2171 2 2910 7560 t
+(the \256le)1 219 1 840 7650 t
+8 I f
+(/etc/passwd)1079 7650 w
+8 R f
+(.)1451 7650 w
+10 R f
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 16 16
+%%Page: 17 17
+/saveobj save def
+mark
+17 pagesetup
+10 R f
+(- 17 -)2 216 1 2907 480 t
+10 I f
+(Netinit)720 960 w
+10 R f
+(changes directory to)2 809 1 1018 960 t
+10 CW f
+(SPOOLDIR)1852 960 w
+10 R f
+(before starting, so pathnames can be relative to)7 1879 1 2357 960 t
+10 CW f
+(SPOOLDIR)4261 960 w
+10 R f
+(, or absolute.)2 516 1 4741 960 t
+9 B f
+( Running Programs)2 761(9.1 Permanently)1 654 2 720 1140 t
+10 R f
+( routing program,)2 774( The)1 241( stop.)1 253(Some network programs need to be run continuously and restarted if they)11 3322 4 720 1320 t
+10 CW f
+(SPOOLDIR/LIBDIR/router)720 1440 w
+10 R f
+(needs to be active at all times to process routing requests.)10 2294 1 2065 1440 t
+10 I f
+(Netinit)720 1620 w
+10 R f
+(can be told to run and restart router by placing a line such as:)13 2437 1 1018 1620 t
+10 CW f
+( -f)1 180( LIBDIR/router)1 1500(router restart)1 1260 3 870 1800 t
+10 R f
+(in)720 1980 w
+10 CW f
+(SPOOLDIR/LIBDIR/initfile)858 1980 w
+10 R f
+(\(the \257ag)1 330 1 2323 1980 t
+10 B f
+(-f)2678 1980 w
+10 R f
+(prevents)2769 1980 w
+10 I f
+(router)3132 1980 w
+10 R f
+(from forking off a child to do the work.\))8 1611 1 3407 1980 t
+9 B f
+( Netinit)1 288(9.2 Controlling)1 604 2 720 2160 t
+10 I f
+(Netinit)720 2340 w
+10 R f
+(can be asked to start and stop processes or groups of processes, re-read)12 2936 1 1027 2340 t
+10 CW f
+(initfile)3997 2340 w
+10 R f
+( of)1 118(, report the status)3 715 2 4477 2340 t
+(processes or shutdown all processes in an orderly way using the)10 2551 1 720 2460 t
+10 I f
+(netcontrol)3296 2460 w
+10 R f
+(program.)3732 2460 w
+10 I f
+(Netcontrol)720 2640 w
+10 R f
+(takes a command name argument and an optional regular expression, and carries out the requested)14 4123 1 1187 2640 t
+( See)1 214( all processes whose process names match the regular expression.)9 2796(operation on)1 523 3 720 2760 t
+10 I f
+(netcontrol)4298 2760 w
+10 R f
+(\(8\) for further)2 593 1 4717 2760 t
+(details.)720 2880 w
+9 B f
+( UP PERIODIC CALLS)3 939(10. SETTING)1 559 2 720 3120 t
+10 R f
+( to make)2 346(If you only \(or also\) wish)5 1018 2 720 3300 t
+10 I f
+(periodic)2110 3300 w
+10 R f
+(calls to some other node, then you need to add an)10 1982 1 2469 3300 t
+10 I f
+(init\256le)4477 3300 w
+10 R f
+(entry to make)2 551 1 4759 3300 t
+( instance, to call the node ``munnari'' at noon, 6pm, and midnight, place)12 3052( For)1 202( at the chosen intervals.)4 992(the calls)1 344 4 720 3420 t
+(appropriate commands in a shell)4 1298 1 720 3540 t
+10 S f
+(_)2018 3540 w
+10 R f
+(script)2068 3540 w
+10 CW f
+(SPOOLDIR/_call/call_munnari)2350 3540 w
+10 R f
+(, and add the line:-)4 746 1 3970 3540 t
+10 CW f
+( _call/call_munnari)1 1200( 0,12,18 * * *")4 900(call-munnari "0)1 960 3 870 3720 t
+10 R f
+(to)720 3900 w
+10 CW f
+(SPOOLDIR/LIBDIR/initfile)858 3900 w
+10 R f
+(.)2298 3900 w
+( 7pm,)1 234(As another example, if we had a Hayes compatible dialup modem and wished to call ``cluster'' at 7am and)18 4356 2 720 4080 t
+(then we could add to)4 832 1 720 4200 t
+10 CW f
+(SPOOLDIR/LIBDIR/initfile)1612 4200 w
+10 R f
+(the line:)1 325 1 3077 4200 t
+10 CW f
+( LIBDIR/VCcall)1 1080( 7,19 * * *")4 720(call-cluster "0)1 960 3 870 4380 t
+(-S _call/hayes.cs # call script)4 1860 1 2850 4500 t
+(-D loginstr=sarad)1 1020 1 2850 4620 t
+(-D passwdstr=XXXX)1 1020 1 2850 4740 t
+(-D phoneno=3234321)1 1080 1 2850 4860 t
+(-D modemdev="/dev/cua")1 1320 1 2850 4980 t
+(-D linespeed=2400)1 1020 1 2850 5100 t
+(cluster)2850 5220 w
+10 R f
+( been placed on one long line but we have spread it over several lines for clarity.)16 3644(This entry could have)3 946 2 720 5400 t
+(Continuation lines of an entry in)5 1297 1 720 5520 t
+10 I f
+(init\256le)2042 5520 w
+10 R f
+(are indicated by leading white space.)5 1474 1 2323 5520 t
+( the form)2 396(The parameters to the call program will be converted to arguments of)11 2923 2 720 5700 t
+10 B f
+(\261D)4079 5700 w
+10 I f
+(name=value)4201 5700 w
+10 R f
+(for use in the)3 569 1 4741 5700 t
+10 I f
+(netcall)720 5820 w
+10 R f
+( script programs are provided in the)6 1569( Call)1 241( language.)1 434(call script)1 416 4 1042 5820 t
+10 CW f
+(_call)3751 5820 w
+10 R f
+(directory for several popular)3 1210 1 4100 5820 t
+( you can easily write your own call script program)9 2019( a new connection type)4 920( For)1 189(modems and other connection types.)4 1462 4 720 5940 t
+(\(see)720 6060 w
+10 I f
+(netcall)905 6060 w
+10 R f
+(\(8\)\).)1185 6060 w
+(Periodic connections involve less overheads than)5 2061 1 720 6240 t
+10 I f
+(auto-call)2826 6240 w
+10 R f
+( scheduling of connections to take)5 1467(, and allow the)3 648 2 3195 6240 t
+(advantage of cheaper billing periods.)4 1477 1 720 6360 t
+( the network by adding one line to)7 1956(In most cases a new connection can be made to)9 2634 2 720 6540 t
+10 CW f
+(SPOOLDIR/LIBDIR/initfile)720 6660 w
+10 R f
+(.)2160 6660 w
+9 B f
+(11. STATISTICS)1 689 1 720 6900 t
+10 R f
+(If you don't want to gather statistics)6 1953 1 720 7080 t
+7 R f
+(13)2673 7040 w
+10 R f
+( remove the \256le called)4 1231(at all, then you should)4 1226 2 2853 7080 t
+10 CW f
+(SPOOLDIR/STATSDIR/Accumulated)720 7200 w
+10 R f
+(created by the)2 563 1 2487 7200 t
+10 I f
+(make)3077 7200 w
+10 R f
+(target)3314 7200 w
+10 I f
+(special)3568 7200 w
+10 R f
+( at)1 98( the network will log)4 841(. Otherwise,)1 512 3 3859 7200 t
+(least one statistics record in)4 1104 1 720 7320 t
+10 I f
+(Accumulated)1849 7320 w
+10 R f
+(for every message processed.)3 1168 1 2395 7320 t
+8 S1 f
+(__________________)720 7500 w
+8 R f
+(13. Or ``accounting information''.)3 1092 1 720 7620 t
+10 R f
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 17 17
+%%Page: 18 18
+/saveobj save def
+mark
+18 pagesetup
+10 R f
+(- 18 -)2 216 1 2907 480 t
+(The statistics are collected as lines containing `)7 2205 1 720 960 t
+10 B f
+(:)2925 960 w
+10 R f
+(' separated)1 481 1 2958 960 t
+9 R f
+(ASCII)3511 960 w
+10 R f
+( \256elds are de\256ned in)4 998(\256elds. The)1 494 2 3818 960 t
+10 CW f
+(Include/stats.h)720 1080 w
+10 R f
+(.)1620 1080 w
+7 R f
+(14)1645 1040 w
+10 R f
+(There are no programs as yet to summarize this information and the \256le can grow)14 3549 1 1761 1080 t
+(alarmingly quickly on busy systems, so my advice is to turn off statistics accumulation for the time being.)17 4234 1 720 1200 t
+9 B f
+( TO MAIL)2 421(12. INTERFACES)1 739 2 720 1440 t
+10 R f
+( remote sites, \(see)3 796(The distribution contains a mail program capable of using the network to send mail to)14 3794 2 720 1620 t
+10 I f
+(netmail)720 1740 w
+10 R f
+( Try)1 208( arrange for users to access this program when they wish to send network mail.)14 3348(\(1\)\), and you can)3 726 3 1028 1740 t
+(modifying and installing the shell program)5 1738 1 720 1860 t
+10 CW f
+(Admin/netmail.sh)2489 1860 w
+10 R f
+( appropriate mail program)3 1066(, which invokes the)3 795 2 3449 1860 t
+(depending on its arguments.)3 1127 1 720 1980 t
+(However, if you are running a 4)6 1295 1 720 2160 t
+9 R f
+(BSD)2015 2160 w
+10 R f
+(system, or)1 414 1 2218 2160 t
+9 R f
+(SYSTEM V.4)1 514 1 2660 2160 t
+10 R f
+( that understands)2 685(, you already have a version of mail)7 1451 2 3174 2160 t
+( should arrange to cause the mail insertion program to use the)11 2559( You)1 231(what to do with network addresses.)5 1459 3 720 2280 t
+9 I f
+(MHS)5003 2280 w
+10 I f
+(net)5188 2280 w
+10 R f
+(program)720 2400 w
+10 I f
+(net\256le)1083 2400 w
+10 R f
+( use the sequence:)3 723( We)1 188(\(1\) to deliver the message.)4 1056 3 1335 2400 t
+10 CW f
+(netfile -Amailer -oP3 -NMail -Q)4 1860 1 870 2580 t
+10 I f
+(person)2730 2580 w
+10 B f
+(@)3002 2580 w
+10 I f
+(destination)3095 2580 w
+10 R f
+( mail message read from)4 989(to deliver a)2 451 2 720 2760 t
+10 I f
+(stdin)2187 2760 w
+10 R f
+( can, of course, specify many)5 1176(. You)1 249 2 2390 2760 t
+10 I f
+(persons)3842 2760 w
+10 R f
+(and)4180 2760 w
+10 I f
+(destinations)4351 2760 w
+10 R f
+(at one time)2 448 1 4862 2760 t
+(to take advantage of)3 878 1 720 2880 t
+9 I f
+(MHS)1647 2880 w
+10 I f
+(net)1832 2880 w
+10 R f
+( that the \257ags)3 608( Note)1 268('s multi-cast addressing capabilities.)3 1526 3 1962 2880 t
+10 B f
+(-oP3)4412 2880 w
+10 R f
+(specify that the)2 656 1 4654 2880 t
+( \256xed, time-ordered priority, so that queued mail messages will be delivered in)12 3302(message should be queued at a)5 1288 2 720 3000 t
+(order.)720 3120 w
+(If you don't have one of these systems, then your best bet is to negotiate with us for a separate mail distribution.)21 4481 1 720 3300 t
+( arrange to run as a network)6 1131(If your mail insertion program has security features to prevent impersonation, and can)12 3459 2 720 3480 t
+( the)1 157(privileged user \(either)2 903 2 720 3600 t
+10 I f
+(super-user)1815 3600 w
+10 R f
+(, or)1 143 1 2250 3600 t
+10 I f
+(NETUSER)2428 3600 w
+10 R f
+(\) before invoking)2 713 1 2864 3600 t
+10 I f
+(net\256le)3612 3600 w
+10 R f
+(, then you should edit the)5 1061 1 3864 3600 t
+10 I f
+(handlers)4960 3600 w
+10 R f
+(\256le)720 3720 w
+10 CW f
+(Handlers/handlers)873 3720 w
+10 R f
+(\(see)1918 3720 w
+10 I f
+(nethandlers)2103 3720 w
+10 R f
+(\(5\)\) to turn on the)4 710 1 2583 3720 t
+10 I f
+(restriction)3318 3720 w
+10 R f
+(\257ag for the mail handler.)4 990 1 3760 3720 t
+9 B f
+( PRINTING)1 473(13. REMOTE)1 559 2 720 3960 t
+10 R f
+( parameters for)2 631(Assuming that you wish to set up a remote printing facility, the following example sets up the)16 3959 2 720 4140 t
+( running a version of)4 880(printing to be allowed between three hosts ``site1'', ``site2'' and ``site3'', all)11 3217 2 720 4260 t
+10 I f
+(lpr)4854 4260 w
+10 R f
+(\(1\) with)1 331 1 4979 4260 t
+( a printer, and)3 566( us also assume that the network is being con\256gured at ``site1'' which has)13 2993( Let)1 186(some added features.)2 845 4 720 4380 t
+(that ``site2'' has two printers.)4 1184 1 720 4500 t
+(The spooler program is called)4 1196 1 720 4680 t
+10 I f
+(lpr)1942 4680 w
+10 R f
+( takes some unusual arguments:-)4 1308(. It)1 137 2 2067 4680 t
+10 B f
+(\261h)3538 4680 w
+10 I f
+(host)3644 4680 w
+10 R f
+( job comes from a)4 729(to indicate that the)3 744 2 3837 4680 t
+( called)1 276(remote site)1 455 2 720 4800 t
+10 I f
+(host)1489 4800 w
+10 R f
+(,)1664 4800 w
+10 B f
+(\261u)1727 4800 w
+10 I f
+(person)1833 4800 w
+10 R f
+(to indicate that the job comes from a remote user called)10 2348 1 2143 4800 t
+10 I f
+(person)4529 4800 w
+10 R f
+(,)4809 4800 w
+10 B f
+(\261n)4872 4800 w
+10 I f
+(name)4978 4800 w
+10 R f
+(to)5232 4800 w
+(indicate the name of the print job, and)7 1541 1 720 4920 t
+10 B f
+(\261p)2289 4920 w
+10 I f
+(printer)2395 4920 w
+10 R f
+( handler)1 328( The)1 209( the job on.)3 462(to indicate an alternative printer to print)6 1610 4 2701 4920 t
+(will pipe the contents of a)5 1100 1 720 5040 t
+10 I f
+(print)1858 5040 w
+10 R f
+(message into the program)3 1065 1 2091 5040 t
+9 R f
+(PRINTER)3193 5040 w
+10 R f
+(, so we should set the Make\256le parameter)7 1742 1 3568 5040 t
+9 R f
+(PRINTER)720 5160 w
+10 R f
+(to be)1 197 1 1120 5160 t
+10 I f
+(/bin/lpr)1342 5160 w
+10 R f
+(, and)1 194 1 1651 5160 t
+9 R f
+(PRINTERARGS)1870 5160 w
+10 R f
+(should be set to show the true name and origin of the job, ie:)13 2420 1 2510 5160 t
+10 CW f
+(PRINTERARGS = \\"-h&O\\",\\"-u&F\\",\\"-n&D\\")2 2400 1 870 5340 t
+10 R f
+(Now we should de\256ne)3 896 1 720 5520 t
+9 R f
+(PRINTORIGINS)1641 5520 w
+10 R f
+(to restrict print jobs to our own sites, so we set)10 1863 1 2291 5520 t
+10 CW f
+(PRINTORIGINS = /usr/lib/printorigins)2 2160 1 870 5700 t
+10 R f
+(and in this \256le we put two lines naming the favoured sites:)11 2335 1 720 5880 t
+10 CW f
+(site2)870 6060 w
+(site3)870 6180 w
+10 R f
+(We also need to enable our users to send print jobs to the two printers at)15 3482 1 720 6360 t
+10 I f
+(site2)4267 6360 w
+10 R f
+( \256le)1 194(by creating a)2 595 2 4521 6360 t
+10 CW f
+(/usr/lib/printsites)720 6480 w
+10 R f
+( now use a general feature of the)7 1459( We)1 211(in which we put just the name ``site2''.)7 1731 3 1909 6480 t
+10 I f
+(handlers)720 6600 w
+10 R f
+(\256le \(see)1 322 1 1104 6600 t
+10 I f
+(nethandlers)1460 6600 w
+10 R f
+( Edit)1 226(\(5\)\) that allows us to specify an addressing restriction for any message type.)12 3144 2 1940 6600 t
+10 CW f
+(Handlers/handlers)720 6720 w
+10 R f
+(so that the)2 411 1 1765 6720 t
+10 I f
+(address)2201 6720 w
+10 R f
+(\256eld for the)2 466 1 2537 6720 t
+10 I f
+(printer)3028 6720 w
+10 R f
+(handler contains)1 657 1 3331 6720 t
+10 CW f
+(/usr/lib/printsites)4013 6720 w
+10 R f
+(.)5153 6720 w
+( jobs to)2 313(That's all for the Make\256le parameters, but we also need to make it easy for our users to send their print)20 4277 2 720 6900 t
+( called, say)2 472( can be done by writing a shell script)8 1582( This)1 242(``site2'' and be able to choose what printer it goes on.)10 2294 4 720 7020 t
+10 CW f
+(/usr/bin/netprint)720 7140 w
+10 R f
+( could contain the following:-)4 1188(. It)1 136 2 1740 7140 t
+8 S1 f
+(__________________)720 7424 w
+8 R f
+(14. Should be)2 442 1 720 7544 t
+8 I f
+(netstats)1182 7544 w
+8 R f
+(\(5\).)1431 7544 w
+10 R f
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 18 18
+%%Page: 19 19
+/saveobj save def
+mark
+19 pagesetup
+10 R f
+(- 19 -)2 216 1 2907 480 t
+10 CW f
+(#!/bin/sh)870 960 w
+(printer=1)870 1080 w
+(case $1)1 420 1 870 1200 t
+(in)870 1320 w
+(-1\)printer=1 ; shift ;;)3 1380 1 1050 1440 t
+(-2\)printer=2 ; shift ;;)3 1380 1 1050 1560 t
+(esac)870 1680 w
+(netfile -A printer -D site2 -E "-p$printer" $*)7 2760 1 870 1800 t
+10 R f
+( or -2, which selects which of the printers is to be used.)12 2226(The shell program has an optional \256rst argument, either -1,)9 2364 2 720 1980 t
+( remote spooler inside the message)5 1535( information is passed as an argument for the)8 2029( This)1 257(The default is -1.)3 769 4 720 2100 t
+10 I f
+(environment)720 2220 w
+10 R f
+(using the)1 364 1 1244 2220 t
+10 I f
+(net\256le)1633 2220 w
+10 R f
+(argument)1902 2220 w
+10 B f
+(\261E)2304 2220 w
+10 R f
+(.)2421 2220 w
+9 B f
+( TO NETNEWS)2 626(14. INTERFACING)1 799 2 720 2460 t
+10 R f
+(In order to receive news, all that you normally need to do is de\256ne)13 2755 1 720 2640 t
+9 R f
+(NEWSEDITOR)3506 2640 w
+10 R f
+( con\256gure)1 411(when you)1 399 2 4124 2640 t
+9 R f
+(MHS)4968 2640 w
+10 R f
+(net,)5163 2640 w
+(and install everything normally, and then get your news neighbour\(s\) to start sending news to you.)15 3932 1 720 2760 t
+( batched, or compressed, news, or some combination, then you)9 2609(If, however, your news feed wishes to send you)8 1981 2 720 2940 t
+(will need to create the)4 897 1 720 3060 t
+9 R f
+(NEWSCMDS)1646 3060 w
+10 R f
+( must have been de\256ned when you con\256gured the network software)10 2740(\256le. This)1 385 2 2185 3060 t
+( news feed should be able)5 1058( Your)1 260( will usually have been de\256ned to be SPOOLDIR/LIBDIR/newscmds.)8 2846( It)1 116(as well.)1 310 5 720 3180 t
+(to tell you what you need to put in this \256le.)10 1720 1 720 3300 t
+7 R f
+(15)2440 3260 w
+10 R f
+( we are)2 289( Since)1 273( post articles.)2 532(You are also going to want to send news back to your news feed, so that local users can)18 3496 4 720 3480 t
+( you have read the netnews documentation, you will know how to put the following command in)16 4026(assuming that)1 564 2 720 3600 t
+(your subscription \256le, for the node that you are going to send news to.)13 2800 1 720 3720 t
+10 CW f
+(SPOOLDIR/LIBDIR/sendmsg -dorP9 -A reporter -D <node> -Z 600000)7 3720 1 870 3900 t
+10 R f
+(That arranges for news articles \(which are given to the command on standard input\) to be sent to the)18 4219 1 720 4080 t
+10 I f
+(reporter)4977 4080 w
+10 R f
+(handler at)1 408 1 720 4200 t
+10 S f
+(<)1165 4200 w
+10 I f
+(node)1220 4200 w
+10 S f
+(>)1414 4200 w
+10 R f
+(. The)1 242 1 1469 4200 t
+10 B f
+(d)1748 4200 w
+10 R f
+(option prevents)1 630 1 1840 4200 t
+10 I f
+(sendmsg)2506 4200 w
+10 R f
+(from triggering the)2 782 1 2886 4200 t
+10 I f
+(auto-call)3704 4200 w
+10 R f
+(mechanism when the news is)4 1209 1 4101 4200 t
+(queued. The)1 519 1 720 4320 t
+10 B f
+(o)1266 4320 w
+10 R f
+(option has the effect of keeping news articles ordered, which is generally a good idea, especially if)16 3967 1 1343 4320 t
+( The)1 206( as a news feed, and passing lots of news from one site to another.)14 2648(you are acting)2 569 3 720 4440 t
+10 B f
+(r)4169 4440 w
+10 R f
+(option prevents news from)3 1071 1 4239 4440 t
+( general, this is a)4 702( In)1 140( not acceptable at your neighbour node.)6 1619(being returned to your host if \(for some reason\) it is)10 2129 4 720 4560 t
+( However,)1 453( news is seldom important enough to worry about the small chance of its being rejected.)15 3707(good idea,)1 430 3 720 4680 t
+( The)1 206(when you are just starting, you might want to omit this option.)11 2509 2 720 4800 t
+10 B f
+(P9)3461 4800 w
+10 R f
+(option causes)1 542 1 3598 4800 t
+10 I f
+(sendmsg)4166 4800 w
+10 R f
+(to treat news as the)4 773 1 4537 4800 t
+( The)1 217(lowest possible priority traf\256c.)3 1263 2 720 4920 t
+10 B f
+(Z)2237 4920 w
+10 R f
+( one)1 180(option speci\256es that if the news hasn't been delivered within about)10 2789 2 2341 4920 t
+(week, then it should be removed.)5 1323 1 720 5040 t
+( the)1 152(Note, there is no requirement that)5 1362 2 720 5220 t
+10 S f
+(<)2264 5220 w
+10 I f
+(node)2319 5220 w
+10 S f
+(>)2513 5220 w
+10 R f
+( that you)2 360( Anyone)1 371(be a node that is directly connected to your host.)9 1981 3 2598 5220 t
+( sending news articles to sites without their consent is not a ``nice'')12 2811( However,)1 450( target.)1 287(can address is a potential)4 1042 4 720 5340 t
+(thing to do!)2 467 1 720 5460 t
+(You can use)2 499 1 720 5640 t
+10 I f
+(sendmsg)1247 5640 w
+10 R f
+('s)1591 5640 w
+10 B f
+(\261E)1691 5640 w
+10 R f
+( the news system, should you have need)7 1626(parameter to pass exotic remote commands to)6 1848 2 1836 5640 t
+(to do that.)2 411 1 720 5760 t
+7 R f
+(16)1131 5720 w
+10 R f
+( need arises you will be an expert at handling)9 1850(By the time that)3 654 2 1230 5760 t
+9 R f
+(MHS)3764 5760 w
+10 R f
+(net and the netnews systems, and)5 1351 1 3959 5760 t
+(will not need explanations from here!)5 1500 1 720 5880 t
+9 B f
+( AS A FILESERVER NODE)4 1107(15. ACTING)1 519 2 720 6120 t
+10 R f
+( to access \256les that you might happen to have and)10 2101(If you desire to, you can make your host available to others)11 2489 2 720 6300 t
+(which are generally available to all.)5 1424 1 720 6420 t
+(If you are going to do this, then you should have de\256ned)11 2325 1 720 6600 t
+9 R f
+(PUBLICFILES)3076 6600 w
+10 R f
+( of a \256le or directory that)6 1040(to be the name)3 603 2 3667 6600 t
+( If)1 124( will be making available.)4 1067(will give access to the \256les you)6 1303 3 720 6720 t
+9 R f
+(PUBLICFILES)3247 6720 w
+10 R f
+(is the name of a directory, then you)7 1470 1 3840 6720 t
+( can probably be owned by the)6 1261( It)1 117(should make it now.)3 829 3 720 6840 t
+9 R f
+(SERVERUSER)2958 6840 w
+10 R f
+( remote)1 309(that you de\256ned to act on behalf of)7 1437 2 3564 6840 t
+( you have any \256les that you wish to make immediately available, you can copy, or link, them into this)19 4235(users. If)1 355 2 720 6960 t
+( sure that they are readable by)6 1226(directory. Make)1 667 2 720 7080 t
+9 R f
+(SERVERUSER)2643 7080 w
+10 R f
+( subdirectories if there is a lot of)7 1337( \256ne to make)3 534(! It's)1 221 3 3218 7080 t
+8 S1 f
+(__________________)720 7260 w
+8 I f
+(15. If they don't know, then they should probably restrict themselves to sending simple one-at-a-time articles!)15 3494 1 720 7380 t
+( command that you send must be in the)8 1297( The)1 168( can be used to send batched and/or compressed news articles.)10 2083(16. This)1 258 4 720 7500 t
+7 I f
+(NEWSCMDS)4551 7500 w
+8 I f
+(\256le at your)2 359 1 4951 7500 t
+(news neighbour.)1 528 1 840 7590 t
+10 R f
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 19 19
+%%Page: 20 20
+/saveobj save def
+mark
+20 pagesetup
+10 R f
+(- 20 -)2 216 1 2907 480 t
+(related material that should be kept together.)6 1783 1 720 960 t
+(If)720 1140 w
+9 R f
+(PUBLICFILES)820 1140 w
+10 R f
+( minimal case \(and probably the best)6 1530( A)1 132(is the name of a \256le, then you need to create that \256le.)12 2233 3 1415 1140 t
+(starting point\) would be)3 958 1 720 1260 t
+10 CW f
+(* SPOOLDIR/_public)1 2040 1 870 1440 t
+10 R f
+( anyone to access \256les in SPOOLDIR/)6 1544(This allows)1 465 2 720 1620 t
+10 S f
+(_)2729 1620 w
+10 R f
+(public and is equivalent to simply de\256ning)6 1718 1 2779 1620 t
+9 R f
+(PUBLICFILES)4524 1620 w
+10 R f
+(to be)1 199 1 5111 1620 t
+( it does leave room for expansion, should you wish to at some later time.)14 2903( However,)1 440(this directory name.)2 796 3 720 1740 t
+10 I f
+(Fileserver)720 1920 w
+10 R f
+( with those of the user who requested)7 1531(reads this \256le, forwards, looking for a match of user and address)11 2619 2 1160 1920 t
+( the)1 151( \256rst line that matches \(ie: the \256rst line for which either)11 2261(\256les. The)1 402 3 720 2040 t
+10 S f
+(<)3563 2040 w
+10 I f
+(user)3618 2040 w
+10 S f
+(>)3790 2040 w
+10 R f
+(part is the name of the remote user,)7 1436 1 3874 2040 t
+(or is missing or)3 644 1 720 2160 t
+10 B f
+(*)1398 2172 w
+10 R f
+(, and the)2 359 1 1448 2160 t
+10 S f
+(<)1841 2160 w
+10 I f
+(address)1896 2160 w
+10 S f
+(>)2207 2160 w
+10 R f
+(part either matches the name of the remote host, or is)10 2211 1 2296 2160 t
+10 B f
+(*)4541 2172 w
+10 R f
+(\) ends the search.)3 719 1 4591 2160 t
+(The)720 2280 w
+10 I f
+(full)905 2280 w
+10 S f
+(_)1039 2280 w
+10 I f
+(path)1089 2280 w
+10 S f
+(_)1267 2280 w
+10 I f
+(name)1317 2280 w
+10 R f
+( particular user may)3 807(on that line is used as the name of the directory containing \256les that this)14 2940 2 1563 2280 t
+( no line in)3 409(access. If)1 397 2 720 2400 t
+9 I f
+(PUBLICFILES)1553 2400 w
+10 R f
+( line that does match does not contain a)8 1600(matches, or if the)3 699 2 2130 2400 t
+10 I f
+(full)4457 2400 w
+10 S f
+(_)4591 2400 w
+10 I f
+(path)4641 2400 w
+10 S f
+(_)4819 2400 w
+10 I f
+(name,)4869 2400 w
+10 R f
+(then)5138 2400 w
+(the remote user is denied access.)5 1302 1 720 2520 t
+( case, users are permitted access to \256les relative to the \256nal directory only, and may not use a path that)20 4327(In any)1 263 2 720 2700 t
+(commences with)1 674 1 720 2820 t
+10 B f
+(/)1419 2820 w
+10 R f
+(, or that contains `)4 724 1 1447 2820 t
+10 B f
+(. .)1 58 1 2171 2820 t
+10 R f
+(' anywhere within it.)3 832 1 2229 2820 t
+(Another example might be)3 1068 1 720 3000 t
+10 CW f
+(network@* SPOOLDIR)1 1560 1 870 3180 t
+(friend@neighbour /)1 1140 1 870 3300 t
+(enemy@*)870 3420 w
+(* SPOOLDIR/_public)1 2040 1 870 3540 t
+10 R f
+( the user)2 362(This allows requests from)3 1068 2 720 3720 t
+10 I f
+(network)2187 3720 w
+10 R f
+(at any site to access publicly readable \256les in your spool directory)11 2764 1 2546 3720 t
+(\(such as)1 370 1 720 3840 t
+10 S f
+(_)1161 3840 w
+10 I f
+(stats/Accumulated)1211 3840 w
+10 R f
+( by)1 170(\320 but not network messages, which are always mode 0600 owned)10 3125 2 2015 3840 t
+9 R f
+(NETUSERNAME)720 3960 w
+10 R f
+(\).)1390 3960 w
+10 I f
+(friend@neighbour)1504 3960 w
+10 R f
+(is allowed to access any \256les on your system, provided that)10 2427 1 2277 3960 t
+9 R f
+(SERVERUSER)4735 3960 w
+10 R f
+(has read permissions on the requested \256les.)6 1740 1 720 4080 t
+10 I f
+(Enemy)2512 4080 w
+10 R f
+( to)1 104(is not permitted any access at all, whatever host he happens)10 2396 2 2810 4080 t
+( others can access \256les in the public directory only.)9 2041( All)1 178(be using, as there is no path speci\256ed for him.)9 1834 3 720 4200 t
+(Once this \256le is created, you should make sure that any directories it names exist, and have suitable permissions.)18 4497 1 720 4380 t
+(You should also make sure that the user)7 1609 1 720 4560 t
+9 R f
+(SERVERUSER)2356 4560 w
+10 R f
+(exists in your password \256le, and that)6 1475 1 2958 4560 t
+9 R f
+(SERVERGROUP)4460 4560 w
+10 R f
+(is in)1 173 1 5137 4560 t
+(your group \256le.)2 619 1 720 4680 t
+7 R f
+(17)1339 4640 w
+10 R f
+(If you wish, the)3 657 1 720 4860 t
+10 I f
+(\256leserver)1412 4860 w
+10 R f
+( should de\256ne the)3 738( You)1 232(handler will keep statistics of all \256les fetched from your site.)10 2522 3 1818 4860 t
+9 R f
+(FILESERVERLOG)720 4980 w
+10 R f
+(parameter, and make sure the \256le exists and is writable by)10 2475 1 1481 4980 t
+9 R f
+(SERVERUSER)3997 4980 w
+10 R f
+(, as otherwise the)3 738 1 4572 4980 t
+( program exists to interpret the statistics as yet.)8 1879( No)1 172(handler will quietly avoid producing any statistics.)6 2024 3 720 5100 t
+9 B f
+( SUN III NODES)3 664(16. ADDING)1 524 2 720 5340 t
+10 R f
+(If you have been running with the previous version of the software, \(and you have turned on the)17 3967 1 720 5520 t
+9 R f
+(SUN3)4720 5520 w
+10 R f
+(gateway)4978 5520 w
+( is a shell script in the directory)7 1264( There)1 283( sites that it already knows.)5 1093(option\), then you probably want to add in all the)9 1950 4 720 5640 t
+10 CW f
+(Admin)720 5760 w
+10 R f
+(called)1048 5760 w
+10 CW f
+(AddSun3Host.sh)1349 5760 w
+10 R f
+( commands suitable for reading into)5 1460(which will output a set of)5 1034 2 2217 5760 t
+10 I f
+(netstate)4740 5760 w
+10 R f
+(. You)1 251 1 5059 5760 t
+( it as follows:)3 542( Use)1 205(may need to edit it for the local name of your Sun3 state program.)13 2635 3 720 5880 t
+10 CW f
+(sh AddSun3Host.sh | netstate -crs 2>/dev/null)5 2700 1 870 6060 t
+10 R f
+(or use an intermediate \256le instead of a pipe, since you might need to repeat the command.)16 3583 1 720 6240 t
+(After the network is running,)4 1182 1 720 6420 t
+9 R f
+(SUN3)1930 6420 w
+10 R f
+( tables)1 264(state messages will be incorporated automatically into the new routing)9 2861 2 2185 6420 t
+(by the gateway programs.)3 1031 1 720 6540 t
+9 B f
+( THE NETWORK)2 716(17. STARTING)1 629 2 720 6780 t
+10 R f
+(Now you can run)3 708 1 720 6960 t
+10 I f
+(netstate)1459 6960 w
+10 R f
+( on seeing the \257ag)4 755(\(8\) to test out your command \256le \(which it reads)9 1988 2 1778 6960 t
+10 B f
+(C)4553 6960 w
+10 R f
+(\), let's use the)3 581 1 4625 6960 t
+10 B f
+(w)5238 6960 w
+10 R f
+( also want to update the state\256le and routing tables \()10 2081( We)1 188(\257ag to make it complain about your typos.)7 1694 3 720 7080 t
+10 B f
+(rs)4683 7080 w
+10 R f
+(\). Type:-)1 374 1 4766 7080 t
+8 S1 f
+(__________________)720 7424 w
+8 I f
+(17. Or password \256le, if you are running an)8 1371 1 720 7544 t
+7 I f
+(AUSAS)2111 7544 w
+8 I f
+(system.)2337 7544 w
+10 R f
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 20 20
+%%Page: 21 21
+/saveobj save def
+mark
+21 pagesetup
+10 R f
+(- 21 -)2 216 1 2907 480 t
+10 CW f
+(netstate -rswC)1 840 1 870 960 t
+10 R f
+(You will probably get warnings from)5 1550 1 720 1140 t
+10 I f
+(netstate)2307 1140 w
+10 R f
+( of nodes that it doesn't yet know)7 1426(when it encounters the names)4 1229 2 2655 1140 t
+( there were any)3 638( If)1 125( the network starts communicating.)4 1443( can safely be ignored, they will cease when)8 1839(about. These)1 545 5 720 1260 t
+( can use)2 321( You)1 222(other complaints, \256x up the commands, and try again.)8 2151 3 720 1380 t
+10 I f
+(netmap)3439 1380 w
+10 R f
+(\(1\) to see the results of your efforts.)7 1430 1 3741 1380 t
+( new link is added into the)6 1175( a)1 88( When)1 307(Finally, try writing some call programs and making a few connections.)10 3020 4 720 1560 t
+(state\256le,)720 1680 w
+10 I f
+(netstate)1096 1680 w
+10 R f
+(will invoke the program)3 1008 1 1447 1680 t
+10 I f
+(netrequest)2495 1680 w
+10 R f
+( new topology to all the sites in your)8 1573(\(1\) to broadcast the)3 818 2 2919 1680 t
+10 I f
+(visible region)1 547 1 720 1800 t
+10 R f
+(.)1275 1800 w
+9 B f
+(18. MAINTENANCE)1 849 1 720 2040 t
+10 R f
+(You also need to automate the process of getting)8 1947 1 720 2220 t
+10 I f
+(netinit)2692 2220 w
+10 R f
+(started each time your system boots. Just put a line)9 2032 1 2973 2220 t
+10 CW f
+(SPOOLDIR/LIBDIR/start)870 2400 w
+10 R f
+(in the usual place, which would be near where the line printer and other daemons are started in the)18 4017 1 720 2580 t
+10 I f
+(/etc/rc)4767 2580 w
+10 R f
+(\256le on)1 258 1 5052 2580 t
+(most systems.)1 596 1 720 2700 t
+10 I f
+(Start)1400 2700 w
+10 R f
+(can be copied from the \256le)5 1237 1 1654 2700 t
+10 CW f
+(Admin/start.sh)2950 2700 w
+10 R f
+( the network)2 565(, and will contain all)4 955 2 3790 2700 t
+(initialization commands, including an invocation of)5 2066 1 720 2820 t
+10 I f
+(netinit)2811 2820 w
+10 R f
+( may need to edit it for local directory changes.)9 1885(. You)1 247 2 3075 2820 t
+(Once a night you should run a command from)8 1938 1 720 3000 t
+10 I f
+(init\256le)2695 3000 w
+10 R f
+(to clean out temporary \256les and directories, and remove)8 2322 1 2988 3000 t
+(uncollected and timed-out \256le messages:-)4 1659 1 720 3120 t
+10 CW f
+( 5 * * *" LIBDIR/purge -ds)6 1560(purge "0)1 960 2 870 3300 t
+10 R f
+(However, look at the administration shell scripts ending in)8 2340 1 720 3480 t
+10 CW f
+(*ly.sh)3085 3480 w
+10 R f
+(in the directory)2 610 1 3470 3480 t
+10 I f
+(Admin)4105 3480 w
+10 R f
+(for general guidance.)2 844 1 4391 3480 t
+( \256nd that the)3 509(After system crashes, you might)4 1294 2 720 3660 t
+10 I f
+(state\256le)2550 3660 w
+10 R f
+(and/or)2888 3660 w
+10 I f
+(route\256le)3170 3660 w
+10 R f
+(got corrupted \(by the crash happening in the)7 1780 1 3530 3660 t
+(middle of an \256le rename\).)4 1078 1 720 3780 t
+7 R f
+(18)1798 3740 w
+10 R f
+( the state message)3 754(This will cause any programs using the routing tables to fail, or)11 2652 2 1904 3780 t
+(handler to get an error from)5 1105 1 720 3900 t
+10 I f
+(netstate)1850 3900 w
+10 R f
+( the state\256le by running the command)6 1510(. Repair)1 341 2 2169 3900 t
+10 CW f
+(netstate -ersxC)1 900 1 870 4080 t
+10 R f
+(This could also go into your)5 1150 1 720 4260 t
+10 I f
+(start)1900 4260 w
+10 R f
+(\256le before)1 412 1 2114 4260 t
+10 I f
+(netinit)2556 4260 w
+10 R f
+( gets completely clobbered, you can)5 1466( the state\256le)2 493( If)1 121(is started.)1 388 4 2842 4260 t
+( other nodes on the network by running the program)9 2128(request an update from)3 935 2 720 4380 t
+10 I f
+(netrequest)3813 4380 w
+10 R f
+( keep a)2 292(\(1\). \(Alternatively,)1 781 2 4237 4380 t
+(nightly backup of the state\256le!\))4 1254 1 720 4500 t
+(You should also add a command to ``start'' to remove any lock \256les that might have survived a system crash:-)19 4408 1 720 4680 t
+10 CW f
+(SPOOLDIR/LIBDIR/purge -adl)1 1560 1 870 4860 t
+9 B f
+(19. UPDATES)1 579 1 720 5100 t
+10 R f
+( as a)2 185( will arrive over the network)5 1154( These)1 291(From time-to-time, there may be distributions of updates for your source.)10 2960 4 720 5280 t
+(\256le called Sun4.up.)2 772 1 720 5400 t
+10 I f
+(type)1492 5400 w
+10 R f
+(, where)1 293 1 1658 5400 t
+10 I f
+(type)1976 5400 w
+10 R f
+(is either ``tar'' or ``cpio'' depending on your original choice.)9 2438 1 2167 5400 t
+( \256les, copy any new)4 916(After extracting the new source)4 1373 2 720 5580 t
+10 I f
+(Make\256le.dist)3064 5580 w
+10 R f
+(to)3632 5580 w
+10 I f
+(Make\256le)3765 5580 w
+10 R f
+(, and type)2 451 1 4116 5580 t
+10 CW f
+(run)4622 5580 w
+10 R f
+( re-)1 165(. When)1 343 2 4802 5580 t
+( and do)2 342(compilation has succeeded, stop any network daemons)6 2338 2 720 5700 t
+10 CW f
+(run install)1 684 1 3484 5700 t
+10 R f
+(, followed by)2 578 1 4168 5700 t
+10 CW f
+(netstate)4830 5700 w
+(-ersC)720 5820 w
+10 R f
+( restart the network.)3 798(. Then)1 280 2 1020 5820 t
+8 S1 f
+(__________________)720 7424 w
+8 I f
+(18. This is an extremely unlikely occurrence, but it always pays to play safe.)13 2428 1 720 7544 t
+10 R f
+( 26, 19106)2 425( September)1 1454( 1.10)1 250(V E R S I O N)6 583 4 2598 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 21 21
+%%Page: 22 22
+/saveobj save def
+mark
+22 pagesetup
+10 R f
+(- 22 -)2 216 1 2907 480 t
+9 B f
+(20. SUMMARY)1 639 1 720 960 t
+10 R f
+(Here is a brief summary of the steps you should have taken, just in case you missed something.)17 3804 1 720 1140 t
+( everything that comes with the distribution, carefully.)7 2173(1. Read)1 380 2 795 1320 t
+( a node name, and the domains it will belong to.)10 1921(2. Choose)1 475 2 795 1500 t
+( the tape \(or whatever\).)4 927(3. Extract)1 463 2 795 1680 t
+( a ``run'' \256le from the selection in the Make\256les directory.)10 2337(4. Choose)1 475 2 795 1860 t
+( 3.\))1 133( \(Section)1 383( ``run'' to set system dependent de\256nitions.)6 1740(5. Edit)1 342 4 795 2040 t
+(6.)795 2220 w
+10 B f
+(run)970 2220 w
+10 R f
+(. \(Section 5.\))2 516 1 1126 2220 t
+( anything goes wrong, \256x it and)6 1269(\320 If)1 216 2 970 2400 t
+10 B f
+(run)2480 2400 w
+10 R f
+(again.)2661 2400 w
+(\320 Repeat.)1 452 1 970 2580 t
+(7.)795 2760 w
+10 B f
+(run directories special install)3 1236 1 970 2760 t
+10 R f
+(8. Edit)1 342 1 795 2940 t
+10 I f
+(SPOOLDIR/STATEDIR/commands\256le)1162 2940 w
+10 R f
+( 7.\))1 133(. \(Section)1 408 2 2694 2940 t
+(9.)795 3120 w
+10 B f
+(netstate -rswC)1 617 1 970 3120 t
+10 R f
+(\(Section 17.\))1 516 1 1612 3120 t
+( steps 8 and 9 until it's right.)7 1145(10. Repeat)1 502 2 745 3300 t
+( the network.)2 524(11. Start)1 414 2 745 3480 t
+( 1.10)1 250( E R S I O N)6 511( V)1 1098(September 26, 19106)2 852 4 720 8103 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 22 22
+%%Page: 23 23
+/saveobj save def
+mark
+23 pagesetup
+10 R f
+(CONTENTS)2754 960 w
+(1. INTRODUCTION)1 879 1 770 1260 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . .)25 3350 1 1706 1260 t
+10 R f
+(1)5260 1260 w
+( name of your node.)4 801(1.1 The)1 380 2 895 1380 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . .)21 2818 1 2238 1380 t
+10 R f
+(1)5260 1380 w
+( should be easy.)3 638(1.2 Installation)1 675 2 895 1500 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . .)20 2685 1 2371 1500 t
+10 R f
+(1)5260 1500 w
+( HIERARCHY)1 608(2. DIRECTORY)1 697 2 770 1680 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . .)21 2818 1 2238 1680 t
+10 R f
+(2)5260 1680 w
+(2.1 Admin)1 503 1 895 1800 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 1800 t
+10 R f
+(2)5260 1800 w
+(2.2 Bin)1 370 1 895 1920 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 1920 t
+10 R f
+(2)5260 1920 w
+(2.3 Con\256g)1 498 1 895 2040 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 2040 t
+10 R f
+(2)5260 2040 w
+(2.4 Control)1 531 1 895 2160 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 2160 t
+10 R f
+(2)5260 2160 w
+(2.5 Dirlib)1 464 1 895 2280 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 2280 t
+10 R f
+(3)5260 2280 w
+(2.6 Documents)1 680 1 895 2400 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . .)25 3350 1 1706 2400 t
+10 R f
+(3)5260 2400 w
+(2.7 FtHeader)1 596 1 895 2520 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 2520 t
+10 R f
+(3)5260 2520 w
+(2.8 Handlers)1 585 1 895 2640 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 2640 t
+10 R f
+(3)5260 2640 w
+(2.9 Header)1 512 1 895 2760 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 2760 t
+10 R f
+(3)5260 2760 w
+(2.10 Include)1 524 1 895 2880 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 2880 t
+10 R f
+(3)5260 2880 w
+(2.11 Init)1 364 1 895 3000 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 3000 t
+10 R f
+(3)5260 3000 w
+(2.12 Lib)1 364 1 895 3120 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 3120 t
+10 R f
+(3)5260 3120 w
+(2.13 Libc)1 408 1 895 3240 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 3240 t
+10 R f
+(3)5260 3240 w
+(2.14 Make\256les)1 619 1 895 3360 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 3360 t
+10 R f
+(3)5260 3360 w
+(2.15 Manuals)1 569 1 895 3480 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 3480 t
+10 R f
+(4)5260 3480 w
+(2.16 Route)1 464 1 895 3600 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 3600 t
+10 R f
+(4)5260 3600 w
+(2.17 Utilities)1 548 1 895 3720 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 3720 t
+10 R f
+(4)5260 3720 w
+(2.18 VCdaemon)1 680 1 895 3840 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . .)25 3350 1 1706 3840 t
+10 R f
+(4)5260 3840 w
+(2.19 VCsetup)1 575 1 895 3960 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 3960 t
+10 R f
+(4)5260 3960 w
+( THE CONFIGURATION FILE)3 1301(3. EDITING)1 529 2 770 4140 t
+10 B f
+(. . . . . . . . . . . . . . . . . .)17 2286 1 2770 4140 t
+10 R f
+(4)5260 4140 w
+( Interfaces)1 417(3.1 System)1 520 2 895 4260 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . .)23 3084 1 1972 4260 t
+10 R f
+(5)5260 4260 w
+( Dependencies)1 584(3.2 System)1 520 2 895 4380 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . .)22 2951 1 2105 4380 t
+10 R f
+(8)5260 4380 w
+( Parameters)1 468(3.3 Kernel)1 496 2 895 4500 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . .)23 3084 1 1972 4500 t
+10 R f
+(9)5260 4500 w
+( Visible Program Names)3 985(3.4 User)1 413 2 895 4620 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . .)20 2685 1 2371 4620 t
+10 R f
+(9)5260 4620 w
+( Control)1 331(3.5 Compilation)1 726 2 895 4740 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . .)22 2951 1 2105 4740 t
+10 R f
+(10)5210 4740 w
+( BUGS)1 292(4. SYSTEM)1 520 2 770 4920 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . .)25 3350 1 1706 4920 t
+10 R f
+(11)5210 4920 w
+( TARGETS)1 475(5. MAKEFILE)1 630 2 770 5100 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . .)23 3084 1 1972 5100 t
+10 R f
+(12)5210 5100 w
+(6. REGIONS)1 558 1 770 5280 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 5280 t
+10 R f
+(12)5210 5280 w
+( THE COMMANDSFILE)2 1044(7. CONFIGURING)1 813 2 770 5460 t
+10 B f
+(. . . . . . . . . . . . . . . . . .)17 2286 1 2770 5460 t
+10 R f
+(13)5210 5460 w
+( local node)2 438(7.1 The)1 380 2 895 5580 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . .)24 3217 1 1839 5580 t
+10 R f
+(13)5210 5580 w
+(7.2 Links)1 453 1 895 5700 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 5700 t
+10 R f
+(15)5210 5700 w
+( Forwarding)1 491(7.3 Address)1 552 2 895 5820 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . .)22 2951 1 2105 5820 t
+10 R f
+(15)5210 5820 w
+( UP AUTO-CALL FACILITIES)3 1307(8. SETTING)1 541 2 770 6000 t
+10 B f
+(. . . . . . . . . . . . . . . . . .)17 2286 1 2770 6000 t
+10 R f
+(15)5210 6000 w
+( NETINIT)1 418(9. CONFIGURING)1 813 2 770 6180 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . .)22 2951 1 2105 6180 t
+10 R f
+(16)5210 6180 w
+( Running Programs)2 778(9.1 Permanently)1 730 2 895 6300 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . .)19 2552 1 2504 6300 t
+10 R f
+(17)5210 6300 w
+( Netinit)1 303(9.2 Controlling)1 687 2 895 6420 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . .)23 3084 1 1972 6420 t
+10 R f
+(17)5210 6420 w
+( UP PERIODIC CALLS)3 981(10. SETTING)1 591 2 720 6600 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . .)20 2685 1 2371 6600 t
+10 R f
+(17)5210 6600 w
+(11. STATISTICS)1 731 1 720 6780 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 6780 t
+10 R f
+(17)5210 6780 w
+( TO MAIL)2 438(12. INTERFACES)1 781 2 720 6960 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . .)22 2951 1 2105 6960 t
+10 R f
+(18)5210 6960 w
+( PRINTING)1 491(13. REMOTE)1 586 2 720 7140 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . .)23 3084 1 1972 7140 t
+10 R f
+(18)5210 7140 w
+( TO NETNEWS)2 660(14. INTERFACING)1 841 2 720 7320 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . .)20 2685 1 2371 7320 t
+10 R f
+(19)5210 7320 w
+( AS A FILESERVER NODE)4 1172(15. ACTING)1 552 2 720 7500 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . .)19 2552 1 2504 7500 t
+10 R f
+(19)5210 7500 w
+( SUN III NODES)3 707(16. ADDING)1 568 2 720 7680 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . .)22 2951 1 2105 7680 t
+10 R f
+(20)5210 7680 w
+( THE NETWORK)2 743(17. STARTING)1 669 2 720 7860 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . .)21 2818 1 2238 7860 t
+10 R f
+(20)5210 7860 w
+(- i -)2 144 1 2943 8223 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 23 23
+%%Page: 24 24
+/saveobj save def
+mark
+24 pagesetup
+10 R f
+(18. MAINTENANCE)1 907 1 720 960 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . .)25 3350 1 1706 960 t
+10 R f
+(21)5210 960 w
+(19. UPDATES)1 625 1 720 1140 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .)27 3616 1 1440 1140 t
+10 R f
+(21)5210 1140 w
+(20. SUMMARY)1 692 1 720 1320 t
+10 B f
+(. . . . . . . . . . . . . . . . . . . . . . . . . . .)26 3483 1 1573 1320 t
+10 R f
+(22)5210 1320 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 24 24
+%%Page: 25 25
+/saveobj save def
+mark
+25 pagesetup
+12 B f
+(Installation Guide for)2 1118 1 2235 970 t
+11 B f
+(MHS)3383 970 w
+12 B f
+(net)3634 970 w
+12 I f
+(Piers Lauder)1 631 1 2699 1160 t
+(\(piers@mhs.oz\))2634 1290 w
+10 R f
+(Message Handling Systems)2 1105 1 2462 1470 t
+10 I f
+(ABSTRACT)2778 1830 w
+10 R f
+(This document is a guide to the installation of the)9 2142 1 720 2130 t
+9 R f
+(MHS)2905 2130 w
+10 R f
+( includes a)2 465( It)1 130( from the distribution \256le.)4 1107(net software)1 508 4 3100 2130 t
+( with care, and notify the author of any)8 1635( read it)2 299( Please)1 316(detailed description for the con\256guration of the network.)7 2340 4 720 2250 t
+(de\256ciencies, additions, or modi\256cations you might think are necessary.)8 2839 1 720 2370 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 25 25
+%%Trailer
+done
+%%Pages: 25
+%%DocumentFonts: Times-Bold Times-Italic Courier Times-Roman Symbol Times-Roman
