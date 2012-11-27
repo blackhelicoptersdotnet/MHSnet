@@ -47,6 +47,8 @@ static char	sccsid[]	= "%W% %E%";
 #include	"exec.h"		/* For ExInChild */
 
 
+#include	<crypt.h>
+
 
 
 /*

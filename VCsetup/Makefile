@@ -31,7 +31,7 @@ all:		$(BINARIES)
 
 ../$(BIN)/VCshell: \
 		$(SHELLOBJS) $(SHELLLIBS)
-		$(CC) $(LDFLAGS) -o $@ $(SHELLOBJS) $(SHELLLIBS) $(IPLIBS) $(SLIBS)
+		$(CC) $(LDFLAGS) -o $@ $(SHELLOBJS) $(SHELLLIBS) $(IPLIBS) $(SLIBS) -lcrypt
 
 ../$(BIN)/VCcall: \
 		$(OBJECTS) grammar.o $(LIBS)

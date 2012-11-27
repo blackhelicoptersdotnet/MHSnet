@@ -26,7 +26,7 @@ CFILES		= \
 		StringCRC32.c StringMatch.c StripCopyEnd.c StripDomain.c StripEnv.c StripTypes.c \
 		SysWarn.c TimeString.c ToLower.c ToUpper.c Trace.c UniqueName.c ValidChars.c Version.c \
 		Warn.c WrStats.c WriteCmds.c bcopy.c bsearch.c concat.c crc.c crc32.c create.c \
-		crypt.c lfind.c listsort.c millisecs.c newprintf.c newnstr.c newstr.c otol.c \
+		lfind.c listsort.c millisecs.c newprintf.c newnstr.c newstr.c otol.c \
 		rfc822time.c strccmp.c strclr.c strcpyend.c strnccmp.c \
 		strncpyend.c strrpbrk.c ticks.c xtol.c
 
@@ -47,7 +47,7 @@ OBJECTS		= $(CRCS_O) \
 		StringCRC32.o StringMatch.o StripCopyEnd.o StripDomain.o StripEnv.o StripTypes.o \
 		SysWarn.o TimeString.o ToLower.o ToUpper.o Trace.o UniqueName.o ValidChars.o Version.o \
 		Warn.o WrStats.o WriteCmds.o bcopy.o bsearch.o concat.o crc.o crc32.o create.o \
-		crypt.o lfind.o listsort.o millisecs.o newprintf.o newnstr.o newstr.o otol.o \
+		lfind.o listsort.o millisecs.o newprintf.o newnstr.o newstr.o otol.o \
 		rfc822time.o strccmp.o strclr.o strcpyend.o strnccmp.o \
 		strncpyend.o strrpbrk.o ticks.o xtol.o
 
