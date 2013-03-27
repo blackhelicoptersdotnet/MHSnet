@@ -242,5 +242,3 @@ extern long	time _FA_((long *));
 extern char *	sbrk _FA_((int));
 extern int	write _FA_((int, char *, int));
 #endif	/* !defined(QNX) && !defined(UNISTD_H) */
-
-extern char *	crypt _FA_((const char *, const char *));

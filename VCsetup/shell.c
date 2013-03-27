@@ -77,6 +77,8 @@ static char	sccsid[]	= "@(#)shell.c	1.54 05/12/16";
 #endif	/* EXCELAN == 1 */
 #endif	/* UDP_IP == 1 || TCP_IP == 1 */
 
+#include	<crypt.h>
+
 
 /*
 **	Arguments.

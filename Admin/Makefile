@@ -85,7 +85,7 @@ all:		../$(BIN)/curses.h $(BINARIES)
 
 ../$(BIN)/passwd: \
 		passwd.o $(PWDLIBS)
-		$(CC) $(LDFLAGS) -o ../$(BIN)/passwd passwd.o $(PWDLIBS) $(SLIBS)
+		$(CC) $(LDFLAGS) -o ../$(BIN)/passwd passwd.o $(PWDLIBS) $(SLIBS) -lcrypt
 
 ../$(BIN)/revpath: \
 		revpath.o $(REVPLIBS)

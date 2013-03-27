@@ -17,6 +17,7 @@
 **	along with MHSnet.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/*#define _XOPEN_SOURCE*/
 
 /*
 **	Include local peculiarities here.
