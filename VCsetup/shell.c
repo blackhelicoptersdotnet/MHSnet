@@ -262,7 +262,7 @@ main(argc, argv)
 	oname = Name;
 	Name = concat(oname, " ", cp, NULLSTR);
 
-	if ( Recover(ert_here) )
+	if ( RecoverV(ert_here) )
 	{
 		Recover(ert_finish);
 
