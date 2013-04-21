@@ -125,7 +125,8 @@ typedef enum { ert_finish, ert_here, ert_return, ert_exit } ERC_t;
 extern jmp_buf		ErrBuf;
 extern ERC_t		ErrFlag;
 
-#define	Recover(T)	(ErrFlag=T,((T==ert_here)?setjmp(ErrBuf):0))
+#define	RecoverV(T)	(ErrFlag=T,((T==ert_here)?setjmp(ErrBuf):0))
+#define	Recover(T)	(void)RecoverV(T)
 
 #endif	/* RECOVER */
 
