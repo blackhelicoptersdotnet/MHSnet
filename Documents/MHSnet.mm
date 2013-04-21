@@ -1,7 +1,7 @@
 .\" pic % | tbl | troff -rL19.5c -rW11c -rO3c -mm | lw -r
 .\" OPTIONS mm
 .\" SCCSID @(#)MHSnet.mm	1.35 05/12/16
-.nr S3 1 \" 1 for ACSnet
+.nr S3 0 \" 1 for ACSnet
 .SA 1
 .MT 4 l
 .nr C 3\" DRAFT (to be effective MUST be set on command line as -rC3)
