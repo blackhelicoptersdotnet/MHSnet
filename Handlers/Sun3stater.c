@@ -194,7 +194,7 @@ main(argc, argv)
 		&&
 		checkaddress()
 		&&
-		!Recover(ert_here)
+		!RecoverV(ert_here)
 	)
 		passstate();
 
