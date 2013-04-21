@@ -231,7 +231,7 @@ read_handlers()
 			continue;
 
 		hp->proto_type = UNK_PROTO;
-		hp->restrict = DFLT_RESTRICT;
+		hp->restricted = DFLT_RESTRICT;
 		hp->quality = CHOOSE_QUALITY;
 		hp->order = DFLT_ORDER;
 		hp->nice = NICEHANDLERS;
@@ -251,8 +251,8 @@ read_handlers()
 		if ( (cp = strtok(NULLSTR, space)) == NULLSTR )
 			goto lookup;
 
-		if ( (hp->restrict = *cp) == '-' )
-			hp->restrict = DFLT_RESTRICT;
+		if ( (hp->restricted = *cp) == '-' )
+			hp->restricted = DFLT_RESTRICT;
 
 		if ( (cp = strtok(NULLSTR, space)) == NULLSTR )
 			goto lookup;
@@ -311,8 +311,8 @@ lookup:
 		{
 			Trace2(3, "old handler %s", hp->handler);
 			ohp->descrip = hp->descrip;
-			if ( ohp->restrict <= DFLT_RESTRICT )
-				ohp->restrict = hp->restrict;	/* Use new restrict if higher */
+			if ( ohp->restricted <= DFLT_RESTRICT )
+				ohp->restricted = hp->restricted;	/* Use new restrict if higher */
 			if ( ohp->quality == CHOOSE_QUALITY )
 				ohp->quality = hp->quality;	/* Use new quality if higher */
 			if ( ohp->order <= DFLT_ORDER )
