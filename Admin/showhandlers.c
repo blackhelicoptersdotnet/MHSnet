@@ -179,7 +179,7 @@ show_hndlr(hp)
 	Printf("%*s", DESCLEN, hp->descrip);
 
 	Printf(" proto:%c", hp->proto_type);
-	Printf(" rstrct:%c", hp->restrict);
+	Printf(" rstrct:%c", hp->restricted);
 	if ( hp->quality == CHOOSE_QUALITY )
 		Printf(" qual:*");
 	else
