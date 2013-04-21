@@ -2640,7 +2640,7 @@ route()
 	**	Extract canonical addresses.
 	*/
 
-	if ( Recover(ert_here) )
+	if ( RecoverV(ert_here) )
 	{
 		handlebad(newstr(AddrErr));
 		Traceflag = save_level;
@@ -2845,7 +2845,7 @@ route()
 
 	if ( UseLink == NULLSTR )
 	{
-		if ( Recover(ert_here) )
+		if ( RecoverV(ert_here) )
 		{
 			handlebad(newstr(AddrErr));
 			Traceflag = save_level;
