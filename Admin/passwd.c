@@ -93,9 +93,9 @@ Args	Usage[]	=
 **	  it must sort the passwd file on the leading chars after the first period,
 **	  with input taken from the file named by the first `%s',
 **	  and output sent to the file named by the second `%s'.
+**
+**char *PasswdSortStr	= "sort -t. -k2nr %s -o %s"
 */
-
-char *	SortCmd		= "sort -t. +1nr %s -o %s";
 
 /*
 **	Miscellaneous definitions.
@@ -124,7 +124,7 @@ struct sgttyb	params;
 
 ParTb	Params[] =
 {
-	{"PASSWDSORT",	&SortCmd,			PSTRING},
+	{"PASSWDSORT",	(char **)&PASSWDSORT,		PSTRING},
 	{"TRACEFLAG",	(char **)&Traceflag,		PINT},
 };
 
@@ -564,8 +564,8 @@ setpasswd()
 
 	(void)close(fd);
 
-	cp = Malloc(strlen(SortCmd) + strlen(TmpFile)*2);
-	(void)sprintf(cp, SortCmd, TmpFile, TmpFile);
+	cp = Malloc(strlen(PASSWDSORT) + strlen(TmpFile)*2);
+	(void)sprintf(cp, PASSWDSORT, TmpFile, TmpFile);
 
 	/*
 	**	If you think I can be bothered doing a qsort on unstructured data,
