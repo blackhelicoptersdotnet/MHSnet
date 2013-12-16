@@ -44,7 +44,7 @@ typedef struct
 	char *	handler;		/* Name of handler */
 	char *	descrip;		/* Description of contents */
 	char	proto_type;		/* Protocol type ('-' means none) */
-	char	restrict;		/* Not allowed for mortals (if not '-') */
+	char	restricted;		/* Not allowed for mortals (if not '-') */
 	char	quality;		/* Minimum quality ('0'-'9') ('*' or '-' means none) */
 	char	order;			/* Order flag ('0' never, '1' always, '-' unspecified) */
 	int	nice;			/* `nice(2)' value for handler ('*' means none) */
