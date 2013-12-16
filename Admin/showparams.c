@@ -124,6 +124,7 @@ bool	No_X;
 bool	NoRet;
 int	NveTimeDelay	= NVETIMEDELAY;
 char *	Pager		= "more";
+char *	PasswdSort	= "sort -t. -k2nr %s -o %s";
 int	Port		= 1989;
 bool	Received;
 char *	SendAckARGS	= "-au -Amailer -NMail";
@@ -174,6 +175,7 @@ ParTb	Params[] =
 	{"NVETIMECHANGE",	(char **)&NveChangeMax,		PINT},
 	{"NVETIMEDELAY",	(char **)&NveTimeDelay,		PINT},
 	{"PAGER",		&Pager,				PSTRING},
+	{"PASSWDSORT",		&PasswdSort,			PSTRING},
 	{"PORT",		(char **)&Port,			PINT},
 	{"PRINTER",		&PRINTER,			PSTRING},
 	{"PRINTERARGS",		(char **)&PRINTERARGS,		PVECTOR},
