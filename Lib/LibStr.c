@@ -61,6 +61,7 @@ int	NoAddressCompletion	= NOADDRCOMPL;
 char *	NodenamefileStr		= NODENAMEFILE;
 int	NveChangeMax		= NVETIMECHANGE;
 char *	ParamsdirStr		= PARAMSDIR;
+char *	PasswdSortStr		= PASSWDSORT;
 char *	PendngdirStr		= PENDINGDIR;
 char *	PostmasterStr		= POSTMASTER;
 char *	PrivsfileStr		= PRIVSFILE;

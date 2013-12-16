@@ -240,6 +240,12 @@ extern int		NveChangeMax;
 extern char *		ParamsdirStr;
 #endif	/* PARAMSDIR */
 
+#ifdef	PASSWDSORT
+#undef	PASSWDSORT
+#define	PASSWDSORT	PasswdSortStr
+extern char *		PasswdSortStr;
+#endif	/* PASSWDSORT */
+
 #ifdef	PENDINGDIR
 #undef	PENDINGDIR
 #define	PENDINGDIR	PendngdirStr
