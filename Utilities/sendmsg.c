@@ -254,7 +254,7 @@ main(argc, argv)
 		(
 			handler->proto_type != UNK_PROTO
 			||
-			(handler->restrict != '0' && !SU)
+			(handler->restricted != '0' && !SU)
 		)
 	)
 	{

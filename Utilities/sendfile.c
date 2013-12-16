@@ -293,7 +293,7 @@ main(argc, argv)
 		(
 			handler->proto_type != FTP
 			||
-			(handler->restrict != '0' && !SU)
+			(handler->restricted != '0' && !SU)
 		)
 	)
 	{
