@@ -485,7 +485,7 @@ SetupParts(chnp)
 		char	errs[100];
 
 		if ( errno != ENOENT )
-			(bool)SysWarn(CouldNot, english("read commands in"), chnp->ch_cmdfilename);
+			(void)SysWarn(CouldNot, english("read commands in"), chnp->ch_cmdfilename);
 		(void)sprintf(errs, english("bad commands: %s (%s)"), BadCmdReason, ErrnoStr(errno));
 		BadMesg(chnp, errs);
 		FreeParts(&FirstP);	/* Leave files for inspection */
