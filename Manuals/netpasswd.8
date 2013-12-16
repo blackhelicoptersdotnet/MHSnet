@@ -10,7 +10,7 @@
 netpasswd \- create password for network site
 .SH SYNOPSIS
 .BI \*(S6
-.RB [\-[ c ][ d ]]
+.RB [\-[ c ][ d ][ n ]]
 .RB \- p |\c
 .I address
 .RI [ comment ...]
@@ -128,8 +128,8 @@ This file can contain the following optional parameters:
 This is the command string used to sort the password file by passing it to the shell.
 The default is:
 
-.if n `sort -t. +1nr %s -o %s'
-.if t \f(CWsort -t. +1nr %s -o %s\fP
+.if n `sort -t. -k2nr %s -o %s'
+.if t \f(CWsort -t. -k2nr %s -o %s\fP
 
 It must sort the passwd file in reverse order on the leading chars after the first period,
 with input taken from the file named by the first `%s',
