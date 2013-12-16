@@ -38,6 +38,7 @@ case "$chown" in
 esac
 
 case `uname -mrs` in
+Linux*armv6l)	awkflag=	;;
 Linux*)	awkflag=--traditional	;;
 *)	awkflag=		;;
 esac
