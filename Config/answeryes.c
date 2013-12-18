@@ -1,13 +1,20 @@
 /*
-**	MHSnet Version 1
+**	Copyright 2012 Piers Lauder
 **
-**	Copyright 2005 Piers Lauder, Personis P/L.
+**	This file is part of MHSnet.
 **
-**	All rights reserved.
+**	MHSnet is free software: you can redistribute it and/or modify
+**	it under the terms of the GNU General Public License as published by
+**	the Free Software Foundation, either version 3 of the License, or
+**	(at your option) any later version.
 **
-**	Use of this software is subject to a licence agreement.
+**	MHSnet is distributed in the hope that it will be useful,
+**	but WITHOUT ANY WARRANTY; without even the implied warranty of
+**	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**	GNU General Public License for more details.
 **
-**	SCCSID	%W% %E%
+**	You should have received a copy of the GNU General Public License
+**	along with MHSnet.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 /*
