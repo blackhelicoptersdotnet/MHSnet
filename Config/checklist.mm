@@ -5,7 +5,6 @@
 .TL
 \s+8MHSnet Port\s-8
 .AF ""
-.AU "Personis P/L."
 .MT 4
 .SA 1
 .S 10
